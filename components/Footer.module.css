@@ -1,0 +1,183 @@
+/* ─── Footer shell ─────────────────────────────────────────────── */
+.footer {
+  background: #f5f2ee;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 2rem;
+  box-sizing: border-box;
+}
+
+/* ─── Brand name ────────────────────────────────────────────────── */
+.brand {
+  font-family: "IM Fell English", "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+}
+
+/* ─── Column labels (Links / Get in touch) ───────────────────────── */
+.colLabel {
+  font-family: "Courier New", "Courier", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem;
+}
+
+/* ─── Links ─────────────────────────────────────────────────────── */
+.linksCol,
+.contactCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.link {
+  font-family: "Courier New", "Courier", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+  width: fit-content;
+}
+
+.link:hover {
+  opacity: 0.55;
+}
+
+/* ─── Logo ──────────────────────────────────────────────────────── */
+.logoCol {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+/* ================================================================
+   MOBILE LAYOUT (base — matches mobile mockup image)
+   Row 1: CHI BOTANICAL (left)   logo (right)
+   Row 2: Links (left)           Contact (right)
+   ================================================================ */
+.top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 2rem 1rem;
+}
+
+.brand {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+
+.logoCol {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+}
+
+.linksCol {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.contactCol {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* ================================================================
+   TABLET (≥ 640px)
+   Same 2-row layout, slightly bigger spacing and text
+   ================================================================ */
+@media (min-width: 640px) {
+  .inner {
+    padding: 3rem 2.5rem 2.5rem;
+  }
+
+  .brand {
+    font-size: 2.5rem;
+  }
+
+  .colLabel {
+    font-size: 0.7rem;
+  }
+
+  .link {
+    font-size: 0.72rem;
+  }
+
+  .logo {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+/* ================================================================
+   DESKTOP (≥ 1024px)
+   Single row: brand extreme left | Links | Get in touch | logo extreme right
+   Matches desktop mockup image exactly
+   ================================================================ */
+@media (min-width: 1024px) {
+  .inner {
+    max-width: 1400px;
+    padding: 4rem 6rem 3rem;
+  }
+
+  .top {
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-rows: auto;
+    gap: 2rem;
+  }
+
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  }
+
+  .linksCol {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .contactCol {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .logoCol {
+    grid-column: 4;
+    grid-row: 1;
+    justify-content: flex-end;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ================================================================
+   LARGE DESKTOP (≥ 1280px)
+   ================================================================ */
+@media (min-width: 1280px) {
+  .inner {
+    padding: 5rem 8rem 4rem;
+  }
+}

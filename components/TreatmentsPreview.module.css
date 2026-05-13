@@ -1,0 +1,102 @@
+.section {
+  background: #f5f2ee;
+  padding: 5rem 4rem 6rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: #1a1a18;
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Tall card image */
+.imageWrap {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.imageWrap_tall {
+  aspect-ratio: 3 / 4;
+}
+
+.imageWrap_short {
+  aspect-ratio: 4 / 3;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: #e8e4df;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.18);
+  aspect-ratio: inherit;
+}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #1a1a18;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.duration {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #1a1a18;
+  margin: 0;
+}
+
+.desc {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.75;
+  color: #5a5248;
+  margin: 0;
+}
+
+.viewMore {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #1a1a18;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-align: center;
+  margin-top: 3.5rem;
+  transition: opacity 0.2s;
+}
+
+.viewMore:hover {
+  opacity: 0.5;
+}

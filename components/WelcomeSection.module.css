@@ -1,0 +1,42 @@
+.section {
+  background: #f5f2ee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7rem 6rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: #1a1a18;
+  margin: 0 0 4rem;
+}
+
+.body {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: #1a1a18;
+  max-width: 700px;
+  text-align: justify;
+  text-align-last: center;
+  margin: 0 0 4rem;
+}
+
+.logoWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.logoPlaceholder {
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.2);
+}

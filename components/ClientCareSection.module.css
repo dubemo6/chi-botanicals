@@ -1,0 +1,86 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  background: #f5f2ee;
+  padding: 7rem 6rem;
+  gap: 6rem;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--font-dm);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9a8a78;
+  margin: 0 0 1.5rem;
+}
+
+.heading {
+  font-family: var(--font-fell);
+  font-style: italic;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 400;
+  color: #1a1a18;
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+}
+
+.sub {
+  font-family: var(--font-dm);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #5a5248;
+  margin: 0 0 2.5rem;
+}
+
+.cta {
+  display: inline-block;
+  font-family: var(--font-dm);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1a1a18;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: #3a3a38;
+}
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.faq:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.faqQ {
+  font-family: var(--font-fell);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1a1a18;
+  margin: 0 0 0.75rem;
+}
+
+.faqA {
+  font-family: var(--font-dm);
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #5a5248;
+  margin: 0;
+}

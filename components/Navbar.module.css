@@ -1,3 +1,6 @@
+/* ══════════════════════════════════════
+   DESKTOP NAVBAR
+   ══════════════════════════════════════ */
 .navbar {
   position: absolute;
   top: 0;
@@ -7,23 +10,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: 2rem 4rem;
 }
 
 .group {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
 }
 
 .link {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   color: #fff;
   text-decoration: none;
-  opacity: 0.9;
+  opacity: 0.95;
   transition: opacity 0.2s ease;
 }
 
@@ -32,13 +35,166 @@
 }
 
 .brand {
-  font-family: var(--font-mono);
-  font-size: 1rem;
+  font-family: var(--font-fell);
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.05em;
   color: #fff;
   text-decoration: none;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.05;
   text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════
+   MOBILE NAVBAR
+   ══════════════════════════════════════ */
+.mobileNav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.mobileBrand {
+  font-family: var(--font-fell);
+  font-style: italic;
+  font-size: clamp(1.6rem, 8vw, 2.2rem);
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+/* Sticky hamburger — always visible on mobile while scrolling */
+.stickyHamburger {
+  display: none;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  background: none;
+  border: none;
+  color: #1a1a18;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* ══════════════════════════════════════
+   FULL SCREEN OVERLAY MENU
+   ══════════════════════════════════════ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: #f5f2ee;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+.overlayTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.overlayBrand {
+  font-family: var(--font-fell);
+  font-style: italic;
+  font-size: clamp(1.6rem, 8vw, 2.2rem);
+  font-weight: 400;
+  color: #1a1a18;
+  text-decoration: none;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #1a1a18;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.overlayLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 2.5rem;
+}
+
+.overlayLink {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: #1a1a18;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.overlayLink:hover {
+  opacity: 0.5;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Hide desktop navbar */
+  .navbar {
+    display: none;
+  }
+
+  /* Show mobile navbar */
+  .mobileNav {
+    display: flex;
+  }
+
+  /* Show sticky hamburger */
+  .stickyHamburger {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Hide mobile-only elements on desktop */
+  .mobileNav {
+    display: none;
+  }
+
+  .stickyHamburger {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
 }

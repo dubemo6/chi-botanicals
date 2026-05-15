@@ -34,9 +34,55 @@
 .logoPlaceholder {
   width: 80px;
   height: 80px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+/* ── Mobile (already in place, untouched) ── */
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .body {
+    font-size: 0.85rem;
+    text-align: justify;
+  }
+
+  .eyebrow {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* ── Desktop / Laptop ── */
+@media (min-width: 769px) {
+  .section {
+    padding: 5rem 4rem 6rem;
+    align-items: center;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    margin: 0 0 4rem;
+  }
+
+  .body {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    width: 100%;
+    max-width: 100%;
+    text-align: justify;
+    text-align-last: left;
+    text-indent: 8em;
+    margin: 0 0 5rem;
+  }
+
+  .logoWrap {
+    margin-top: 1rem;
+  }
+
+  .logoPlaceholder {
+    width: 90px;
+    height: 90px;
+  }
 }

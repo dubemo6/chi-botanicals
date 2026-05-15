@@ -25,7 +25,6 @@
   gap: 0.6rem;
 }
 
-/* Tall card image */
 .imageWrap {
   width: 100%;
   overflow: hidden;
@@ -34,6 +33,10 @@
 
 .imageWrap_tall {
   aspect-ratio: 3 / 4;
+}
+
+.imageWrap_medium {
+  aspect-ratio: 4 / 3;
 }
 
 .imageWrap_short {
@@ -99,4 +102,80 @@
 
 .viewMore:hover {
   opacity: 0.5;
+}
+
+/* ══════════════════════════════════════
+   MOBILE
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0 5rem;
+    background: #f5f2ee;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    margin: 0 0 2.5rem;
+    text-align: center;
+  }
+
+  /* Single column — each card full width */
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    padding: 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 1.5rem;
+  }
+
+  /* Image spans full width edge to edge (no side padding) */
+  .imageWrap {
+    width: calc(100% + 0rem);
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .imageWrap_tall {
+    aspect-ratio: 3 / 4;
+  }
+
+  .imageWrap_medium {
+    aspect-ratio: 4 / 3;
+  }
+
+  .imageWrap_short {
+    aspect-ratio: 4 / 3;
+  }
+
+  .name {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.2rem;
+  }
+
+  .duration {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 0.6rem;
+  }
+
+  .desc {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #1a1a18;
+  }
+
+  .viewMore {
+    margin-top: 4rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+  }
 }

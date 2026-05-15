@@ -6,10 +6,9 @@ export default function MoreInfoSection() {
   return (
     <section className={styles.section} id="more-info">
 
-      {/* TOP RIGHT: More Info label — floats above everything on the right */}
+      {/* ── DESKTOP layout ── */}
       <p className={styles.eyebrow}>MORE INFO</p>
 
-      {/* LEFT: image with breathing room around it */}
       <div className={styles.imageWrap}>
         {moreInfoImage ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -26,7 +25,6 @@ export default function MoreInfoSection() {
         )}
       </div>
 
-      {/* MIDDLE RIGHT: Book Now */}
       <a
         href="https://www.fresha.com/en-GB"
         target="_blank"
@@ -36,7 +34,6 @@ export default function MoreInfoSection() {
         BOOK NOW
       </a>
 
-      {/* BOTTOM RIGHT: body text */}
       <p className={styles.body}>
         Acium assed quo tem qui omniscienest eatur rerum harunt ex eserovit,
         oTatatur? Qui ipsae ni autebis est, untempera nulpa est ommodig endae.

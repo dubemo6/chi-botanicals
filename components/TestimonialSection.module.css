@@ -49,3 +49,30 @@
 .arrow:hover {
   opacity: 0.4;
 }
+
+/* ══════════════════════════════════════
+   MOBILE
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem 3rem;
+    min-height: unset;
+    position: relative;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .quote {
+    font-size: clamp(1.1rem, 5vw, 1.3rem);
+    line-height: 1.65;
+  }
+
+  /* Arrow sits bottom right */
+  .arrow {
+    position: absolute;
+    bottom: 2rem;
+    right: 1.5rem;
+    align-self: unset;
+    font-size: 1.4rem;
+  }
+}

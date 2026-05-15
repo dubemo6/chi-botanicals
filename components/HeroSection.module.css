@@ -7,7 +7,7 @@
   background: #111;
 }
 
-/* ── Panel ── */
+/* ── Panels ── */
 .panel {
   position: relative;
   flex: 1;
@@ -35,23 +35,7 @@
   z-index: 1;
 }
 
-/* ── Placeholder ── */
-.placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: rgba(255, 255, 255, 0.2);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-}
-
-/* ── Overlay with tagline ── */
+/* ── Overlay ── */
 .overlay {
   position: absolute;
   inset: 0;
@@ -59,11 +43,11 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 2.5rem 3rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
   z-index: 5;
 }
 
-/* ── Tagline ── */
+/* ── Tagline (desktop — lives on left panel) ── */
 .tagline {
   margin: 0;
   display: flex;
@@ -71,14 +55,114 @@
   gap: 0.1em;
 }
 
+/* Mobile tagline — hidden on desktop */
+.taglineMobile {
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
 .taglineLine {
   display: block;
   font-family: var(--font-fell);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
   font-weight: 400;
   font-style: italic;
   color: #fff;
   letter-spacing: 0.08em;
   line-height: 1.15;
   text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════════
+   LARGE DESKTOP (≥ 1440px)
+   ══════════════════════════════════════════════ */
+@media (min-width: 1440px) {
+  .taglineLine {
+    font-size: 3.5rem;
+  }
+
+  .overlay {
+    padding: 3rem 4rem;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   TABLET LANDSCAPE / SMALL LAPTOP (769px–1024px)
+   ══════════════════════════════════════════════ */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .taglineLine {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+  }
+
+  .overlay {
+    padding: 2rem 2rem;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   TABLET PORTRAIT (481px–768px)
+   ══════════════════════════════════════════════ */
+@media (max-width: 768px) and (min-width: 481px) {
+  /* Hide left panel */
+  .leftPanel {
+    display: none;
+  }
+
+  /* Right panel full width */
+  .rightPanel {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Hide desktop tagline, show mobile tagline */
+  .tagline {
+    display: none;
+  }
+
+  .taglineMobile {
+    display: flex;
+  }
+
+  .taglineLine {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .overlay {
+    padding: 2rem 2.5rem;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE (≤ 480px)
+   ══════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* Hide left panel */
+  .leftPanel {
+    display: none;
+  }
+
+  /* Right panel full width */
+  .rightPanel {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Hide desktop tagline, show mobile tagline */
+  .tagline {
+    display: none;
+  }
+
+  .taglineMobile {
+    display: flex;
+  }
+
+  .taglineLine {
+    font-size: clamp(1.8rem, 10vw, 2.8rem);
+  }
+
+  .overlay {
+    padding: 1.5rem 1.5rem;
+  }
 }

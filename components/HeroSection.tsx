@@ -34,41 +34,33 @@ function useActiveIndex(length: number, interval: number) {
   return index;
 }
 
-interface PanelProps {
+function Panel({
+  images,
+  alt,
+  interval,
+  children,
+  className,
+}: {
   images: string[];
   alt: string;
   interval: number;
   children?: React.ReactNode;
-}
-
-function Panel({ images, alt, interval, children }: PanelProps) {
+  className?: string;
+}) {
   const activeIndex = useActiveIndex(images.length, interval);
 
   return (
-    <div className={styles.panel}>
-      {images.length > 0 ? (
-        <>
-          {images.map((src, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={src}
-              src={src}
-              alt={i === 0 ? alt : ""}
-              aria-hidden={i !== activeIndex}
-              className={`${styles.panelImg} ${i === activeIndex ? styles.visible : styles.hidden}`}
-            />
-          ))}
-        </>
-      ) : (
-        <div className={styles.placeholder}>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-            <rect x="3" y="3" width="18" height="18" rx="1" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <path d="M21 15l-5-5L5 21" />
-          </svg>
-          <span>Your images go here</span>
-        </div>
-      )}
+    <div className={`${styles.panel} ${className ?? ""}`}>
+      {images.map((src, i) => (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          key={src}
+          src={src}
+          alt={i === 0 ? alt : ""}
+          aria-hidden={i !== activeIndex}
+          className={`${styles.panelImg} ${i === activeIndex ? styles.visible : styles.hidden}`}
+        />
+      ))}
       {children && <div className={styles.overlay}>{children}</div>}
     </div>
   );
@@ -80,16 +72,34 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero} id="home">
-      <Panel images={LEFT_IMAGES} alt="Botanical product" interval={LEFT_INTERVAL}>
+
+      {/* LEFT panel — has tagline, hidden on mobile */}
+      <Panel
+        images={LEFT_IMAGES}
+        alt="Botanical product"
+        interval={LEFT_INTERVAL}
+        className={styles.leftPanel}
+      >
         <h1 className={styles.tagline}>
           <span className={styles.taglineLine}>SKIN ,</span>
           <span className={styles.taglineLine}>AT THE ROOT.</span>
         </h1>
       </Panel>
 
-      <div className={styles.divider} aria-hidden="true" />
+      {/* RIGHT panel — full width on mobile, tagline also shown on mobile */}
+      <Panel
+        images={RIGHT_IMAGES}
+        alt="Skincare model"
+        interval={RIGHT_INTERVAL}
+        className={styles.rightPanel}
+      >
+        {/* Tagline shown ONLY on mobile via CSS */}
+        <h1 className={styles.taglineMobile}>
+          <span className={styles.taglineLine}>SKIN ,</span>
+          <span className={styles.taglineLine}>AT THE ROOT.</span>
+        </h1>
+      </Panel>
 
-      <Panel images={RIGHT_IMAGES} alt="Skincare model" interval={RIGHT_INTERVAL} />
     </section>
   );
 }

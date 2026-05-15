@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { IM_Fell_English, DM_Sans, Courier_Prime } from "next/font/google";
+
+import { IM_Fell_English, DM_Sans } from "next/font/google"; 
 import "./globals.css";
 
 const imFellEnglish = IM_Fell_English({
@@ -17,13 +18,8 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const courierPrime = Courier_Prime({
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
+
+
 
 export const metadata: Metadata = {
   title: "Chi Botanical — Skin, At The Root.",
@@ -42,7 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${imFellEnglish.variable} ${dmSans.variable} ${courierPrime.variable}`}>
+    
+    <html lang="en" className={`${imFellEnglish.variable} ${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -12,7 +12,7 @@
   margin: 0 0 3rem;
 }
 
-/* Desktop: 4 columns */
+/* desktop */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -101,9 +101,7 @@
   opacity: 0.5;
 }
 
-/* ══════════════════════════════════════
-   MOBILE — single column, full-width images
-   ══════════════════════════════════════ */
+/* mobile */
 @media (max-width: 768px) {
   .section {
     padding: 3rem 0 4rem;
@@ -120,7 +118,7 @@
     gap: 3rem;
   }
 
-  /* Image goes full width edge to edge */
+
   .imageWrap {
     margin-bottom: 0.5rem;
   }
@@ -133,7 +131,7 @@
     aspect-ratio: 4 / 3;
   }
 
-  /* Text has padding */
+  
   .name,
   .duration,
   .desc {

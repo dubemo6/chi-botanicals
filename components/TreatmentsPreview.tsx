@@ -6,7 +6,8 @@ const treatments = [
     name: "Lift & Release Facial",
     duration: "45 min",
     description:
-      "An express sculpting and tension-release treatment focusing on facial massage, steam, and relaxation. Ideal for jaw tension, stress relief, and a quick lift.",
+      "A sculpting and tension-release facial designed to lift, debuff and restore including 10min consultation, cleanse, facial massage, include neck and shoulder release, gua sha, and targeted skincare. ",
+
     size: "tall",
   },
   {

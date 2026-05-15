@@ -37,7 +37,7 @@
   object-fit: contain;
 }
 
-/* ── Mobile (already in place, untouched) ── */
+/* ── Mobile*/
 @media (max-width: 768px) {
   .section {
     padding: 5rem 1.5rem;
@@ -61,24 +61,27 @@
   }
 
   .eyebrow {
-    font-size: 0.7rem;
+    font-size: 1rem;
     letter-spacing: 0.25em;
+    padding-bottom: 4.7rem;
+    padding-top: 3.7rem;
     margin: 0 0 4rem;
+    
   }
 
   .body {
-    font-size: 0.95rem;
+    font-size: 1.7rem;
     line-height: 1.9;
     width: 100%;
     max-width: 100%;
-    text-align: justify;
+    text-align: left;
     text-align-last: left;
-    text-indent: 8em;
+    text-indent: 8rem;
     margin: 0 0 5rem;
   }
 
   .logoWrap {
-    margin-top: 1rem;
+    margin-top: 0rem;
   }
 
   .logoPlaceholder {

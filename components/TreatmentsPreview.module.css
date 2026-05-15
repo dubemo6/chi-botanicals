@@ -1,4 +1,5 @@
 .section {
+  
   background: #f5f2ee;
   padding: 5rem 4rem 6rem;
 }
@@ -32,11 +33,11 @@
 }
 
 .imageWrap_tall {
-  aspect-ratio: 3 / 4;    /* tallest — cards 1 and 3 */
+  aspect-ratio: 3 / 4;   
 }
 
 .imageWrap_medium {
-  aspect-ratio: 4 / 5;    /* medium — cards 2 and 4, visibly shorter than tall */
+  aspect-ratio: 4 / 5;    
 }
 
 .imageWrap_short {
@@ -104,9 +105,7 @@
   opacity: 0.5;
 }
 
-/* ══════════════════════════════════════
-   MOBILE
-   ══════════════════════════════════════ */
+/*  MOBILE*/
 @media (max-width: 768px) {
   .section {
     padding: 3.5rem 0 5rem;
@@ -120,7 +119,7 @@
     text-align: center;
   }
 
-  /* Single column — each card full width */
+  
   .grid {
     display: flex;
     flex-direction: column;
@@ -135,7 +134,7 @@
     padding: 0 1.5rem;
   }
 
-  /* Image spans full width edge to edge (no side padding) */
+  
   .imageWrap {
     width: calc(100% + 0rem);
     margin-left: 0;

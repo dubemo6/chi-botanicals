@@ -1,4 +1,4 @@
-/* ── Reset ───────────────────────────────────────── */
+
 *,
 *::before,
 *::after {
@@ -7,11 +7,11 @@
   padding: 0;
 }
 
-/* ── CSS Variables ───────────────────────────────── */
+
 :root {
   --font-fell: "IM Fell English", serif;
   --font-dm: "DM Sans", sans-serif;
-  --font-mono: "Courier Prime", "Courier New", monospace;
+ --font-mono: var(--font-xanh), "Courier New", monospace;
 
   --color-dark: #1a1a18;
   --color-darker: #111;
@@ -23,7 +23,7 @@
   --spacing-section: 7rem 6rem;
 }
 
-/* ── Base ────────────────────────────────────────── */
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;

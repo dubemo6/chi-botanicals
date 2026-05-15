@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { IM_Fell_English, DM_Sans } from "next/font/google"; 
+import { IM_Fell_English, DM_Sans, Xanh_Mono } from "next/font/google"; 
 import "./globals.css";
 
 const imFellEnglish = IM_Fell_English({
@@ -19,7 +19,12 @@ const dmSans = DM_Sans({
 });
 
 
-
+const xanhMono = Xanh_Mono({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-xanh", 
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Chi Botanical — Skin, At The Root.",
@@ -39,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     
-    <html lang="en" className={`${imFellEnglish.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${imFellEnglish.variable} ${dmSans.variable} ${xanhMono.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -6,11 +6,12 @@
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   letter-spacing: 0.25em;
   color: #1a1a18;
   text-align: center;
   margin: 0 0 3rem;
+  font-weight: bold;
 }
 
 .grid {
@@ -66,7 +67,7 @@
 .name {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  font-weight: 400;
+  font-weight: bold;
   color: #1a1a18;
   margin: 0;
   line-height: 1.4;
@@ -78,20 +79,22 @@
   font-style: italic;
   color: #1a1a18;
   margin: 0;
+  font-weight: bold;
 }
 
 .desc {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: #5a5248;
   margin: 0;
+  font-weight: bold;
 }
 
 .viewMore {
   display: block;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   letter-spacing: 0.2em;
   color: #1a1a18;
   text-decoration: underline;

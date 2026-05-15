@@ -67,8 +67,8 @@ function Panel({
 }
 
 export default function HeroSection() {
-  const LEFT_INTERVAL = 1000;
-  const RIGHT_INTERVAL = 1100;
+  const LEFT_INTERVAL = 1300;
+  const RIGHT_INTERVAL = 1500;
 
   return (
     <section className={styles.hero} id="home">

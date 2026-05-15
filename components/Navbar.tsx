@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 
 const allLinks = [
-  { label: "ABOUT", href: "/about" },
-  { label: "TREATMENTS", href: "/treatments" },
-  { label: "CLIENT CARE", href: "/client-care" },
+  { label: "ABOUT", href: "/components/About" },
+  { label: "TREATMENTS", href: "/components/Treatments" },
+  { label: "CLIENT CARE", href: "/components/ClientCare" },
   { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },
 ];
 

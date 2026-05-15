@@ -52,14 +52,14 @@
    ══════════════════════════════════════ */
 .mobileNav {
   display: none;
-  position: absolute;
+  position: absolute;       /* disappears on scroll */
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
   padding: 1.5rem 1.5rem;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .mobileBrand {
@@ -71,34 +71,36 @@
   text-decoration: none;
   line-height: 1.05;
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
 }
 
 .hamburger {
   background: none;
   border: none;
   color: #fff;
-  font-size: 1.6rem;
   cursor: pointer;
   padding: 0;
-  line-height: 1;
-  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  position: fixed;          /* always visible while scrolling */
+  right: 1.5rem;
+  top: 1.5rem;
+  z-index: 101;
 }
 
-/* Sticky hamburger — always visible on mobile while scrolling */
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #fff;
+  border-radius: 0;
+}
+
+/* Sticky hamburger — REMOVED, no longer used */
 .stickyHamburger {
-  display: none;
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 200;
-  background: none;
-  border: none;
-  color: #1a1a18;
-  font-size: 1.6rem;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
+  display: none !important;
 }
 
 /* ══════════════════════════════════════
@@ -116,8 +118,9 @@
 
 .overlayTop {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
+  position: relative;
 }
 
 .overlayBrand {
@@ -129,16 +132,19 @@
   text-decoration: none;
   line-height: 1.05;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .closeBtn {
   background: none;
   border: none;
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: #1a1a18;
   cursor: pointer;
   padding: 0;
-  margin-top: 4px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .overlayLinks {
@@ -168,29 +174,17 @@
    RESPONSIVE BREAKPOINTS
    ══════════════════════════════════════ */
 @media (max-width: 768px) {
-  /* Hide desktop navbar */
   .navbar {
     display: none;
   }
 
-  /* Show mobile navbar */
   .mobileNav {
     display: flex;
-  }
-
-  /* Show sticky hamburger */
-  .stickyHamburger {
-    display: block;
   }
 }
 
 @media (min-width: 769px) {
-  /* Hide mobile-only elements on desktop */
   .mobileNav {
-    display: none;
-  }
-
-  .stickyHamburger {
     display: none;
   }
 

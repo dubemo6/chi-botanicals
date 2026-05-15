@@ -32,15 +32,15 @@
 }
 
 .imageWrap_tall {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4;    /* tallest — cards 1 and 3 */
 }
 
 .imageWrap_medium {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;    /* medium — cards 2 and 4, visibly shorter than tall */
 }
 
 .imageWrap_short {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
 }
 
 .img {
@@ -148,11 +148,11 @@
   }
 
   .imageWrap_medium {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
   }
 
   .imageWrap_short {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
   }
 
   .name {

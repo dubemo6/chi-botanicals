@@ -16,7 +16,6 @@ const rightLinks = allLinks.slice(2);
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -52,7 +51,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ── Mobile navbar (hidden on desktop) ── */}
+      {/* ── Mobile navbar — single hamburger, always at top ── */}
       <div className={styles.mobileNav}>
         <a href="/" className={styles.mobileBrand}>
           CHI<br />BOTANICAL
@@ -62,20 +61,11 @@ export default function Navbar() {
           onClick={() => setMenuOpen(true)}
           aria-label="Open menu"
         >
-          &#9776;
+          <span />
+          <span />
+          <span />
         </button>
       </div>
-
-      {/* ── Sticky hamburger that stays visible while scrolling on mobile ── */}
-      {!menuOpen && (
-        <button
-          className={styles.stickyHamburger}
-          onClick={() => setMenuOpen(true)}
-          aria-label="Open menu"
-        >
-          &#9776;
-        </button>
-      )}
 
       {/* ── Full screen overlay menu ── */}
       {menuOpen && (

@@ -1,0 +1,222 @@
+/* ══════════════════════════════════════
+   MEET CHI SECTION — DESKTOP
+   ══════════════════════════════════════ */
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: unset;
+  background: #f5f2ee;
+  padding: 3rem;
+  gap: 0;
+}
+
+/* MEET CHI — top left */
+.eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: #1a1a18;
+  margin: 0;
+  align-self: start;
+  justify-self: start;
+  padding-bottom: 2rem;
+}
+
+/* Image — right column, aligns with body text */
+.imageWrap {
+  grid-column: 2;
+  grid-row: 3;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-right: 5rem;
+}
+
+.img {
+  width: auto;
+  height: auto;
+  max-width: 320px;
+  max-height: 360px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* BOOK NOW — left column, middle row, centered */
+.bookNow {
+  grid-column: 1;
+  grid-row: 2;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #1a1a18;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  align-self: center;
+  justify-self: center;
+  transition: opacity 0.2s;
+}
+
+.bookNow:hover {
+  opacity: 0.5;
+}
+
+/* Body text — left column, bottom row */
+.body {
+  grid-column: 1;
+  grid-row: 3;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.85;
+  color: #1a1a18;
+  text-align: justify;
+  text-indent: 4em;
+  margin: 0;
+  padding-top: 2rem;
+  align-self: end;
+}
+
+/* ══════════════════════════════════════
+   LARGE DESKTOP (1440px+)
+   ══════════════════════════════════════ */
+@media (min-width: 1440px) {
+  .section {
+    padding: 4rem 5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .body {
+    font-size: 0.85rem;
+  }
+
+  .bookNow {
+    font-size: 0.8rem;
+  }
+
+  .img {
+    max-width: 380px;
+    max-height: 440px;
+  }
+}
+
+/* ══════════════════════════════════════
+   TABLET (769px – 1024px)
+   ══════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section {
+    padding: 2rem;
+    min-height: 70vh;
+  }
+
+  .body {
+    font-size: 0.75rem;
+    line-height: 1.75;
+    text-indent: 2em;
+  }
+
+  .bookNow {
+    font-size: 0.7rem;
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+  }
+}
+
+/* ══════════════════════════════════════
+   MOBILE (max 768px)
+   image top → MEET CHI + BOOK NOW row → body text
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    min-height: unset;
+    background: #f5f2ee;
+    padding: 0;
+    gap: 0;
+  }
+
+  /* Image full width at top */
+  .imageWrap {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    padding: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  /* MEET CHI — left, same row as BOOK NOW */
+  .eyebrow {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 1.5rem 1.5rem;
+    align-self: center;
+    justify-self: start;
+    font-size: 0.72rem;
+    margin: 0;
+  }
+
+  /* BOOK NOW — right, same row as MEET CHI */
+  .bookNow {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+    padding: 1.5rem 1.5rem;
+    justify-self: end;
+    align-self: center;
+    font-size: 0.72rem;
+  }
+
+  /* Body text — full width below */
+  .body {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    padding: 1rem 1.5rem 4rem;
+    font-size: 0.82rem;
+    line-height: 1.85;
+    text-align: justify;
+    text-indent: 4em;
+  }
+}
+
+/* ══════════════════════════════════════
+   SMALL PHONES (max 480px)
+   ══════════════════════════════════════ */
+@media (max-width: 480px) {
+  .imageWrap {
+    aspect-ratio: 3 / 4;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    padding: 1.25rem 1.25rem;
+  }
+
+  .bookNow {
+    font-size: 0.68rem;
+    padding: 1.25rem 1.25rem;
+  }
+
+  .body {
+    font-size: 0.78rem;
+    padding: 0.75rem 1.25rem 3.5rem;
+    text-indent: 3em;
+  }
+}

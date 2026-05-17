@@ -1,13 +1,15 @@
 import styles from "./WelcomeSection.module.css";
 import moreStyles from "./MoreInfoSection.module.css";
 import aboutStyles from "./AboutSection.module.css";
+import MeetChiSection from "./MeetChiSection";
+import OurSpaceSection from "./OurSpaceSection";
 
 const moreInfoImage: string | null = "/images/oil.png";
 
 export default function AboutSection() {
   return (
     <>
-      {/* ── Welcome reused — ABOUT heading ── */}
+      {/* ── 1. ABOUT ── */}
       <section className={`${styles.section} ${aboutStyles.topSpacing}`} id="about">
         <p className={styles.eyebrow}>ABOUT</p>
         <p className={styles.body}>
@@ -20,7 +22,7 @@ export default function AboutSection() {
         </div>
       </section>
 
-      {/* ── MoreInfo reused — OUR APPROACH heading ── */}
+      {/* ── 2. OUR APPROACH ── */}
       <section className={moreStyles.section} id="our-approach">
         <p className={moreStyles.eyebrow}>OUR APPROACH</p>
 
@@ -58,6 +60,12 @@ export default function AboutSection() {
           Nam facea dis perum venist, offic test ad que pe posant Dicae sit.
         </p>
       </section>
+
+      {/* ── 3. MEET CHI ── */}
+      <MeetChiSection />
+
+      {/* ── 4. OUR SPACE ── */}
+      <OurSpaceSection />
     </>
   );
 }

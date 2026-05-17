@@ -4,16 +4,16 @@ import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 
 const allLinks = [
-  { label: "ABOUT", href: "/components/About" },
-  { label: "TREATMENTS", href: "/components/Treatments" },
-  { label: "CLIENT CARE", href: "/components/ClientCare" },
+  { label: "ABOUT", href: "/about" },
+  { label: "TREATMENTS", href: "/treatments" },
+  { label: "CLIENT CARE", href: "/client-care" },
   { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },
 ];
 
 const leftLinks = allLinks.slice(0, 2);
 const rightLinks = allLinks.slice(2);
 
-export default function Navbar() {
+export default function Navbar({ dark = false }: { dark?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -23,17 +23,21 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Desktop navbar (hidden on mobile) ── */}
+      {/* ── Desktop navbar ── */}
       <nav className={styles.navbar}>
         <div className={styles.group}>
           {leftLinks.map((link) => (
-            <a key={link.label} href={link.href} className={styles.link}>
+            <a
+              key={link.label}
+              href={link.href}
+              className={`${styles.link} ${dark ? styles.linkDark : ""}`}
+            >
               {link.label}
             </a>
           ))}
         </div>
 
-        <a href="/" className={styles.brand}>
+        <a href="/" className={`${styles.brand} ${dark ? styles.brandDark : ""}`}>
           CHI<br />BOTANICAL
         </a>
 
@@ -42,7 +46,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className={styles.link}
+              className={`${styles.link} ${dark ? styles.linkDark : ""}`}
               {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
             >
               {link.label}
@@ -51,13 +55,13 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ── Mobile navbar — single hamburger, always at top ── */}
+      {/* ── Mobile navbar ── */}
       <div className={styles.mobileNav}>
-        <a href="/" className={styles.mobileBrand}>
+        <a href="/" className={`${styles.mobileBrand} ${dark ? styles.brandDark : ""}`}>
           CHI<br />BOTANICAL
         </a>
         <button
-          className={styles.hamburger}
+          className={`${styles.hamburger} ${dark ? styles.hamburgerDark : ""}`}
           onClick={() => setMenuOpen(true)}
           aria-label="Open menu"
         >

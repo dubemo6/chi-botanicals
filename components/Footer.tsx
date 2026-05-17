@@ -1,22 +1,64 @@
+"use client";
+
+import { useEffect, useState, useRef } from "react";
 import styles from "./Footer.module.css";
 
-export default function Footer() {
-  return (
-    <footer className={styles.footer}>
-      <div className={styles.inner}>
+const allLinks = [
+  { label: "ABOUT", href: "/about" },
+  { label: "TREATMENTS", href: "/treatments" },
+  { label: "CLIENT CARE", href: "/client-care" },
+  { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },
+];
 
+export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Sets visible to true if even a small part of the footer enters the screen
+        setIsVisible(entry.isIntersecting);
+      },
+      { rootMargin: "100px 0px 0px 0px" } // Slightly offsets so it appears smoothly right before hitting bottom
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => {
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
+      }
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <footer ref={footerRef} className={styles.footer}>
+      <div className={styles.inner}>
+        
         {/* Top section */}
         <div className={styles.top}>
           <div className={styles.brand}>
             CHI<br />BOTANICAL
           </div>
 
+          {/* Dynamic Links Column */}
           <div className={styles.linksCol}>
             <p className={styles.colLabel}>Links</p>
-            <a href="#about" className={styles.link}>ABOUT</a>
-            <a href="#treatments" className={styles.link}>TREATMENTS</a>
-            <a href="#client-care" className={styles.link}>CLIENT CARE</a>
-            <a href="#book" className={styles.link}>BOOK NOW</a>
+            {allLinks.map((link) => (
+              <a key={link.href} href={link.href} className={styles.link}>
+                {link.label}
+              </a>
+            ))}
           </div>
 
           <div className={styles.contactCol}>
@@ -39,6 +81,14 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Floating Action Button with Dynamic Visibility Class */}
+        <button 
+          onClick={scrollToTop} 
+          className={`${styles.floatingScrollBtn} ${isVisible ? styles.visible : ""}`} 
+          aria-label="Scroll to top"
+        >
+          ↑
+        </button>
 
       </div>
     </footer>

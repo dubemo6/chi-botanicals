@@ -67,10 +67,55 @@
   object-fit: contain;
 }
 
+/* ─── Floating Back to Top Arrow (Hidden by Default) ────────────── */
+.floatingScrollBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 99;
+  
+  /* Circle Styling */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  color: #f5f2ee;
+  border: none;
+  
+  /* Centering arrow text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  /* Hide setup */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  
+  /* Transition animations */
+  transition: 
+    opacity 0.3s ease, 
+    transform 0.3s ease, 
+    background-color 0.2s ease;
+}
+
+/* Active State triggered by Intersection Observer */
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floatingScrollBtn:hover {
+  background-color: #333333;
+  transform: translateY(-3px);
+}
+
 /* ================================================================
    MOBILE LAYOUT (base)
-   Row 1: CHI BOTANICAL (left)   logo (right)
-   Row 2: Links (left)           Contact (right)
    ================================================================ */
 .top {
   display: grid;
@@ -129,12 +174,11 @@
 
 /* ================================================================
    DESKTOP (≥ 1024px)
-   Single row: brand | Links | Get in touch | logo
    ================================================================ */
 @media (min-width: 1024px) {
   .inner {
     max-width: 100%;
-    padding: 4rem 0 3rem;
+    padding: 4rem 0 4rem;
   }
 
   .top {
@@ -173,6 +217,11 @@
     width: 80px;
     height: 80px;
   }
+  
+  .floatingScrollBtn {
+    bottom: 3rem;
+    right: 3rem;
+  }
 }
 
 /* ================================================================
@@ -180,7 +229,7 @@
    ================================================================ */
 @media (min-width: 1280px) {
   .inner {
-    padding: 5rem 0 4rem;
+    padding: 5rem 0 5rem;
   }
 
   .brand {

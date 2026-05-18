@@ -6,7 +6,7 @@ import styles from "./Footer.module.css";
 const allLinks = [
   { label: "ABOUT", href: "/about" },
   { label: "TREATMENTS", href: "/treatments" },
-  { label: "CLIENT CARE", href: "/client-care" },
+  { label: "CLIENT CARE", href: "/clients" },
   { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },
 ];
 

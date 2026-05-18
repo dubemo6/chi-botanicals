@@ -24,6 +24,7 @@
   grid-row: 1;
   font-family: var(--font-mono);
   font-size: 0.9rem;
+  font-weight: 600;
   letter-spacing: 0.15em;
   color: #1a1a18;
   margin: 0 0 2rem 0;
@@ -50,7 +51,7 @@
 .name {
   font-family: var(--font-mono);
   font-size: 0.86rem;
-  font-weight: 585;
+  font-weight: 590;
   color: #1a1a18;
   margin: 0;
   line-height: 1.4;
@@ -59,7 +60,7 @@
 .desc {
   font-family: var(--font-mono);
   font-size: 0.83rem;
-  font-weight: 580;
+  font-weight: 590;
   color: #5a5248;
   margin: 0;
   line-height: 1.5;

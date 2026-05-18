@@ -1,3 +1,6 @@
+/* ══════════════════════════════════════
+   DESKTOP NAVBAR
+   ══════════════════════════════════════ */
 .navbar {
   position: absolute;
   top: 0;
@@ -7,7 +10,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 7rem;
+  padding: 2rem 4rem;
+}
+
+/* Dark navbar — white bg, dark text (about + treatments pages) */
+.navbarDark {
+  position: relative;
+  background: #f5f2ee;
+  padding: 2rem 4rem;
 }
 
 .group {
@@ -16,6 +26,7 @@
   align-items: center;
 }
 
+/* Default link — white (home page over hero image) */
 .link {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -31,10 +42,13 @@
   opacity: 1;
 }
 
+/* Dark link — black text */
 .linkDark {
-  color: #1a1a18 !important;
+  color: #1a1a18;
+  opacity: 1;
 }
 
+/* Default brand — white, large (home page) */
 .brand {
   font-family: var(--font-fell);
   font-style: italic;
@@ -48,11 +62,15 @@
   text-transform: uppercase;
 }
 
+/* Dark brand — black text, slightly smaller (about + treatments) */
 .brandDark {
-  color: #1a1a18 !important;
+  color: #1a1a18;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
 }
 
-/* ── Mobile navbar ── */
+/* ══════════════════════════════════════
+   MOBILE NAVBAR
+   ══════════════════════════════════════ */
 .mobileNav {
   display: none;
   position: absolute;
@@ -65,6 +83,11 @@
   justify-content: center;
 }
 
+.mobileNavDark {
+  position: relative;
+  background: #f5f2ee;
+}
+
 .mobileBrand {
   font-family: var(--font-fell);
   font-style: italic;
@@ -75,6 +98,11 @@
   line-height: 1.05;
   text-transform: uppercase;
   text-align: center;
+}
+
+.mobileBrandDark {
+  color: #1a1a18;
+  font-size: clamp(1.3rem, 6vw, 1.8rem);
 }
 
 .hamburger {
@@ -102,14 +130,17 @@
 }
 
 .hamburgerDark span {
-  background: #1a1a18 !important;
+  background: #1a1a18;
 }
 
+/* Sticky hamburger — not used */
 .stickyHamburger {
   display: none !important;
 }
 
-/* ── Overlay ── */
+/* ══════════════════════════════════════
+   FULL SCREEN OVERLAY MENU
+   ══════════════════════════════════════ */
 .overlay {
   position: fixed;
   inset: 0;
@@ -174,7 +205,9 @@
   opacity: 0.5;
 }
 
-/* ── Breakpoints ── */
+/* ══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════ */
 @media (max-width: 768px) {
   .navbar {
     display: none;

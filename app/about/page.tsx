@@ -10,7 +10,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Navbar dark  />
+      <Navbar dark />
       <main>
         <AboutSection />
       </main>

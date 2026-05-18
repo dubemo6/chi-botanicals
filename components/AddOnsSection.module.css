@@ -1,0 +1,162 @@
+/* ══════════════════════════════════════
+   ADD-ONS SECTION
+   ══════════════════════════════════════ */
+.section {
+  background: #f5f2ee; /* Matches your screenshot's white section background */
+  padding: 4rem 4rem 7rem;
+}
+
+/* Base grid structure matching the 4-column treatment layout above it */
+.inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Takes up the first column space */
+.label {
+  grid-column: 1;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: #1a1a18;
+  margin: 0;
+}
+
+/* Spans across the remaining columns to hold the stacked items */
+.list {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  /* Visual offset to align nicely below the section title on desktop */
+  padding-top: 3.5rem; 
+}
+
+/* Flex row allows individual alignment control for text vs button */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Restricts the text block width so it aligns under column 1 & 2 visually */
+.content {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #1a1a18;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.desc {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #5a5248;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Positions the action elements beautifully into the rightmost columns */
+.action {
+  width: 50%;
+  display: flex;
+  /* Staggers items differently down the page:
+     Items 1 & 3 align to Col 3 center, Items 2 & 4 align to Col 4 right edge */
+}
+
+.item:nth-child(odd) .action {
+  justify-content: center;
+  padding-right: 10%; /* Adjust slightly based on your exact column widths */
+}
+
+.item:nth-child(even) .action {
+  justify-content: flex-end;
+}
+
+.bookNow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: #1a1a18;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.bookNow:hover {
+  opacity: 0.5;
+}
+
+/* ══════════════════════════════════════
+   TABLET (769px – 1024px)
+   ══════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section {
+    padding: 4rem 2.5rem 5rem;
+  }
+  .content, .action {
+    width: auto;
+  }
+  .item:nth-child(odd) .action {
+    padding-right: 0;
+  }
+}
+
+/* ══════════════════════════════════════
+   MOBILE (max 768px)
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .list {
+    grid-column: 1;
+    padding-top: 0;
+    gap: 2rem;
+  }
+
+  .item {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .action {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .name {
+    font-size: 0.82rem;
+  }
+
+  .desc {
+    font-size: 0.75rem;
+  }
+}

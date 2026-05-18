@@ -13,7 +13,11 @@ const allLinks = [
 const leftLinks = allLinks.slice(0, 2);
 const rightLinks = allLinks.slice(2);
 
-export default function Navbar({ dark = false }: { dark?: boolean }) {
+interface NavbarProps {
+  dark?: boolean; // black text on cream bg — used on about + treatments pages
+}
+
+export default function Navbar({ dark = false }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -24,7 +28,7 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
   return (
     <>
       {/* ── Desktop navbar ── */}
-      <nav className={styles.navbar}>
+      <nav className={`${styles.navbar} ${dark ? styles.navbarDark : ""}`}>
         <div className={styles.group}>
           {leftLinks.map((link) => (
             <a
@@ -37,7 +41,10 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
           ))}
         </div>
 
-        <a href="/" className={`${styles.brand} ${dark ? styles.brandDark : ""}`}>
+        <a
+          href="/"
+          className={`${styles.brand} ${dark ? styles.brandDark : ""}`}
+        >
           CHI<br />BOTANICAL
         </a>
 
@@ -56,8 +63,11 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
       </nav>
 
       {/* ── Mobile navbar ── */}
-      <div className={styles.mobileNav}>
-        <a href="/" className={`${styles.mobileBrand} ${dark ? styles.brandDark : ""}`}>
+      <div className={`${styles.mobileNav} ${dark ? styles.mobileNavDark : ""}`}>
+        <a
+          href="/"
+          className={`${styles.mobileBrand} ${dark ? styles.mobileBrandDark : ""}`}
+        >
           CHI<br />BOTANICAL
         </a>
         <button

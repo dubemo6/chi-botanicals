@@ -1,17 +1,27 @@
 .section {
-  
   background: #f5f2ee;
   padding: 5rem 4rem 6rem;
 }
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   letter-spacing: 0.25em;
   color: #1a1a18;
   text-align: center;
   margin: 0 0 3rem;
-  font-weight: bold;
+}
+
+/* Only shown on treatments page */
+.consultation {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #1a1a18;
+  text-align: center;
+  margin: 0 auto 3rem;
+  max-width: 500px;
+  line-height: 1.7;
 }
 
 .grid {
@@ -34,11 +44,11 @@
 }
 
 .imageWrap_tall {
-  aspect-ratio: 3 / 4;   
+  aspect-ratio: 3 / 4;    /* tallest — cards 1 and 3 */
 }
 
 .imageWrap_medium {
-  aspect-ratio: 4 / 5;    
+  aspect-ratio: 4 / 5;    /* medium — cards 2 and 4, visibly shorter than tall */
 }
 
 .imageWrap_short {
@@ -67,7 +77,7 @@
 .name {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  font-weight: bold;
+  font-weight: 400;
   color: #1a1a18;
   margin: 0;
   line-height: 1.4;
@@ -79,22 +89,20 @@
   font-style: italic;
   color: #1a1a18;
   margin: 0;
-  font-weight: bold;
 }
 
 .desc {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.75rem;
   line-height: 1.75;
   color: #5a5248;
   margin: 0;
-  font-weight: bold;
 }
 
 .viewMore {
   display: block;
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   letter-spacing: 0.2em;
   color: #1a1a18;
   text-decoration: underline;
@@ -108,7 +116,9 @@
   opacity: 0.5;
 }
 
-/*  MOBILE*/
+/* ══════════════════════════════════════
+   MOBILE
+   ══════════════════════════════════════ */
 @media (max-width: 768px) {
   .section {
     padding: 3.5rem 0 5rem;
@@ -122,7 +132,7 @@
     text-align: center;
   }
 
-  
+  /* Single column — each card full width */
   .grid {
     display: flex;
     flex-direction: column;
@@ -137,7 +147,7 @@
     padding: 0 1.5rem;
   }
 
-  
+  /* Image spans full width edge to edge (no side padding) */
   .imageWrap {
     width: calc(100% + 0rem);
     margin-left: 0;

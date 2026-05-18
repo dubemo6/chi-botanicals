@@ -52,12 +52,18 @@ export default function AboutSection() {
         </a>
 
         <p className={moreStyles.body}>
-          Acium assed quo tem qui omniscienest eatur rerum harunt ex eserovit,
-          oTatatur? Qui ipsae ni autebis est, untempera nulpa est ommodig endae.
-          Nam facea dis perum venist, offic test ad que pe posant Dicae sit.
-          Acium assed quo tem qui omniscienest eatur rerum harunt ex eserovit,
-          oTatatur? Qui ipsae ni autebis est, untempera nulpa est ommodig endae.
-          Nam facea dis perum venist, offic test ad que pe posant Dicae sit.
+        Chi Botanical is a modern skincare studio and
+community space grounded in timeless care,
+connection, and conscious growth.
+A place where time softens.
+Where the noise fades.
+Where you are invited to slow down, reconnect, and
+simply be.
+Here, skincare becomes ritual, not routine.
+A moment of stillness where the body unwinds, the
+mind quiets, and the skin begins to respond.
+Rooted in nature and guided by intention, every
+experience is designed to nurture both skin and self.
         </p>
       </section>
 

@@ -6,8 +6,7 @@ const treatments = [
     name: "Lift & Release Facial",
     duration: "45 min",
     description:
-      "A sculpting and tension-release facial designed to lift, debuff and restore including 10min consultation, cleanse, facial massage, include neck and shoulder release, gua sha, and targeted skincare. ",
-
+      "An express sculpting and tension-release treatment focusing on facial massage, steam, and relaxation. Ideal for jaw tension, stress relief, and a quick lift.",
     size: "tall",
   },
   {
@@ -36,10 +35,26 @@ const treatments = [
   },
 ];
 
-export default function TreatmentsPreview() {
+interface TreatmentsPreviewProps {
+  showConsultation?: boolean;
+}
+
+export default function TreatmentsPreview({ showConsultation = false }: TreatmentsPreviewProps) {
   return (
     <section className={styles.section} id="treatments">
       <p className={styles.eyebrow}>TREATMENTS</p>
+
+      {/* Consultation note — only on treatments page */}
+      {showConsultation && (
+        <div className={styles.consultation}>
+          <span className={styles.consultationTitle}>
+            Consultation — <em>30 min</em>
+          </span><br />
+          <span className={styles.consultationSub}>
+            Required before any treatment to assess your skin and discuss goals.
+          </span>
+        </div>
+      )}
 
       <div className={styles.grid}>
         {treatments.map((t, i) => (
@@ -65,9 +80,11 @@ export default function TreatmentsPreview() {
         ))}
       </div>
 
-      <a href="/treatments" className={styles.viewMore}>
-        VIEW MORE
-      </a>
+      {!showConsultation && (
+        <a href="/treatments" className={styles.viewMore}>
+          VIEW MORE
+        </a>
+      )}
     </section>
   );
 }

@@ -26,25 +26,29 @@ export default function AddOnsSection() {
     <section className={styles.section} id="add-ons">
       <div className={styles.inner}>
         <p className={styles.label}>Add-Ons</p>
-        
+
+        {/* LEFT: all text items grouped together */}
         <div className={styles.list}>
           {addOns.map((addon, i) => (
             <div key={i} className={styles.item}>
-              <div className={styles.content}>
-                <p className={styles.name}>{addon.name}</p>
-                <p className={styles.desc}>{addon.desc}</p>
-              </div>
-              
-              <div className={styles.action}>
-                <a
-                  href={BOOK_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.bookNow}
-                >
-                  BOOK NOW
-                </a>
-              </div>
+              <p className={styles.name}>{addon.name}</p>
+              <p className={styles.desc}>{addon.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* RIGHT (desktop) / BELOW (mobile): all BOOK NOW links separate */}
+        <div className={styles.actions}>
+          {addOns.map((_, i) => (
+            <div key={i} className={styles.actionItem}>
+              <a
+                href={BOOK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.bookNow}
+              >
+                BOOK NOW
+              </a>
             </div>
           ))}
         </div>

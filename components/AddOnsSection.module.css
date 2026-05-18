@@ -1,59 +1,56 @@
 /* ══════════════════════════════════════
-   ADD-ONS SECTION
+   ADD-ONS SECTION — BASE
    ══════════════════════════════════════ */
 .section {
-  background: #f5f2ee; /* Matches your screenshot's white section background */
+  background: #f5f2ee;
   padding: 4rem 4rem 7rem;
 }
 
-/* Base grid structure matching the 4-column treatment layout above it */
+/*
+  DESKTOP GRID:
+  Col 1: label (row 1) + text list (row 2)
+  Col 2: all BOOK NOW buttons (spans rows 1–2)
+*/
 .inner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0;
   align-items: start;
 }
 
-/* Takes up the first column space */
 .label {
   grid-column: 1;
+  grid-row: 1;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   letter-spacing: 0.15em;
   color: #1a1a18;
-  margin: 0;
+  margin: 0 0 2rem 0;
+  text-underline-offset: 4px;
+  text-decoration: underline;
+
 }
 
-/* Spans across the remaining columns to hold the stacked items */
+/* All text items — left column */
 .list {
-  grid-column: 1 / -1;
+  grid-column: 1;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
-  /* Visual offset to align nicely below the section title on desktop */
-  padding-top: 3.5rem; 
+  gap: 1.5rem;
 }
 
-/* Flex row allows individual alignment control for text vs button */
 .item {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-}
-
-/* Restricts the text block width so it aligns under column 1 & 2 visually */
-.content {
-  max-width: 50%;
-  display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.2rem;
 }
 
 .name {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 400;
+  font-size: 0.86rem;
+  font-weight: 550;
   color: #1a1a18;
   margin: 0;
   line-height: 1.4;
@@ -61,43 +58,55 @@
 
 .desc {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.83rem;
+  font-weight: 530;
   color: #5a5248;
   margin: 0;
   line-height: 1.5;
 }
 
-/* Positions the action elements beautifully into the rightmost columns */
-.action {
-  width: 50%;
+/* All BOOK NOW buttons — right column, spans both rows */
+.actions {
+  grid-column: 2;
+  grid-row: 1 / 3;
   display: flex;
-  /* Staggers items differently down the page:
-     Items 1 & 3 align to Col 3 center, Items 2 & 4 align to Col 4 right edge */
+  flex-direction: column;
+  padding-top: 3rem; /* nudge down to align with first text item */
+  gap: 0;
 }
 
-.item:nth-child(odd) .action {
-  justify-content: center;
-  padding-right: 10%; /* Adjust slightly based on your exact column widths */
+/* Each button row matches one text item's height */
+.actionItem {
+  display: flex;
+  width: 100%;
+  min-height: 3.8rem;
+  align-items: flex-start;
+  padding-top: 0.1rem;
 }
 
-.item:nth-child(even) .action {
-  justify-content: flex-end;
-}
+/* Stagger positions matching the Figma/laptop screenshot */
+.actionItem:nth-child(1) { justify-content: flex-start; margin-left: -6rem; }
+.actionItem:nth-child(2) { justify-content: center;margin-left: 2rem; }
+.actionItem:nth-child(3) { justify-content: flex-start; margin-left: 6rem; }
+.actionItem:nth-child(4) { justify-content: flex-end; }
 
 .bookNow {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.2em;
   color: #1a1a18;
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: opacity 0.2s;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .bookNow:hover {
   opacity: 0.5;
 }
+
 
 /* ══════════════════════════════════════
    TABLET (769px – 1024px)
@@ -106,57 +115,68 @@
   .section {
     padding: 4rem 2.5rem 5rem;
   }
-  .content, .action {
-    width: auto;
-  }
-  .item:nth-child(odd) .action {
-    padding-right: 0;
+  .actionItem:nth-child(3) {
+    padding-right: 3%;
   }
 }
 
+
 /* ══════════════════════════════════════
    MOBILE (max 768px)
+
+   - Label
+   - All 4 text items tight together
+   - Big gap
+   - All 4 BOOK NOW staggered:
+       #1 left | #2 right | #3 center-left | #4 right
    ══════════════════════════════════════ */
 @media (max-width: 768px) {
   .section {
-    padding: 3rem 1.5rem 5rem;
+    padding: 3rem 1.5rem 4rem;
   }
 
+  /* Single column, everything stacks */
   .inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .list {
-    grid-column: 1;
-    padding-top: 0;
-    gap: 2rem;
-  }
-
-  .item {
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.75rem;
-  }
-
-  .content {
-    max-width: 100%;
-  }
-
-  .action {
-    width: 100%;
-    justify-content: flex-start !important;
   }
 
   .label {
     font-size: 0.8rem;
+    margin-bottom: 1.5rem;
   }
 
-  .name {
-    font-size: 0.82rem;
+  .list {
+    gap: 1.2rem;
+    width: 100%;
   }
 
-  .desc {
-    font-size: 0.75rem;
+  .name { font-size: 0.8rem; }
+  .desc { font-size: 0.72rem; }
+
+  /* Button block below ALL text items */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 4rem;   /* gap between text block and first button */
+    gap: 3rem;          /* gap between each button */
+    padding-top: 0;
+  }
+
+  .actionItem {
+    width: 100%;
+    min-height: unset;
+    padding-top: 0;
+    align-items: center;
+  }
+
+  .actionItem:nth-child(1) { justify-content: flex-start; padding-right: 0; }
+  .actionItem:nth-child(2) { justify-content: flex-end;   padding-right: 0; }
+  .actionItem:nth-child(3) { justify-content: flex-start; padding-left: 22%; padding-right: 0; }
+  .actionItem:nth-child(4) { justify-content: flex-end;   padding-right: 0; }
+
+  .bookNow {
+    font-size: 0.78rem;
   }
 }

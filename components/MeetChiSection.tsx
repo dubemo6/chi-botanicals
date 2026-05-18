@@ -20,7 +20,7 @@ export default function MeetChiSection() {
         </a>
 
         <p className={styles.body}>
-         Hi, I’m Amarachi, the face behind Chi
+         Hi, I'm Amarachi, the face behind Chi
 Botanical and your personal skin sister,
 seeking truth, not trends.
 My journey into skincare began with my

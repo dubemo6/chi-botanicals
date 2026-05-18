@@ -50,7 +50,7 @@
 .name {
   font-family: var(--font-mono);
   font-size: 0.86rem;
-  font-weight: 550;
+  font-weight: 585;
   color: #1a1a18;
   margin: 0;
   line-height: 1.4;
@@ -59,7 +59,7 @@
 .desc {
   font-family: var(--font-mono);
   font-size: 0.83rem;
-  font-weight: 530;
+  font-weight: 580;
   color: #5a5248;
   margin: 0;
   line-height: 1.5;
@@ -151,8 +151,10 @@
     width: 100%;
   }
 
-  .name { font-size: 0.8rem; }
-  .desc { font-size: 0.72rem; }
+  .name { font-size: 0.8rem; 
+font-weight: 585;}
+  .desc { font-size: 0.72rem; 
+font-weight: 595;}
 
   /* Button block below ALL text items */
   .actions {
@@ -171,11 +173,11 @@
     align-items: center;
   }
 
-  .actionItem:nth-child(1) { justify-content: flex-start; padding-right: 0; }
-  .actionItem:nth-child(2) { justify-content: flex-end;   padding-right: 0; }
-  .actionItem:nth-child(3) { justify-content: flex-start; padding-left: 22%; padding-right: 0; }
-  .actionItem:nth-child(4) { justify-content: flex-end;   padding-right: 0; }
-
+  .actionItem:nth-child(1) { justify-content: center; padding-top: 2rem;}
+.actionItem:nth-child(2) { justify-content: flex-end;margin-left: -1.9rem; }
+.actionItem:nth-child(3) { justify-content: center; margin-left: -4.5rem; padding-bottom: 3.3rem; }
+.actionItem:nth-child(4) { justify-content: flex-end; }
+ 
   .bookNow {
     font-size: 0.78rem;
   }

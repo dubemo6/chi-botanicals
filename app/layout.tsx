@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IM_Fell_English, DM_Sans, Xanh_Mono } from "next/font/google";
 import "./globals.css";
 import ChatWidget from "@/components/ChatWidget";
+import { Analytics } from "@vercel/analytics/next";
 
 const imFellEnglish = IM_Fell_English({
   weight: "400",
@@ -155,6 +156,7 @@ export default function RootLayout({
       </head>
       <body>{children}
          <ChatWidget />
+          <Analytics />
       </body>
     </html>
   );

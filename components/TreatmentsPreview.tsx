@@ -42,7 +42,7 @@ interface TreatmentsPreviewProps {
 export default function TreatmentsPreview({ showConsultation = false }: TreatmentsPreviewProps) {
   return (
     <section className={styles.section} id="treatments">
-      <p className={styles.eyebrow}>TREATMENTS</p>
+     <h2 className={styles.eyebrow}>TREATMENTS</h2>
 
       {/* Consultation note — only on treatments page */}
       {showConsultation && (

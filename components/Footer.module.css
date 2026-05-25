@@ -48,6 +48,7 @@
   text-underline-offset: 3px;
   transition: opacity 0.2s;
   width: fit-content;
+    padding: 0.5rem 0;
 }
 
 .link:hover {

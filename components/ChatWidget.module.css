@@ -1,0 +1,232 @@
+/* ══════════════════════════════════════
+   CHAT WIDGET — Chi Botanical
+   Matches site: #f5f2ee cream, mono font, dark #1a1a18
+   ══════════════════════════════════════ */
+
+.wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+/* ── Floating action button ── */
+.fab {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #1a1a18;
+  color: #f5f2ee;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.fab:hover {
+  transform: scale(1.08);
+  background: #333;
+}
+
+.fabOpen {
+  background: #1a1a18;
+}
+
+/* ── Chat window ── */
+.window {
+  width: 340px;
+  max-height: 500px;
+  background: #f5f2ee;
+  border: 1px solid rgba(26, 26, 24, 0.14);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Header ── */
+.header {
+  background: #1a1a18;
+  color: #f5f2ee;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7ec98a;
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #f5f2ee;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+/* ── Messages ── */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(26, 26, 24, 0.15) transparent;
+}
+
+.message {
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  max-width: 85%;
+  padding: 0.65rem 0.85rem;
+}
+
+.botMsg {
+  background: #ece9e4;
+  color: #1a1a18;
+  align-self: flex-start;
+  border-radius: 0 8px 8px 8px;
+}
+
+.userMsg {
+  background: #1a1a18;
+  color: #f5f2ee;
+  align-self: flex-end;
+  border-radius: 8px 8px 0 8px;
+}
+
+/* ── Typing indicator ── */
+.typing {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 2px 4px;
+}
+
+.typing span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1a1a18;
+  opacity: 0.4;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.typing span:nth-child(1) { animation-delay: 0s; }
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-5px); opacity: 1; }
+}
+
+/* ── Input row ── */
+.inputRow {
+  display: flex;
+  border-top: 1px solid rgba(26, 26, 24, 0.1);
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: #f5f2ee;
+  padding: 0.85rem 1rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  color: #1a1a18;
+  outline: none;
+  letter-spacing: 0.03em;
+}
+
+.input::placeholder {
+  color: rgba(26, 26, 24, 0.4);
+}
+
+.sendBtn {
+  background: none;
+  border: none;
+  border-left: 1px solid rgba(26, 26, 24, 0.1);
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  color: #1a1a18;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.sendBtn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.sendBtn:not(:disabled):hover {
+  opacity: 0.5;
+}
+
+/* ══════════════════════════════════════
+   MOBILE
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .wrapper {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .window {
+    width: calc(100vw - 3rem);
+    max-height: 420px;
+  }
+}

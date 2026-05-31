@@ -15,7 +15,7 @@ const BG_IMAGES: string[] = [
   "/images/fruit6.webp",
 ];
 
-const CENTER_IMAGE: string = "/images/logo2.png";
+const CENTER_IMAGE: string = "/images/image.png";
 
 function useActiveIndex(length: number, interval: number) {
   const [index, setIndex] = useState(0);

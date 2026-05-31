@@ -13,7 +13,7 @@ export default function WelcomeSection() {
       </p>
 
       <div className={styles.logoWrap}>
-        <img src="/images/logo2.png" alt="Brand logo" className={styles.logoPlaceholder} />
+        <img src="/images/image.png" alt="Brand logo" className={styles.logoPlaceholder} />
       </div>
     </section>
   );

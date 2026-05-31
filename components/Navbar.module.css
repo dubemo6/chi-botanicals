@@ -1,6 +1,7 @@
 /* ══════════════════════════════════════
    DESKTOP NAVBAR
    ══════════════════════════════════════ */
+
 .navbar {
   position: absolute;
   top: 0;
@@ -8,8 +9,9 @@
   right: 0;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 3rem;
   padding: 2rem 4rem;
 }
 
@@ -50,9 +52,9 @@
 
 /* Default brand — white, large (home page) */
 .brand {
- font-family: var(--font-xanh), "Courier New", monospace;
+  font-family: var(--font-xanh), "Courier New", monospace;
   font-style: normal;
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
   font-weight: 400;
   letter-spacing: 0.08em;
   color: #fff;

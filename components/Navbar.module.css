@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 2rem 3rem;
 }
 
 /* Dark navbar — white bg, dark text (about + treatments pages) */
@@ -50,11 +50,11 @@
 
 /* Default brand — white, large (home page) */
 .brand {
-  font-family: var(--font-fell);
-  font-style: italic;
+ font-family: var(--font-xanh), "Courier New", monospace;
+  font-style: normal;
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: #fff;
   text-decoration: none;
   text-align: center;
@@ -89,8 +89,8 @@
 }
 
 .mobileBrand {
-  font-family: var(--font-fell);
-  font-style: italic;
+  font-family: var(--font-xanh), "Courier New", monospace;
+  font-style: normal;
   font-size: clamp(1.6rem, 8vw, 2.2rem);
   font-weight: 400;
   color: #fff;
@@ -159,8 +159,8 @@
 }
 
 .overlayBrand {
-  font-family: var(--font-fell);
-  font-style: italic;
+  font-family: var(--font-xanh), "Courier New", monospace;
+  font-style: normal;
   font-size: clamp(1.6rem, 8vw, 2.2rem);
   font-weight: 400;
   color: #1a1a18;

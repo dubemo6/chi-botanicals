@@ -14,15 +14,15 @@
 
 /* ─── Brand name ────────────────────────────────────────────────── */
 .brand {
-  font-family: "IM Fell English", "Playfair Display", Georgia, serif;
-  font-weight: 400;
+  font-family: "Courier New", "Courier", monospace;
+  font-weight: 600;
   font-size: 2rem;
   line-height: 1.04;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
   color: #1a1a1a;
 }
 
-/* ─── Column labels (Links / Get in touch) ───────────────────────── */
+/* ─── Column labels ───────────────────────────────────────────── */
 .colLabel {
   font-family: "Courier New", "Courier", monospace;
   font-size: 0.65rem;
@@ -48,11 +48,54 @@
   text-underline-offset: 3px;
   transition: opacity 0.2s;
   width: fit-content;
-    padding: 0.5rem 0;
+  padding: 0.5rem 0;
 }
 
 .link:hover {
   opacity: 0.55;
+}
+
+/* ─── Journal dropdown ──────────────────────────────────────────── */
+.journalWrap {
+  position: relative;
+  width: fit-content;
+}
+
+.journalTrigger {
+  cursor: pointer;
+  display: block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1a1a1a;
+  padding: 0.6rem 0;
+  z-index: 200;
+  min-width: 160px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dropdownLink {
+  display: block;
+  font-family: "Courier New", "Courier", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #f5f2ee;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.dropdownLink:hover {
+  opacity: 0.6;
 }
 
 /* ─── Logo ──────────────────────────────────────────────────────── */
@@ -68,42 +111,30 @@
   object-fit: contain;
 }
 
-/* ─── Floating Back to Top Arrow (Hidden by Default) ────────────── */
+/* ─── Floating Back to Top ──────────────────────────────────────── */
 .floatingScrollBtn {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 99;
-  
-  /* Circle Styling */
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background-color: #1a1a1a;
   color: #f5f2ee;
   border: none;
-  
-  /* Centering arrow text */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  
-  /* Hide setup */
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
-  
-  /* Transition animations */
-  transition: 
-    opacity 0.3s ease, 
-    transform 0.3s ease, 
-    background-color 0.2s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
 }
 
-/* Active State triggered by Intersection Observer */
 .visible {
   opacity: 1;
   pointer-events: auto;
@@ -218,7 +249,7 @@
     width: 80px;
     height: 80px;
   }
-  
+
   .floatingScrollBtn {
     bottom: 3rem;
     right: 3rem;

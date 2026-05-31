@@ -18,7 +18,7 @@ export default function AboutSection() {
         </p>
         <div className={styles.logoWrap}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/logo2.png" alt="Brand logo" className={styles.logoPlaceholder} />
+          <img src="/images/image.png" alt="Brand logo" className={styles.logoPlaceholder} />
         </div>
       </section>
 

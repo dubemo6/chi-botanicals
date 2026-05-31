@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
 
           <div className={styles.logoCol}>
-            <img src="/images/logo.png" alt="Chi Botanical logo" className={styles.logo} />
+            <img src="/images/image.copy.png" alt="Chi Botanical logo" className={styles.logo} />
           </div>
         </div>
 

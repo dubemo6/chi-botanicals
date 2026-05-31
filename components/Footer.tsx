@@ -89,11 +89,11 @@ export default function Footer() {
               </span>
               {journalOpen && (
                 <div className={styles.dropdown}>
-                  {journalLinks.map((jl) => (
-                    <a key={jl.href} href={jl.href} className={styles.dropdownLink}>
-                      {jl.label}
-                    </a>
-                  ))}
+                 {journalLinks.map((jl) => (
+  <a key={jl.href} href={jl.href} className={styles.dropdownLink} target="_blank" rel="noreferrer">
+    {jl.label}
+  </a>
+))}
                 </div>
               )}
             </div>

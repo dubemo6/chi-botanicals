@@ -74,6 +74,18 @@
   cursor: pointer;
   display: block;
 }
+.dropdown {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 1rem);
+  background: #f5f2ee;
+  border: 1px solid rgba(26, 26, 24, 0.12);
+  padding: 0.4rem 0;
+  z-index: 200;
+  min-width: 180px;
+  animation: fadeIn 0.15s ease;
+  box-shadow: 4px 4px 16px rgba(0,0,0,0.06);
+}
 .dropdownLink {
   display: block;
   font-family: "Courier New", "Courier", monospace;

@@ -1,6 +1,6 @@
 import styles from "./MeetChiSection.module.css";
 
-const meetChiImage: string | null = "/images/chi.png";
+const meetChiImage: string | null = "/images/chi.webp";
 
 export default function MeetChiSection() {
   return (

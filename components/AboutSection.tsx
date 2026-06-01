@@ -20,7 +20,7 @@ export default function AboutSection() {
           designed to nurture both skin and self.
         </p>
         <div className={`${styles.logoWrap} reveal reveal-delay-2`}>
-          <img src="/images/image.png" alt="Brand logo" className={styles.logoPlaceholder} />
+          <img src="/images/image.webp" alt="Brand logo" className={styles.logoPlaceholder} />
         </div>
       </section>
 

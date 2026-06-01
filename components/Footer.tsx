@@ -113,7 +113,7 @@ export default function Footer() {
           </div>
 
           <div className={`${styles.logoCol} reveal reveal-delay-2`}>
-            <img src="/images/life.png" alt="Chi Botanical logo" className={styles.logo} />
+            <img src="/images/life.webp" alt="Chi Botanical logo" className={styles.logo} />
           </div>
 
         </div>

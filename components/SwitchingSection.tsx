@@ -1,21 +1,32 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import styles from "./SwitchingSection.module.css";
 
 const BG_IMAGES: string[] = [
-  "/images/face.webp",
-  "/images/fruit.webp",
-  "/images/face2.webp",
-  "/images/fruit2.webp",
-  "/images/fruit3.webp",
-  "/images/face3.webp",
-  "/images/fruit4.webp",
-  "/images/face4.webp",
-  "/images/fruit5.webp",
-  "/images/fruit6.webp",
+ "images/glass.webp",
+ "images/glass2.webp",
+ "images/glass3.webp",
+ "images/glass4.webp",
+ "images/glass5.webp",
+ "images/glass6.webp",
+ "images/glass7.webp",
+ "images/glass8.webp",
+ "images/glass9.webp",
+ "images/glass10.webp",
+ "images/glass11.webp",
+ "images/glass12.webp",
+ "images/glass13.webp",
+  "images/glass14.webp",
+  "images/glass15.webp",
+  "images/glass16.webp",
+  "images/glass17.webp",
+  "images/glass18.webp",
+  "images/glass19.webp",
+  "images/glass20.webp",
+  "images/glass21.webp",
+  "images/glass22.webp",
 ];
-
-const CENTER_IMAGE: string = "/images/image.png";
 
 function useActiveIndex(length: number, interval: number) {
   const [index, setIndex] = useState(0);
@@ -34,9 +45,7 @@ export default function SwitchingSection() {
 
   return (
     <section className={styles.section}>
-      {/* Full-width swapping background images — all stacked, only active one is visible */}
       {BG_IMAGES.map((src, i) => (
-        // eslint-disable-next-line @next/next/no-img-element
         <img
           key={src}
           src={src}
@@ -45,12 +54,6 @@ export default function SwitchingSection() {
           className={`${styles.bgImg} ${i === activeIndex ? styles.visible : styles.hidden}`}
         />
       ))}
-
-      {/* Fixed small square center image — sits on top of everything, never swaps */}
-      <div className={styles.centerWrap}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={CENTER_IMAGE} alt="Center feature" className={styles.centerImg} />
-      </div>
     </section>
   );
 }

@@ -33,7 +33,7 @@ export default function WelcomeSection() {
         A space to soften, reconnect, and restore through personalised rituals that honour both skin and self
       </p>
       <div ref={logoRef} className={`${styles.logoWrap} reveal reveal-delay-2`}>
-        <img src="/images/image.png" alt="Brand logo" className={styles.logoPlaceholder} />
+        <img src="/images/image.webp" alt="Brand logo" className={styles.logoPlaceholder} />
       </div>
     </section>
   );

@@ -57,9 +57,9 @@ function Entry({ heading, body }: { heading: string; body: string }) {
 export default function OurSpaceSection() {
   return (
     <section className={styles.section} id="our-space">
-      <p className={styles.eyebrow}>OUR SPACE</p>
+      <p className={`${styles.eyebrow} reveal`}>OUR SPACE</p>
 
-      <div className={styles.mobileTopics}>
+      <div className={`${styles.mobileTopics} reveal`}>
         {entries.map((e, i) => (
           <Entry key={i} heading={e.heading} body={e.body} />
         ))}
@@ -67,15 +67,15 @@ export default function OurSpaceSection() {
 
       <div className={styles.grid}>
         {spaceImages.map((src, i) => (
-          <div key={i} className={styles.item}>
-            <div className={styles.imgWrap}>
-              <img src={src} alt={`Our space ${i + 1}`} className={styles.img} />
-            </div>
-            <div className={styles.desktopEntry}>
-              <Entry heading={entries[i].heading} body={entries[i].body} />
-            </div>
-          </div>
-        ))}
+  <div key={i} className={`${styles.item} reveal reveal-delay-${i + 1}`}>
+    <div className={styles.imgWrap}>
+      <img src={src} alt={`Our space ${i + 1}`} className={styles.img} />
+    </div>
+    <div className={styles.desktopEntry}>
+      <Entry heading={entries[i].heading} body={entries[i].body} />
+    </div>
+  </div>
+))}
       </div>
     </section>
   );

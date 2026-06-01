@@ -40,7 +40,6 @@ export default function Footer() {
     };
   }, []);
 
-  // Close journal dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (journalRef.current && !journalRef.current.contains(e.target as Node)) {
@@ -59,32 +58,31 @@ export default function Footer() {
     <footer ref={footerRef} className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.top}>
-          <div className={styles.brand}>
+
+          <div className={`${styles.brand} reveal`}>
             CHI<br />BOTANICAL
           </div>
 
-          {/* Links Column */}
           <div className={styles.linksCol}>
-            <p className={styles.colLabel}>Links</p>
-            {allLinks.map((link) => (
+            <p className={`${styles.colLabel} reveal`}>Links</p>
+            {allLinks.map((link, i) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={styles.link}
+                className={`${styles.link} reveal reveal-delay-${i + 1}`}
                 {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
               >
                 {link.label}
               </a>
             ))}
 
-            {/* Journal dropdown */}
             <div
               ref={journalRef}
               className={styles.journalWrap}
               onMouseEnter={() => setJournalOpen(true)}
               onMouseLeave={() => setJournalOpen(false)}
             >
-              <span className={`${styles.link} ${styles.journalTrigger}`}>
+              <span className={`${styles.link} ${styles.journalTrigger} reveal reveal-delay-4`}>
                 JOURNAL
               </span>
               {journalOpen && (
@@ -100,23 +98,24 @@ export default function Footer() {
           </div>
 
           <div className={styles.contactCol}>
-            <p className={styles.colLabel}>Get in touch</p>
-            <a href="mailto:info@chibotanical.com" className={styles.link}>
+            <p className={`${styles.colLabel} reveal`}>Get in touch</p>
+            <a href="mailto:info@chibotanical.com" className={`${styles.link} reveal reveal-delay-1`}>
               info@chibotanical.com
             </a>
             <a
               href="https://instagram.com/chibotanical"
               target="_blank"
               rel="noreferrer"
-              className={styles.link}
+              className={`${styles.link} reveal reveal-delay-2`}
             >
               @chibotanical
             </a>
           </div>
 
-          <div className={styles.logoCol}>
+          <div className={`${styles.logoCol} reveal reveal-delay-2`}>
             <img src="/images/life.png" alt="Chi Botanical logo" className={styles.logo} />
           </div>
+
         </div>
 
         <button

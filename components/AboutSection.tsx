@@ -4,6 +4,7 @@ import aboutStyles from "./AboutSection.module.css";
 import MeetChiSection from "./MeetChiSection";
 import OurSpaceSection from "./OurSpaceSection";
 
+
 const moreInfoImage: string | null = "/images/oil.png";
 
 export default function AboutSection() {
@@ -11,11 +12,9 @@ export default function AboutSection() {
     <>
       {/* ── 1. ABOUT ── */}
       <section className={`${styles.section} ${aboutStyles.topSpacing}`} id="about">
-        <p className={styles.eyebrow}>ABOUT</p>
+        <p className={styles.eyebrow}>OUR APPROACH</p>
         <p className={styles.body}>
-          A modern skincare studio rooted in timeless care, connection and conscious growth.<br />
-          A space to soften, reconnect, and restore through personalised rituals that honour both skin and self
-        </p>
+       Chi Botanical is a modern skincare studio and community space grounded in timeless care, connection, and conscious growth. A place where time softens. Where the noise fades. Where you are invited to slow down, reconnect, and simply be. Here, skincare becomes ritual, not routine. A moment of stillness where the body unwinds, the mind quiets, and the skin begins to respond. Rooted in nature and guided by intention, every experience is designed to nurture both skin and self.        </p>
         <div className={styles.logoWrap}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/image.png" alt="Brand logo" className={styles.logoPlaceholder} />
@@ -24,7 +23,8 @@ export default function AboutSection() {
 
       {/* ── 2. OUR APPROACH ── */}
       <section className={moreStyles.section} id="our-approach">
-        <p className={moreStyles.eyebrow}>OUR APPROACH</p>
+        <p className={moreStyles.eyebrow}>The Meaning Behind
+Chi Botanical</p>
 
         <div className={moreStyles.imageWrap}>
           {moreInfoImage ? (
@@ -52,18 +52,31 @@ export default function AboutSection() {
         </a>
 
         <p className={moreStyles.body}>
-        Chi Botanical is a modern skincare studio and
-community space grounded in timeless care,
-connection, and conscious growth.
-A place where time softens.
-Where the noise fades.
-Where you are invited to slow down, reconnect, and
-simply be.
-Here, skincare becomes ritual, not routine.
-A moment of stillness where the body unwinds, the
-mind quiets, and the skin begins to respond.
-Rooted in nature and guided by intention, every
-experience is designed to nurture both skin and self.
+   The name Chi Botanical is deeply personal
+and intentional.
+“Chi” comes from my own name, Amarachi,
+and my sister’s name, Chi-Chi,
+representing trust, closeness, and the
+kind of relationship where honesty and
+care come naturally. It reflects the
+space I strive to create, one where you
+feel supported, understood, and safe.
+In Igbo culture, where I am from in
+Nigeria, “Chi” means God, a guiding
+force, a sense of purpose, and spiritual
+alignment. In other cultures, it
+represents life force energy, the flow
+that sustains balance and wellbeing.
+“Botanical” was inspired by my journey of
+growing my own crops, a reminder that
+everything meaningful starts from the
+ground up. It speaks to being rooted,
+patient, and connected to nature.
+Together, the name represents a
+philosophy. Working in alignment with the
+body, guided by truth, and grounded in
+
+nature to create lasting, meaningful change
         </p>
       </section>
 

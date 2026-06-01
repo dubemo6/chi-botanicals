@@ -4,59 +4,38 @@
 
 .navbar {
   position: absolute;
-  top: 0;
+  /* CHANGE: Shifted closer to the absolute top edge */
+  top: 0; 
   left: 0;
   right: 0;
   z-index: 100;
+  /* CHANGE: Decreased top padding from 3rem to 1.5rem to pull the navbar UP */
+  padding: 1.5rem 0 3rem 0; 
+
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly; 
   align-items: center;
-  gap: 38rem;
-  padding: 2rem 4rem;
 }
 
 /* Dark navbar — white bg, dark text (about + treatments pages) */
 .navbarDark {
   position: relative;
   background: #f5f2ee;
-  padding: 2rem 4rem;
+  /* CHANGE: Mirror the same top-shifting padding here */
+  padding: 1.5rem 0 3rem 0; 
 }
 
 .group {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
+  display: contents; 
 }
 
-/* Default link — white (home page over hero image) */
-.link {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  color: #fff;
-  text-decoration: none;
-  opacity: 0.95;
-  transition: opacity 0.2s ease;
-}
-
-.link:hover {
-  opacity: 1;
-}
-
-/* Dark link — black text */
-.linkDark {
-  color: #1a1a18;
-  opacity: 1;
-}
-
-/* Default brand — white, large (home page) */
+/* Default brand — white, single-line (home page) */
 .brand {
-  font-family: var(--font-xanh), "Courier New", monospace;
-  font-style: normal;
-  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-family: var(--font-mono);
+  /* font-style: italic; */
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   color: #fff;
   text-decoration: none;
   text-align: center;
@@ -64,12 +43,33 @@
   text-transform: uppercase;
 }
 
-/* Dark brand — black text, slightly smaller (about + treatments) */
-.brandDark {
+/* Default link — white (home page over hero image) */
+.link {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+.link:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* Dark link — black text */
+.linkDark {
   color: #1a1a18;
-  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  opacity: 1;
 }
 
+/* Dark brand — black text (about + treatments) */
+.brandDark {
+  color: #1a1a18;
+}
 /* ══════════════════════════════════════
    MOBILE NAVBAR
    ══════════════════════════════════════ */
@@ -91,9 +91,9 @@
 }
 
 .mobileBrand {
-  font-family: var(--font-xanh), "Courier New", monospace;
+  font-family: var(--font-mono);
   font-style: normal;
-  font-size: clamp(1.6rem, 8vw, 2.2rem);
+  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
   font-weight: 400;
   color: #fff;
   text-decoration: none;

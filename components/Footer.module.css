@@ -8,15 +8,16 @@
 .inner {
   width: 100%;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 2rem;
+  padding: 2rem 1rem 2rem;
   box-sizing: border-box;
 }
 
 /* ─── Brand name ────────────────────────────────────────────────── */
 .brand {
-  font-family: "Courier New", "Courier", monospace;
-  font-weight: 600;
-  font-size: 2rem;
+  font-family: var(--font-mono);
+  /* font-style: italic; */
+  font-size: clamp(1.8rem, 2.6vw, 2rem);
+  font-weight: 300;
   line-height: 1.04;
   letter-spacing: 0.08em;
   color: #1a1a1a;
@@ -24,7 +25,7 @@
 
 /* ─── Column labels ───────────────────────────────────────────── */
 .colLabel {
-  font-family: "Courier New", "Courier", monospace;
+ font-family: var(--font-mono);;
   font-size: 0.65rem;
   letter-spacing: 0.05em;
   color: #1a1a1a;
@@ -40,7 +41,7 @@
 }
 
 .link {
-  font-family: "Courier New", "Courier", monospace;
+font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   color: #1a1a1a;

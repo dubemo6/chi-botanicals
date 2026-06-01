@@ -16,7 +16,7 @@
   grid-row: 1;
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.1em;
   color: #1a1a18;
   margin: 0;
   align-self: start;
@@ -24,6 +24,8 @@
   text-indent: 8rem;
   padding-bottom: 2rem;
   font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .imageWrap {
@@ -130,6 +132,7 @@
     font-weight: normal; 
     text-indent: 0;      
     letter-spacing: 0.15em;
+    
   }
 
   /* BOOK NOW (Right aligned link) */

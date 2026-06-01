@@ -4,9 +4,9 @@ import { useEffect, useState, useRef } from "react";
 import styles from "./Footer.module.css";
 
 const allLinks = [
-  { label: "ABOUT", href: "/about" },
-  { label: "TREATMENTS", href: "/treatments" },
-  { label: "CLIENT CARE", href: "/clients" },
+  { label: "CONCEPT", href: "/CONCEPT" },
+  { label: "SKIN RITUALS", href: "/SKIN_RITUALS" },
+  { label: "COMMUNITY", href: "/COMMUNITY" },
   { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },
 ];
 
@@ -89,11 +89,11 @@ export default function Footer() {
               </span>
               {journalOpen && (
                 <div className={styles.dropdown}>
-                 {journalLinks.map((jl) => (
-  <a key={jl.href} href={jl.href} className={styles.dropdownLink} target="_blank" rel="noreferrer">
-    {jl.label}
-  </a>
-))}
+                  {journalLinks.map((jl) => (
+                    <a key={jl.href} href={jl.href} className={styles.dropdownLink}>
+                      {jl.label}
+                    </a>
+                  ))}
                 </div>
               )}
             </div>

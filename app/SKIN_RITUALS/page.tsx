@@ -34,6 +34,35 @@ export default function TreatmentsPage() {
     <>
       <Navbar dark />
       <main>
+        <section style={{
+          background: "#f5f2ee",
+          padding: "6rem 4rem 3rem",
+          fontFamily: "var(--font-mono), 'Courier New', monospace",
+          color: "#1a1a18",
+        }}>
+          <p style={{
+            fontSize: "1rem",
+            lineHeight: "1.3",
+            marginBottom: "3rem",
+            letterSpacing: "0.25em",
+            textAlign: "center",
+            textTransform: "uppercase",
+          }}>
+            Skin, at the root.
+          </p>
+          <p style={{
+            fontSize: "1.7rem",
+            lineHeight: "1.9",
+            width: "100%",
+            maxWidth: "100%",
+            textAlign: "left",
+            textIndent: "8rem",
+            margin: "0 0 2rem",
+            letterSpacing: "0.03em",
+          }}>
+            A curated menu of personalised treatments designed to restore balance, refine the skin, and support long-term skin health. Each ritual blends advanced techniques with intentional touch, working in harmony with the skin and body.
+          </p>
+        </section>
         <TreatmentsPreview showConsultation />
         <AddOnsSection />
       </main>

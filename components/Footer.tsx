@@ -11,8 +11,8 @@ const allLinks = [
 ];
 
 const journalLinks = [
-  { label: "JOURNAL PART ONE", href: "/journal/part-one" },
-  { label: "JOURNAL PART TWO", href: "/journal/part-two" },
+  { label: "community directory", href: "/journal/part-one" },
+  { label: "skin library", href: "/journal/part-two" },
 ];
 
 export default function Footer() {
@@ -83,7 +83,7 @@ export default function Footer() {
               onMouseLeave={() => setJournalOpen(false)}
             >
               <span className={`${styles.link} ${styles.journalTrigger} reveal reveal-delay-4`}>
-                JOURNAL
+                SKIN JOURNAL
               </span>
               {journalOpen && (
                 <div className={styles.dropdown}>

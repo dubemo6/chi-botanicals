@@ -42,11 +42,10 @@ interface TreatmentsPreviewProps {
 export default function TreatmentsPreview({ showConsultation = false }: TreatmentsPreviewProps) {
   return (
     <section className={styles.section} id="treatments">
-     <h2 className={styles.eyebrow}>TREATMENTS</h2>
+      <h2 className={`${styles.eyebrow} reveal`}>TREATMENTS</h2>
 
-      {/* Consultation note — only on treatments page */}
       {showConsultation && (
-        <div className={styles.consultation}>
+        <div className={`${styles.consultation} reveal reveal-delay-1`}>
           <span className={styles.consultationTitle}>
             Consultation — <em>30 min</em>
           </span><br />
@@ -58,10 +57,12 @@ export default function TreatmentsPreview({ showConsultation = false }: Treatmen
 
       <div className={styles.grid}>
         {treatments.map((t, i) => (
-          <div key={i} className={styles.card}>
+          <div
+            key={i}
+            className={`${styles.card} reveal reveal-delay-${i + 1}`}
+          >
             <div className={`${styles.imageWrap} ${styles[`imageWrap_${t.size}`]}`}>
               {t.image ? (
-                // eslint-disable-next-line @next/next/no-img-element
                 <img src={t.image} alt={t.name} className={styles.img} />
               ) : (
                 <div className={styles.placeholder}>
@@ -81,7 +82,7 @@ export default function TreatmentsPreview({ showConsultation = false }: Treatmen
       </div>
 
       {!showConsultation && (
-        <a href="/treatments" className={styles.viewMore}>
+        <a href="/treatments" className={`${styles.viewMore} reveal`}>
           VIEW MORE
         </a>
       )}

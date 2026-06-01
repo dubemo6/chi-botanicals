@@ -23,18 +23,16 @@ const testimonials = [
 
 export default function TestimonialSection() {
   const [index, setIndex] = useState(0);
-
   const next = () => setIndex((i) => (i + 1) % testimonials.length);
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} reveal`}>
       <div className={styles.content}>
         <blockquote className={styles.quote}>
           &ldquo;{testimonials[index].quote}&rdquo;
         </blockquote>
         <p className={styles.name}>{testimonials[index].name}</p>
       </div>
-
       <button className={styles.arrow} onClick={next} aria-label="Next testimonial">
         &rarr;
       </button>

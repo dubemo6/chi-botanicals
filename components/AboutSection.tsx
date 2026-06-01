@@ -4,31 +4,31 @@ import aboutStyles from "./AboutSection.module.css";
 import MeetChiSection from "./MeetChiSection";
 import OurSpaceSection from "./OurSpaceSection";
 
-
 const moreInfoImage: string | null = "/images/oil.png";
 
 export default function AboutSection() {
   return (
     <>
-      {/* ── 1. ABOUT ── */}
       <section className={`${styles.section} ${aboutStyles.topSpacing}`} id="about">
-        <p className={styles.eyebrow}>OUR APPROACH</p>
-        <p className={styles.body}>
-       Chi Botanical is a modern skincare studio and community space grounded in timeless care, connection, and conscious growth. A place where time softens. Where the noise fades. Where you are invited to slow down, reconnect, and simply be. Here, skincare becomes ritual, not routine. A moment of stillness where the body unwinds, the mind quiets, and the skin begins to respond. Rooted in nature and guided by intention, every experience is designed to nurture both skin and self.        </p>
-        <div className={styles.logoWrap}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+        <p className={`${styles.eyebrow} reveal`}>OUR APPROACH</p>
+        <p className={`${styles.body} reveal reveal-delay-1`}>
+          Chi Botanical is a modern skincare studio and community space grounded in timeless care,
+          connection, and conscious growth. A place where time softens. Where the noise fades.
+          Where you are invited to slow down, reconnect, and simply be. Here, skincare becomes
+          ritual, not routine. A moment of stillness where the body unwinds, the mind quiets, and
+          the skin begins to respond. Rooted in nature and guided by intention, every experience is
+          designed to nurture both skin and self.
+        </p>
+        <div className={`${styles.logoWrap} reveal reveal-delay-2`}>
           <img src="/images/image.png" alt="Brand logo" className={styles.logoPlaceholder} />
         </div>
       </section>
 
-      {/* ── 2. OUR APPROACH ── */}
       <section className={moreStyles.section} id="our-approach">
-        <p className={moreStyles.eyebrow}>The Meaning Behind
-Chi Botanical</p>
+        <p className={`${moreStyles.eyebrow} reveal`}>The Meaning Behind Chi Botanical</p>
 
-        <div className={moreStyles.imageWrap}>
+        <div className={`${moreStyles.imageWrap} reveal reveal-delay-1`}>
           {moreInfoImage ? (
-            // eslint-disable-next-line @next/next/no-img-element
             <img src={moreInfoImage} alt="Our approach" className={moreStyles.img} />
           ) : (
             <div className={moreStyles.placeholder}>
@@ -46,44 +46,27 @@ Chi Botanical</p>
           href="https://www.fresha.com/en-GB"
           target="_blank"
           rel="noreferrer"
-          className={moreStyles.bookNow}
+          className={`${moreStyles.bookNow} reveal reveal-delay-2`}
         >
           BOOK NOW
         </a>
 
-        <p className={moreStyles.body}>
-   The name Chi Botanical is deeply personal
-and intentional.
-“Chi” comes from my own name, Amarachi,
-and my sister’s name, Chi-Chi,
-representing trust, closeness, and the
-kind of relationship where honesty and
-care come naturally. It reflects the
-space I strive to create, one where you
-feel supported, understood, and safe.
-In Igbo culture, where I am from in
-Nigeria, “Chi” means God, a guiding
-force, a sense of purpose, and spiritual
-alignment. In other cultures, it
-represents life force energy, the flow
-that sustains balance and wellbeing.
-“Botanical” was inspired by my journey of
-growing my own crops, a reminder that
-everything meaningful starts from the
-ground up. It speaks to being rooted,
-patient, and connected to nature.
-Together, the name represents a
-philosophy. Working in alignment with the
-body, guided by truth, and grounded in
-
-nature to create lasting, meaningful change
+        <p className={`${moreStyles.body} reveal reveal-delay-3`}>
+          The name Chi Botanical is deeply personal and intentional.
+          &ldquo;Chi&rdquo; comes from my own name, Amarachi, and my sister&apos;s name, Chi-Chi,
+          representing trust, closeness, and the kind of relationship where honesty and care come
+          naturally. It reflects the space I strive to create, one where you feel supported,
+          understood, and safe. In Igbo culture, where I am from in Nigeria, &ldquo;Chi&rdquo; means
+          God, a guiding force, a sense of purpose, and spiritual alignment. In other cultures, it
+          represents life force energy, the flow that sustains balance and wellbeing.
+          &ldquo;Botanical&rdquo; was inspired by my journey of growing my own crops, a reminder that
+          everything meaningful starts from the ground up. It speaks to being rooted, patient, and
+          connected to nature. Together, the name represents a philosophy. Working in alignment with
+          the body, guided by truth, and grounded in nature to create lasting, meaningful change.
         </p>
       </section>
 
-      {/* ── 3. MEET CHI ── */}
       <MeetChiSection />
-
-      {/* ── 4. OUR SPACE ── */}
       <OurSpaceSection />
     </>
   );

@@ -5,13 +5,10 @@ const moreInfoImage: string | null = "/images/oil.png";
 export default function MoreInfoSection() {
   return (
     <section className={styles.section} id="more-info">
+      <p className={`${styles.eyebrow} reveal`}>MORE INFO</p>
 
-      {/* ── DESKTOP layout ── */}
-      <p className={styles.eyebrow}>MORE INFO</p>
-
-      <div className={styles.imageWrap}>
+      <div className={`${styles.imageWrap} reveal reveal-delay-1`}>
         {moreInfoImage ? (
-          // eslint-disable-next-line @next/next/no-img-element
           <img src={moreInfoImage} alt="More info" className={styles.img} />
         ) : (
           <div className={styles.placeholder}>
@@ -29,26 +26,25 @@ export default function MoreInfoSection() {
         href="https://www.fresha.com/en-GB"
         target="_blank"
         rel="noreferrer"
-        className={styles.bookNow}
+        className={`${styles.bookNow} reveal reveal-delay-2`}
       >
         BOOK NOW
       </a>
 
-      <p className={styles.body}>
-       Chi Botanical is a modern skincare studio and
-community space grounded in timeless care,
-connection, and conscious growth.
-A place where time softens.
-Where the noise fades.
-Where you are invited to slow down, reconnect, and
-simply be.
-Here, skincare becomes ritual, not routine.
-A moment of stillness where the body unwinds, the
-mind quiets, and the skin begins to respond.
-Rooted in nature and guided by intention, every
-experience is designed to nurture both skin and self.
+      <p className={`${styles.body} reveal reveal-delay-3`}>
+        Chi Botanical is a modern skincare studio and
+        community space grounded in timeless care,
+        connection, and conscious growth.
+        A place where time softens.
+        Where the noise fades.
+        Where you are invited to slow down, reconnect, and
+        simply be.
+        Here, skincare becomes ritual, not routine.
+        A moment of stillness where the body unwinds, the
+        mind quiets, and the skin begins to respond.
+        Rooted in nature and guided by intention, every
+        experience is designed to nurture both skin and self.
       </p>
-
     </section>
   );
 }

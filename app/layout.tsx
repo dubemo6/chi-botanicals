@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IM_Fell_English, DM_Sans, Xanh_Mono } from "next/font/google";
 import "./globals.css";
 import ChatWidget from "@/components/ChatWidget";
+import RevealObserver from "@/components/RevealObserver";
 import { Analytics } from "@vercel/analytics/next";
 
 const imFellEnglish = IM_Fell_English({
@@ -50,9 +51,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Chi Botanical" }],
   creator: "Chi Botanical",
   metadataBase: new URL("https://www.chibotanical.com"),
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Chi Botanical — Luxury Facial & Skincare Studio in London",
     description:
@@ -71,10 +70,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    googleBot: { index: true, follow: true },
   },
 };
 
@@ -138,11 +134,7 @@ const structuredData = {
   ],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en-GB"
@@ -154,9 +146,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body>{children}
-         <ChatWidget />
-          <Analytics />
+      <body>
+        {children}
+        <ChatWidget />
+        <RevealObserver />
+        <Analytics />
       </body>
     </html>
   );

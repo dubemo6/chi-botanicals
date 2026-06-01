@@ -48,7 +48,7 @@ export default function TreatmentsPage() {
             textAlign: "center",
             textTransform: "uppercase",
           }}>
-            Skin, at the root.
+            Skin at the root.
           </p>
           <p style={{
             fontSize: "1.7rem",

@@ -4,7 +4,7 @@ import aboutStyles from "./AboutSection.module.css";
 import MeetChiSection from "./MeetChiSection";
 import OurSpaceSection from "./OurSpaceSection";
 
-const moreInfoImage: string | null = "/images/oil.png";
+const moreInfoImage: string | null = "/images/oil.webp";
 
 export default function AboutSection() {
   return (

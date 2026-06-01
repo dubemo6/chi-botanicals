@@ -1,6 +1,6 @@
 import styles from "./MoreInfoSection.module.css";
 
-const moreInfoImage: string | null = "/images/oil.png";
+const moreInfoImage: string | null = "/images/oil.webp";
 
 export default function MoreInfoSection() {
   return (

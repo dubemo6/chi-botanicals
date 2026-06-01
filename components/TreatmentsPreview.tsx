@@ -10,7 +10,7 @@ const treatments = [
     size: "tall",
   },
   {
-    image: "/images/plant.png",
+    image: "/images/plant.webp",
     name: "Lift & Release Facial",
     duration: "60 min upgrade",
     description:
@@ -26,7 +26,7 @@ const treatments = [
     size: "tall",
   },
   {
-    image: "/images/plant2.png",
+    image: "/images/fruit2.webp",
     name: "Collagen Renewal Ritual",
     duration: "60 min",
     description:

@@ -12,7 +12,7 @@
 }
 
 .mainTitle {
-  font-family: Arial, Helvetica, sans-serif;
+   font-family: var(--font-mono), monospace;
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -40,7 +40,7 @@
 
 /* Bolded Category Topics styled clean and prominent */
 .sectionTitle {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), monospace;
   font-size: 1.25rem;
   font-weight: 700;
   color: #1a1a1a;
@@ -50,7 +50,7 @@
 }
 
 .subTitle {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), monospace;
   font-size: 1rem;
   font-weight: 700;
   color: #2b2b29;
@@ -60,7 +60,7 @@
 }
 
 .contentBody p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), monospace;
   font-size: 0.95rem;
   line-height: 1.7;
   color: #333331;
@@ -81,7 +81,7 @@
 }
 
 .list li {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), monospace;
   font-size: 0.95rem;
   line-height: 1.65;
   color: #333331;

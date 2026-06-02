@@ -41,7 +41,7 @@
 }
 
 .partnerTitle {
-  font-family: "Playfair Display", "Didot", serif;
+    font-family: var(--font-mono), monospace;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 300;
   line-height: 1.2;
@@ -57,7 +57,7 @@
 }
 
 .partnerBody {
-  font-family: Arial, sans-serif;
+    font-family: var(--font-mono), monospace;
   font-size: 0.9rem;
   line-height: 1.7;
   color: rgba(245, 242, 238, 0.85);
@@ -120,7 +120,7 @@
 }
 
 .fieldLabel {
-  font-family: Arial, sans-serif;
+   font-family: var(--font-mono), monospace;
   font-size: 0.82rem;
   font-weight: 600;
   color: #1a1917;
@@ -129,7 +129,7 @@
 .input, .textarea, .select {
   width: 100%;
   padding: 0.95rem 1rem;
-  font-family: Arial, sans-serif;
+   font-family: var(--font-mono), monospace;
   font-size: 0.9rem;
   color: #2b2a28;
   background-color: transparent;
@@ -160,7 +160,7 @@
 
 .selectWrapper::after {
   content: "↓";
-  font-family: monospace;
+    font-family: var(--font-mono), monospace;
   font-size: 0.75rem;
   color: #1a1917;
   position: absolute;
@@ -200,7 +200,7 @@
 }
 
 .successMessage {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-mono), monospace;
   font-size: 0.85rem;
   color: #2e613c;
   margin: 0;
@@ -208,7 +208,7 @@
 }
 
 .errorMessage {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-mono), monospace;
   font-size: 0.85rem;
   color: #8c251e;
   margin: 0;
@@ -230,7 +230,7 @@
 }
 
 .accentText {
-  font-family: "Playfair Display", "Didot", serif;
+  font-family: var(--font-mono), monospace;
   font-size: clamp(1.25rem, 2.5vw, 1.85rem);
   font-weight: 300;
   color: #1a1917;

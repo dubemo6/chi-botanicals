@@ -34,7 +34,7 @@
 }
 
 .heading {
-  font-family: "Playfair Display", "Didot", "Georgia", serif;
+  font-family: var(--font-mono), monospace;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 300;
   line-height: 1.12;

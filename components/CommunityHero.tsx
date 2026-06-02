@@ -8,7 +8,7 @@ export default function CommunityHero() {
       <div className={styles.heroBgWrap}>
         {/* Use your rich closeup portrait image path here */}
         <img 
-          src="/images/face5.webp" 
+          src="/images/faces10.webp" 
           alt="Chi Botanical skin profile portrait" 
           className={styles.heroBg} 
         />

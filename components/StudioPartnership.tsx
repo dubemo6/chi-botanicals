@@ -18,10 +18,10 @@ export default function StudioPartnership() {
 
     try {
       // ─── EMAILJS CREDENTIAL CONFIGURATION ───
-      const SERVICE_ID = "YOUR_EMAILJS_SERVICE_ID";
-      const PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY";
-      const ADMIN_TEMPLATE_ID = "YOUR_ADMIN_TEMPLATE_ID";
-      const GUEST_TEMPLATE_ID = "YOUR_GUEST_TEMPLATE_ID";
+      const SERVICE_ID = "service_hgy45ug";
+      const PUBLIC_KEY = "okPQ4HpngoXN8_9F_";
+      const ADMIN_TEMPLATE_ID = "template_4uk8jaw";
+      const GUEST_TEMPLATE_ID = "template_kq7kzaq";
 
       await emailjs.sendForm(
         SERVICE_ID,

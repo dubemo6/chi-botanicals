@@ -7,7 +7,7 @@ const addOns = [
   { name: "Shoulder & back massage with gua sha 20mins | £50", desc: "A targeted treatment to release tension in the shoulders and upper back, helping to reduce facial puffiness and restore a  more lifted appearance." },
   { name: "Head Tension Massage — 10 min | £40", desc: "Relieves scalp, temple, and head tension" },
   { name: "Extra Hands | £35", desc: "Enhanced relaxation with additional massage techniques" },
-  // { name: "Hydrating Mask | £30", desc: "Intensive moisture boost to restore hydration and glow" },
+   { name: "Hydrating Mask | £30", desc: "Intensive moisture boost to restore hydration and glow" },
 
 
 ];

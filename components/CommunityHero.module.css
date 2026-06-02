@@ -1,0 +1,148 @@
+/* ================================================================
+   HIGH-END EDITORIAL HERO CONTAINER
+   ================================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height like the mockup */
+  display: flex;
+  align-items: center;
+  background-color: #eae6df; 
+  overflow: hidden;
+  padding: 8rem 1.5rem 6rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.heroBgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.heroBg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right; /* Keeps face composition nicely positioned on desktop */
+  opacity: 0.95; /* Restores the rich color depth from your mockup */
+}
+
+/* Linear light gradient to make the typography seamlessly legible on the left */
+.heroBgWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(245, 242, 238, 0.92) 0%,
+    rgba(245, 242, 238, 0.75) 35%,
+    rgba(245, 242, 238, 0) 100__
+  );
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 720px;
+  margin: 0; /* Left aligned matching the mockup */
+}
+
+.heroLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  color: #1a1a1a;
+  margin: 0 0 1.8rem 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.heroTitle {
+  font-family: "Playfair Display", "Didot", serif;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 400; /* Rich editorial weight */
+  line-height: 1.15;
+  color: #121212;
+  margin: 0 0 1.8rem 0;
+  letter-spacing: -0.015em;
+}
+
+.heroDivider {
+  border: none;
+  border-top: 1.5px solid #1a1a1a; /* Clean solid rule from layout reference */
+  margin: 0 0 2rem 0;
+  width: 45px; /* Fixed elegant design width */
+}
+
+.heroSub {
+  font-family: Arial, sans-serif; /* Clean baseline body text */
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #2b2b29;
+  margin: 0 0 1rem 0;
+  max-width: 460px;
+}
+
+.heroScroll {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: #1a1a1a;
+  text-decoration: none;
+  margin-top: 2.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #1a1a1a;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.heroScroll:hover {
+  opacity: 0.6;
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ================================================================ */
+@media (max-width: 1023px) {
+  .heroBgWrap::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 242, 238, 0.95) 0%,
+      rgba(245, 242, 238, 0.8) 50%,
+      rgba(245, 242, 238, 0.4) 100__
+    );
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 0 8%;
+    min-height: 100vh;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    padding-left: 12%;
+  }
+}
+
+/* ================================================================
+   PURE INDEPENDENT SCROLL REVEAL TARGETS
+   ================================================================ */
+.heroContent:global(.reveal) {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.heroContent:global(.reveal.revealed) {
+  opacity: 1;
+  transform: translateY(0);
+}

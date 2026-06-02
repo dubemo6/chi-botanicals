@@ -4,33 +4,33 @@ const treatments = [
   {
     image: "/images/face6.webp",
     name: "Lift & Release Facial",
-    duration: "45 min",
+    duration: "45 min | £110",
     description:
-      "An express sculpting and tension-release treatment focusing on facial massage, steam, and relaxation. Ideal for jaw tension, stress relief, and a quick lift.",
-    size: "tall",
+      "A sculpting and tension-release facial designed to lift depuff and restore Including 10min consultation, cleanse, facialmassage,neck and shoulder release, gua sha, and targeted skincare.",
+   size: "tall",
   },
   {
     image: "/images/plant.webp",
-    name: "Lift & Release Facial",
-    duration: "60 min upgrade",
+    name: "Lift & Release Facial Extended",
+    duration: "60 min | £160",
     description:
-      "Extended version for deeper sculpting, longer massage, and enhanced relaxation, maintaining the same tension-release focus.",
+      "A deeper, extended massage using various tools facial cupping and a shoulder release, to enhanced sculpting and relaxation. Including 10min consultation, cleanse, facial massage, neck and shoulder release, cupping, gua sha, and targeted skincare.",
     size: "medium",
   },
   {
     image: "/images/face3.webp",
     name: "Glow & Flow Facial",
-    duration: "60 min",
+    duration: "60 min | £220",
     description:
-      "Refresh and rejuvenate the skin with dermaplaning, hydrating hydrofacial, and a soothing facial massage. Perfect for brightening, smoothing, and relaxation before or after a special occasion.",
+      "A results-driven treatment to refine texture, clear congestion, and restore glow Including 10min consultation, cleanse, extraction, dermaplaning (optional), Massage, hydrating mask and LED",
     size: "tall",
   },
   {
     image: "/images/fruit2.webp",
     name: "Collagen Renewal Ritual",
-    duration: "60 min",
+    duration: "60 min | £220",
     description:
-      "Results-driven treatment combining microneedling (SkinPen® EVO) and LED light therapy to stimulate collagen, refine texture, and improve skin quality over the long term.",
+      "An advanced treatment combining microneedling and LED to support collagen, refine texture, and improve overall skin quality. Includes cleanse, SkinPen® EVO Microneedling, and a calming mask with LED",
     size: "medium",
   },
 ];

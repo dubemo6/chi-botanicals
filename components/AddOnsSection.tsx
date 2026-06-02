@@ -3,10 +3,13 @@ import styles from "./AddOnsSection.module.css";
 const BOOK_URL = "https://www.fresha.com/en-GB";
 
 const addOns = [
-  { name: "Buccal Massage", desc: "Releases deep jaw and facial tension" },
-  { name: "Facial Cupping", desc: "Stimulates circulation and lymphatic drainage" },
-  { name: "Head Tension Massage — 10 min", desc: "Relieves scalp, temple, and head tension" },
-  { name: "Extra Hands", desc: "Enhanced relaxation with additional massage techniques" },
+  { name: "Buccal Massage 20 mins | £50", desc: "Deep intra-oral massage to release jaw tension and sculpt facial contours" },
+  { name: "Shoulder & back massage with gua sha 20mins | £50", desc: "A targeted treatment to release tension in the shoulders and upper back, helping to reduce facial puffiness and restore a  more lifted appearance." },
+  { name: "Head Tension Massage — 10 min | £40", desc: "Relieves scalp, temple, and head tension" },
+  { name: "Extra Hands | £35", desc: "Enhanced relaxation with additional massage techniques" },
+  // { name: "Hydrating Mask | £30", desc: "Intensive moisture boost to restore hydration and glow" },
+
+
 ];
 
 export default function AddOnsSection() {

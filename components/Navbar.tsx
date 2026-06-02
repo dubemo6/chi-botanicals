@@ -6,7 +6,7 @@ import styles from "./Navbar.module.css";
 const allLinks = [
   { label: "CONCEPT", href: "/CONCEPT" },
   { label: "SKIN RITUALS", href: "/SKIN_RITUALS" },
-  { label: "COMMUNITY", href: "/COMMUNITY" },
+  { label: "COMMUNITY", href: "/CommunityPage" },
   { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },
 ];
 

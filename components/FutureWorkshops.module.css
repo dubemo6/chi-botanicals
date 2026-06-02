@@ -1,0 +1,177 @@
+/* ══════════════════════════════════════
+   FUTURE WORKSHOPS STRUCTURAL LAYOUT
+   ══════════════════════════════════════ */
+.workshops {
+  background: #f5f2ee;
+  border-top: 1px solid rgba(26, 26, 24, 0.1);
+  padding: 6rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: #1a1a18;
+  margin: 0;
+}
+
+.title {
+  font-family: "Playfair Display", "Didot", serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  color: #1a1a18;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.intro {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  line-height: 1.85;
+  color: #5a5248;
+  margin: 0;
+  padding-top: 0.25rem;
+}
+
+/* Grid of 4 cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #f5f2ee;
+  border: 1px solid rgba(26, 26, 24, 0.08);
+  text-align: center; 
+}
+
+.cardImageWrap {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #e8e4de;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.02);
+}
+
+.cardBody {
+  padding: 1.8rem 1.4rem 2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cardTitle {
+  font-family: "Playfair Display", "Didot", serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #1a1a18;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.cardDesc {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.73rem;
+  line-height: 1.75;
+  color: #5a5248;
+  margin: 0;
+  max-width: 260px;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.ctaBtn {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: #1a1a18;
+  text-decoration: none;
+  border: 1px solid rgba(26, 26, 24, 0.8);
+  padding: 0.9rem 2.2rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ctaBtn:hover {
+  background: #1a1a18;
+  color: #f5f2ee;
+}
+
+/* ══════════════════════════════════════
+   MEDIA QUERIES
+   ══════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .workshops { padding: 4rem 2.5rem; }
+  .header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .workshops { padding: 3.5rem 1.5rem; gap: 2.5rem; }
+  .header { grid-template-columns: 1fr; gap: 1.2rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════
+   SAFE ELEMENT-LEVEL SCROLL REVEALS
+   ══════════════════════════════════════ */
+.headerLeft:global(.reveal),
+.intro:global(.reveal),
+.card:global(.reveal),
+.cta:global(.reveal) {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1.1s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1.1s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.headerLeft:global(.reveal.revealed),
+.intro:global(.reveal.revealed),
+.card:global(.reveal.revealed),
+.cta:global(.reveal.revealed) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Apply cascaded item stagger delays to cards */
+.card:global(.reveal.revealed) {
+  transition-delay: var(--reveal-delay, 0s);
+}

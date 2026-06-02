@@ -1,0 +1,210 @@
+/* ================================================================
+   1. WHY COMMUNITY SECTION
+   ================================================================ */
+.why {
+  background-color: #f2f0ea;
+  padding: 5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.whyImageWrap {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.whyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.whyContent {
+  width: 100%;
+}
+
+.whyLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.whyTitle {
+  font-family: "Playfair Display", "Didot", serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0 0 2.5rem 0;
+}
+
+.whyBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.whyCol p {
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #3a3935;
+  margin: 0 0 1.2rem 0;
+}
+
+.whyRule {
+  border: none;
+  border-top: 1px solid rgba(26, 26, 24, 0.1);
+  margin: 0 0 2rem 0;
+}
+
+.whyClosing {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* ================================================================
+   2. PILLARS SECTION
+   ================================================================ */
+.pillars {
+  background-color: #f5f2ee;
+  padding: 5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  border-top: 1px solid rgba(26, 26, 24, 0.08);
+  border-bottom: 1px solid rgba(26, 26, 24, 0.08);
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.pillarIcon {
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.pillarName {
+  font-family: "Playfair Display", "Didot", serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+}
+
+.pillarDesc {
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #4a4844;
+  margin: 0;
+}
+
+.pillarDivider {
+  width: 40px;
+  height: 1px;
+  background-color: rgba(26, 26, 24, 0.15);
+  margin: 0 auto;
+}
+
+/* ================================================================
+   DESKTOP RESPONSIVE BREAKPOINTS (Adaptive Multi-Column Layouts)
+   ================================================================ */
+@media (min-width: 768px) {
+  .whyBody {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  
+  .whyCol {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Why Section Split Layout */
+  .why {
+    flex-direction: row;
+    align-items: center;
+    padding: 7rem 6rem;
+    gap: 6%;
+  }
+
+  .whyImageWrap {
+    width: 40%;
+    height: 580px;
+  }
+
+  .whyContent {
+    width: 54%;
+  }
+
+  /* Pillars Horizontal Row Configuration */
+  .pillars {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 6rem 8%;
+    gap: 2rem;
+  }
+
+  .pillar {
+    flex: 1;
+    margin: 0;
+  }
+
+  .pillarDivider {
+    width: 1px;
+    height: auto;
+    background-color: rgba(26, 26, 24, 0.12);
+    margin: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .why { padding-left: 12%; padding-right: 12%; }
+  .pillars { padding-left: 12%; padding-right: 12%; }
+}
+
+/* ================================================================
+   PURE MODULE-COMPLIANT SCROLL REVEAL TIMINGS
+   ================================================================ */
+/* Elements start slightly translated and transparent, background colors remain visible */
+.whyImageWrap:global(.reveal),
+.whyContent:global(.reveal),
+.pillars:global(.reveal) {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1.1s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1.1s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+/* Transition to clean view states on active viewport scroll */
+.whyImageWrap:global(.reveal.revealed),
+.whyContent:global(.reveal.revealed),
+.pillars:global(.reveal.revealed) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Rhythmic delay patterns */
+.whyContent:global(.reveal) {
+  transition-delay: 0.15s;
+}

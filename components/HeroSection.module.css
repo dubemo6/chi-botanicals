@@ -65,7 +65,7 @@
 
 .taglineLine {
   display: block;
-  font-family: var(--font-fell);
+  font-family: var(--font-mono);
   font-size: clamp(1.8rem, 3.5vw, 3.2rem);
   font-weight: 400;
   font-style: italic;
@@ -94,6 +94,7 @@
 @media (max-width: 1024px) and (min-width: 769px) {
   .taglineLine {
     font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-family: var(--font-mono);
   }
 
   .overlay {
@@ -127,6 +128,7 @@
 
   .taglineLine {
     font-size: clamp(1.8rem, 7vw, 2.5rem);
+    font-family: var(--font-mono);
   }
 
   .overlay {

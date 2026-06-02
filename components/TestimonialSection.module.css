@@ -7,6 +7,7 @@
   gap: 2rem;
   min-height: 50vh;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Prevents text overflow during transitions */
 }
 
 .content {
@@ -14,6 +15,21 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  
+  /* ── Smooth state transitions ── */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+}
+
+/* ── Animation State Control ── */
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(-4px); /* Clean, luxury drift effect */
 }
 
 .quote {
@@ -42,12 +58,13 @@
   padding: 0;
   margin-top: 0.25rem;
   flex-shrink: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.2s ease;
   align-self: center;
 }
 
 .arrow:hover {
   opacity: 0.4;
+  transform: translateX(3px); /* Subtle sign of life when interacting */
 }
 
 /* ══════════════════════════════════════
@@ -67,12 +84,16 @@
     line-height: 1.65;
   }
 
-  /* Arrow sits bottom right */
+  /* Arrow sits bottom right perfectly matching original spec */
   .arrow {
     position: absolute;
     bottom: 2rem;
     right: 1.5rem;
     align-self: unset;
     font-size: 1.4rem;
+  }
+  
+  .arrow:hover {
+    transform: none; /* Disables hover translation movement on mobile screens */
   }
 }

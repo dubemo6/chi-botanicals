@@ -1,0 +1,239 @@
+/* ── Overlay Backdrop ── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* Snug spacing on mobile to maximize card size */
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ── Modal Card Container ── */
+.modalCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 920px;
+  background-color: #f2f0ea;
+  color: #1c1b18;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  
+  /* CRITICAL MOBILE RESPONSIVENESS FIXES */
+  max-height: calc(100vh - 2rem); /* Hard caps height within mobile viewports */
+  overflow-y: auto; /* Handles vertical scrolling internally if text is long */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Desktop layout split state engine */
+@media (min-width: 768px) {
+  .modalCard {
+    flex-direction: row;
+    min-height: 550px;
+    max-height: 90vh; /* Controlled aesthetic desktop window */
+    overflow: hidden; /* Standardizes layout block bounds */
+  }
+}
+
+/* ── Close Button (Top Right Cross) ── */
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: rgba(242, 240, 234, 0.85); /* Ensures visibility over images */
+  backdrop-filter: blur(2px);
+  border: none;
+  cursor: pointer;
+  color: #1c1b18;
+  padding: 0.4rem;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .closeButton {
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+  }
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+/* ── Left Side Image Container ── */
+.imageSection {
+  position: relative;
+  width: 100%;
+  height: 180px; /* Shorter mobile display height to maximize form canvas view */
+  background-color: #e5e2da;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .imageSection {
+    width: 46%; 
+    height: auto;
+  }
+}
+
+/* ── Right Side Content Wrapper ── */
+.contentSection {
+  width: 100%;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .contentSection {
+    width: 54%;
+    padding: 4.5rem 4rem 3.5rem 4rem;
+    overflow-y: auto; /* Internal context scrolling if needed on small screens */
+  }
+}
+
+/* ── Typography & Layout Elements ── */
+.launchTagWrapper {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.launchTag {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #1c1b18;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.tagDivider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #d3cfc4;
+  margin: 0;
+}
+
+.title {
+  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #1c1b18;
+  margin: 0 0 1.2rem 0;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4a4842;
+  margin: 0 0 1.25rem 0;
+}
+
+/* ── Form Inputs ── */
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  background-color: transparent;
+  border: 1px solid #a39f94;
+  font-size: 0.9rem;
+  color: #1c1b18;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #1c1b18;
+}
+
+.inputField::placeholder {
+  color: #a19f95;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: #21201e;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #383632;
+}
+
+/* ── Minimal Brand Footer ── */
+.footerSection {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.footerLineDivider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #d3cfc4;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.iconWrapper {
+  background-color: #f2f0ea;
+  padding: 0 1rem;
+  color: #1c1b18;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #5d5a52;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 400;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

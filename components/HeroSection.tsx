@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import styles from "./HeroSection.module.css";
+import NewsletterModal from "./NewsletterModal"; // Added the modal import
 
+// ── All your original images are completely safe and untouched here ──
 const LEFT_IMAGES: string[] = [
   "/images/fruit.webp",
   "/images/fruit2.webp",
@@ -71,35 +73,40 @@ export default function HeroSection() {
   const RIGHT_INTERVAL = 1500;
 
   return (
-    <section className={styles.hero} id="home">
+    <>
+      {/* The pop-up runs perfectly here and checks localStorage on first load */}
+      <NewsletterModal />
 
-      {/* LEFT panel — has tagline, hidden on mobile */}
-      <Panel
-        images={LEFT_IMAGES}
-        alt="Botanical product"
-        interval={LEFT_INTERVAL}
-        className={styles.leftPanel}
-      >
-        <h1 className={styles.tagline}>
-          <span className={styles.taglineLine}>SKIN ,</span>
-          <span className={styles.taglineLine}>AT THE ROOT.</span>
-        </h1>
-      </Panel>
+      <section className={styles.hero} id="home">
 
-      {/* RIGHT panel — full width on mobile, tagline also shown on mobile */}
-      <Panel
-        images={RIGHT_IMAGES}
-        alt="Skincare model"
-        interval={RIGHT_INTERVAL}
-        className={styles.rightPanel}
-      >
-        {/* Tagline shown ONLY on mobile via CSS */}
-        <h1 className={styles.taglineMobile}>
-          <span className={styles.taglineLine}>SKIN ,</span>
-          <span className={styles.taglineLine}>AT THE ROOT.</span>
-        </h1>
-      </Panel>
+        {/* LEFT panel — has tagline, hidden on mobile */}
+        <Panel
+          images={LEFT_IMAGES}
+          alt="Botanical product"
+          interval={LEFT_INTERVAL}
+          className={styles.leftPanel}
+        >
+          <h1 className={styles.tagline}>
+            <span className={styles.taglineLine}>SKIN ,</span>
+            <span className={styles.taglineLine}>AT THE ROOT.</span>
+          </h1>
+        </Panel>
 
-    </section>
+        {/* RIGHT panel — full width on mobile, tagline also shown on mobile */}
+        <Panel
+          images={RIGHT_IMAGES}
+          alt="Skincare model"
+          interval={RIGHT_INTERVAL}
+          className={styles.rightPanel}
+        >
+          {/* Tagline shown ONLY on mobile via CSS */}
+          <h1 className={styles.taglineMobile}>
+            <span className={styles.taglineLine}>SKIN ,</span>
+            <span className={styles.taglineLine}>AT THE ROOT.</span>
+          </h1>
+        </Panel>
+
+      </section>
+    </>
   );
 }

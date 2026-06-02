@@ -6,6 +6,8 @@ import SwitchingSection from "@/components/SwitchingSection";
 import MoreInfoSection from "@/components/MoreInfoSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import Footer from "@/components/Footer";
+import PromoSection from "@/components/CollaborateSection";
+import CollaborateSection from "@/components/CollaborateSection";
 
 export default function Home() {
   return (
@@ -17,7 +19,9 @@ export default function Home() {
         <TreatmentsPreview />
         <SwitchingSection />
         <MoreInfoSection />
+      <CollaborateSection/>
         <TestimonialSection />
+
       </main>
       <Footer />
     </>

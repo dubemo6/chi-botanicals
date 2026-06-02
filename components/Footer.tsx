@@ -10,6 +10,11 @@ const allLinks = [
   { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },
 ];
 
+const helpLinks = [
+  { label: "FAQ", href: "/FAQ" },
+  { label: "TERMS & CONDITIONS", href: "/terms" }, // Change href to match your terms page route
+];
+
 const journalLinks = [
   { label: "community directory", href: "/journal/part-one" },
   { label: "skin library", href: "/journal/part-two" },
@@ -59,10 +64,12 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.top}>
 
+          {/* Column 1: Brand Typography */}
           <div className={`${styles.brand} reveal`}>
             CHI<br />BOTANICAL
           </div>
 
+          {/* Column 2: Main Navigation Links */}
           <div className={styles.linksCol}>
             <p className={`${styles.colLabel} reveal`}>Links</p>
             {allLinks.map((link, i) => (
@@ -97,6 +104,21 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Column 3: The New Help Column */}
+          <div className={styles.helpCol}>
+            <p className={`${styles.colLabel} reveal`}>Help</p>
+            {helpLinks.map((link, i) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`${styles.link} reveal reveal-delay-${i + 1}`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Column 4: Contact Links */}
           <div className={styles.contactCol}>
             <p className={`${styles.colLabel} reveal`}>Get in touch</p>
             <a href="mailto:info@chibotanical.com" className={`${styles.link} reveal reveal-delay-1`}>
@@ -112,12 +134,14 @@ export default function Footer() {
             </a>
           </div>
 
+          {/* Column 5: Brand Graphic Node */}
           <div className={`${styles.logoCol} reveal reveal-delay-2`}>
             <img src="/images/life.webp" alt="Chi Botanical logo" className={styles.logo} />
           </div>
 
         </div>
 
+        {/* Floating Scroll Button */}
         <button
           onClick={scrollToTop}
           className={`${styles.floatingScrollBtn} ${isVisible ? styles.visible : ""}`}

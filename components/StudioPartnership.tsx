@@ -45,12 +45,13 @@ export default function StudioPartnership() {
     }
   };
 
+  // ... (keep the top of your component, state, and handleSubmit exactly the same)
+
   return (
     <section className={styles.wrapper}>
-      {/* Upper Layout: Split Brand Showcase Grid */}
       <div className={styles.splitGrid}>
         
-        {/* Left Panel: Solid Dark Premium Contrast Column */}
+        {/* Left Panel */}
         <div className={styles.leftPanel}>
           <div className={`${styles.leftContent} reveal`}>
             <p className={styles.partnerLabel}>PARTNER WITH CHI BOTANICAL</p>
@@ -74,6 +75,13 @@ export default function StudioPartnership() {
         <div className={styles.rightPanel} id="partnership-form">
           <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
             
+            {/* 💡 HIDDEN FIELD FOR ADMIN TEMPLATE SUBJECT {{title}} */}
+            <input 
+              type="hidden" 
+              name="title" 
+              value="New Partnership Inquiry" 
+            />
+
             {/* Row 1: Split Name & Brand fields */}
             <div className={`${styles.formRow} reveal`} style={{ "--reveal-delay": "0.05s" } as React.CSSProperties}>
               <div className={styles.fieldGroup}>
@@ -81,7 +89,7 @@ export default function StudioPartnership() {
                 <input
                   type="text"
                   id="user_name"
-                  name="user_name"
+                  name="user_name" 
                   placeholder="Your name"
                   className={styles.input}
                   required
@@ -92,7 +100,7 @@ export default function StudioPartnership() {
                 <input
                   type="text"
                   id="brand_name"
-                  name="brand_name"
+                  name="brand_name" 
                   placeholder="Brand or company"
                   className={styles.input}
                   required
@@ -189,7 +197,7 @@ export default function StudioPartnership() {
 
       </div>
 
-      {/* Lower Layout: Minimalist Editorial Footer Banner */}
+      {/* Lower Layout */}
       <div className={styles.footerAccent}>
         <div className={`${styles.accentContent} reveal`}>
           <p className={styles.accentText}>

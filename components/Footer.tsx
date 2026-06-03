@@ -12,12 +12,12 @@ const allLinks = [
 
 const helpLinks = [
   { label: "FAQ", href: "/FAQ" },
-  { label: "TERMS & CONDITIONS", href: "/terms" }, // Change href to match your terms page route
+  { label: "TERMS & CONDITIONS", href: "/terms" },
 ];
 
 const journalLinks = [
-  { label: "community directory", href: "/journal/part-one" },
-  { label: "skin library", href: "/journal/part-two" },
+  { label: "Community Directory", href: "/journal/part-one" },
+  { label: "Skin Library", href: "/journal/part-two" },
 ];
 
 export default function Footer() {
@@ -83,6 +83,7 @@ export default function Footer() {
               </a>
             ))}
 
+            {/* The Wrapper handles all Mouse Triggers seamlessly */}
             <div
               ref={journalRef}
               className={styles.journalWrap}

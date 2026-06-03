@@ -1,0 +1,68 @@
+/* ================================================================
+   LAPTOP & DESKTOP FIRST (Your exact original styling)
+   ================================================================ */
+.introSection {
+  background: #f5f2ee;
+  padding: 6rem 4rem 3rem;
+  font-family: var(--font-mono), 'Courier New', monospace;
+  color: #1a1a18;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.label {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+  letter-spacing: 0.25em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bodyText {
+  font-size: 1.7rem;
+  line-height: 1.9;
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  text-indent: 8rem; /* Keeps your exact deep laptop indentation */
+  margin: 0 0 2rem;
+  letter-spacing: 0.03em;
+}
+
+/* ================================================================
+   TABLET BREAKPOINT (iPads and Medium Screens)
+   ================================================================ */
+@media (max-width: 1024px) {
+  .introSection {
+    padding: 5rem 3rem 3rem; /* Slightly pulls in padding for tablets */
+  }
+
+  .bodyText {
+    font-size: 1.4rem; /* Restructures text size so it doesn't clip */
+    line-height: 1.8;
+    text-indent: 4rem; /* Scales down the indent cleanly for tablet widths */
+  }
+}
+
+/* ================================================================
+   MOBILE PHONE BREAKPOINT (All iPhones, Samsungs, etc.)
+   ================================================================ */
+@media (max-width: 767px) {
+  .introSection {
+    padding: 4rem 1.5rem 2.5rem; /* Safe screen edge padding for small phones */
+  }
+
+  .label {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.2em;
+  }
+
+  .bodyText {
+    font-size: 1.15rem; /* Highly readable mobile font scaling */
+    line-height: 1.7;
+    text-indent: 1.5rem; /* Elegant, safe indentation built for phone screens */
+    letter-spacing: 0.02em;
+  }
+}

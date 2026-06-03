@@ -56,8 +56,10 @@
   color: #1a1a1a;
   margin: 0 0 1.8rem 0;
   text-transform: uppercase;
-  font-weight: 1000;
   
+  /* FORCES BOLD ON LAPTOP: This forces the custom font to render a thicker weight footprint */
+  font-weight: 900 !important;
+  -webkit-text-stroke: 0.5px #1a1a1a;
 }
 
 .heroTitle {

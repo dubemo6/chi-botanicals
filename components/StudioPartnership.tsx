@@ -23,17 +23,31 @@ export default function StudioPartnership() {
       const ADMIN_TEMPLATE_ID = "template_4uk8jaw";
       const GUEST_TEMPLATE_ID = "template_kq7kzaq";
 
-      await emailjs.sendForm(
+      // Gather form element data into a clean key-value object
+      const formData = new FormData(formRef.current);
+      const templateParams = {
+        title: formData.get("title"),
+        user_name: formData.get("user_name"),
+        brand_name: formData.get("brand_name"),
+        user_email: formData.get("user_email"),
+        enquiry_type: formData.get("enquiry_type"),
+        project_details: formData.get("project_details"),
+        timeline: formData.get("timeline"),
+      };
+
+      // 1. Dispatch Alert directly to Admin Studio Inbox
+      await emailjs.send(
         SERVICE_ID,
         ADMIN_TEMPLATE_ID,
-        formRef.current,
+        templateParams,
         PUBLIC_KEY
       );
 
-      await emailjs.sendForm(
+      // 2. Dispatch Auto-Reply Receipt back to the Guest User
+      await emailjs.send(
         SERVICE_ID,
         GUEST_TEMPLATE_ID,
-        formRef.current,
+        templateParams,
         PUBLIC_KEY
       );
 
@@ -44,8 +58,6 @@ export default function StudioPartnership() {
       setStatus("error");
     }
   };
-
-  // ... (keep the top of your component, state, and handleSubmit exactly the same)
 
   return (
     <section className={styles.wrapper}>
@@ -75,7 +87,7 @@ export default function StudioPartnership() {
         <div className={styles.rightPanel} id="partnership-form">
           <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
             
-            {/* 💡 HIDDEN FIELD FOR ADMIN TEMPLATE SUBJECT {{title}} */}
+            {/* HIDDEN FIELD FOR ADMIN TEMPLATE SUBJECT {{title}} */}
             <input 
               type="hidden" 
               name="title" 

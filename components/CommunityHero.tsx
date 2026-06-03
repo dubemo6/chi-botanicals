@@ -6,7 +6,6 @@ export default function CommunityHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroBgWrap}>
-        {/* Use your rich closeup portrait image path here */}
         <img 
           src="/images/faces10.webp" 
           alt="Chi Botanical skin profile portrait" 
@@ -14,9 +13,11 @@ export default function CommunityHero() {
         />
       </div>
 
-      {/* Only the typography elements layer inside the reveal transition */}
       <div className={`${styles.heroContent} reveal`}>
-        <p className={styles.heroLabel}>COMMUNITY</p>
+        {/* Wrapped with strong to force browser weight targeting */}
+        <h1 className={styles.heroLabel}>
+          COMMUNITY
+        </h1>
         <h1 className={styles.heroTitle}>
           Beauty, ritual,<br />
           education and<br />

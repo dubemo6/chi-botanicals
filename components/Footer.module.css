@@ -85,10 +85,15 @@
 @media (min-width: 1024px) {
   .dropdown {
     bottom: auto;
-    top: 0;
-    left: calc(100% + 1rem);
+    top: -4px;        /* Align smoothly with the trigger text top */
+    left: 100%;       /* Sets edge right against the trigger component edge */
     margin-bottom: 0;
     box-shadow: 4px 4px 16px rgba(0,0,0,0.06);
+    
+    /* Crucial Change: This transparent border bridges the 1rem visual layout gap 
+       so your pointer never leaves the hot hover boundary zone */
+    border-left: 1rem solid transparent; 
+    background-clip: padding-box; /* Keeps the background color inside the actual container border */
   }
 }
 

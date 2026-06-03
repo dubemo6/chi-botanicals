@@ -41,7 +41,7 @@ export default function CollaborateSection() {
           ))}
         </div>
 
-        <a href="mailto:info@chibotanical.com" className={`${styles.enquireLink} reveal reveal-delay-2`}>
+        <a href="/CommunityPage#partnership-form" className={`${styles.enquireLink} reveal reveal-delay-2`}>
           ENQUIRE <span className={styles.arrow}>→</span>
         </a>
       </div>

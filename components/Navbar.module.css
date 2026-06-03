@@ -52,7 +52,7 @@
   color: #fff;
   text-decoration: none;
   opacity: 0.95;
-  transition: opacity 0.2s ease;
+  transition: all 0.25s ease;
   white-space: nowrap;
 }
 .link:hover {
@@ -228,4 +228,41 @@
   .overlay {
     display: none;
   }
+}
+
+/* ══════════════════════════════════════
+   FINAL UPDATE: PERMANENT PILL THAT SWAPS COLORS ON HOVER
+   ══════════════════════════════════════ */
+.bookNowBtn {
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
+  /* Normal State for Default Navbar: White Pill, Black Text */
+  background-color: #ffffff;
+  color: #1a1a18 !important;
+  opacity: 1 !important;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease !important;
+  border: 1px solid #ffffff;
+}
+
+/* Default Navbar Hover State: Swaps to Black Pill, White Text */
+.bookNowBtn:hover {
+  text-decoration: none !important;
+  background-color: #1a1a18;
+  color: #ffffff !important;
+  border-color: #1a1a18;
+}
+
+/* Normal State for Dark Navbar: Black Pill, Cream Text */
+.bookNowBtnDark {
+  background-color: #1a1a18;
+  color: #f5f2ee !important;
+  border-color: #1a1a18;
+}
+
+/* Dark Navbar Hover State: Swaps to Cream/White Pill, Black Text */
+.bookNowBtnDark:hover {
+  text-decoration: none !important;
+  background-color: #f5f2ee;
+  color: #1a1a18 !important;
+  border-color: #1a1a18; /* Keeps a clean subtle border edge anchor */
 }

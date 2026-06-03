@@ -49,16 +49,27 @@ export default function Navbar({ dark = false }: NavbarProps) {
         </a>
 
         <div className={styles.group}>
-          {rightLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={`${styles.link} ${dark ? styles.linkDark : ""}`}
-              {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
-            >
-              {link.label}
-            </a>
-          ))}
+          {rightLinks.map((link) => {
+            // Determine if this specific item is the booking action link
+            const isBookNow = link.label === "BOOK NOW";
+            const customClasses = `
+              ${styles.link} 
+              ${dark ? styles.linkDark : ""} 
+              ${isBookNow ? styles.bookNowBtn : ""} 
+              ${isBookNow && dark ? styles.bookNowBtnDark : ""}
+            `.trim();
+
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                className={customClasses}
+                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
       </nav>
 

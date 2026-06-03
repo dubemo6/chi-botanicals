@@ -82,7 +82,7 @@ export default function TreatmentsPreview({ showConsultation = false }: Treatmen
       </div>
 
       {!showConsultation && (
-        <a href="/treatments" className={`${styles.viewMore} reveal`}>
+        <a href="/SKIN_RITUALS" className={`${styles.viewMore} reveal`}>
           VIEW MORE
         </a>
       )}

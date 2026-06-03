@@ -1,5 +1,5 @@
 /* ================================================================
-   LAPTOP & DESKTOP FIRST (Your exact original styling)
+   LAPTOP & DESKTOP FIRST (Intro Section Styling)
    ================================================================ */
 .introSection {
   background: #f5f2ee;
@@ -25,32 +25,162 @@
   width: 100%;
   max-width: 100%;
   text-align: left;
-  text-indent: 8rem; /* Keeps your exact deep laptop indentation */
+  text-indent: 8rem;
   margin: 0 0 2rem;
   letter-spacing: 0.03em;
 }
 
 /* ================================================================
-   TABLET BREAKPOINT (iPads and Medium Screens)
+   PRE-APPOINTMENT GUIDELINES SECTION (CORRECTED BACKGROUND COLOR)
+   ================================================================ */
+.prepSection {
+  background-color: #f5f2ee; /* Clean sand background as requested */
+  color: #1a1a18;            /* Contrast dark text */
+  font-family: var(--font-mono), 'Courier New', monospace;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.prepGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+.prepLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.prepHeader {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+  color: #1a1a18;
+}
+
+.prepSubheader {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #555552;
+  margin: 0 0 2rem 0;
+}
+
+.prepList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.prepItem {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+  color: #1a1a18;
+}
+
+.prepItem::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #1a1a18;
+}
+
+.prepFooterText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #3a3a38;
+  margin: 0;
+  border-top: 1px solid rgba(26, 26, 24, 0.15);
+  padding-top: 1.5rem;
+}
+
+/* Right Column Side: Micro-contrast tile backdrop */
+.prepRight {
+  background-color: #eae6df; /* Soft accent tone to balance the f5f2ee floor */
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(26, 26, 24, 0.06);
+}
+
+.ctaTitle {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  color: #1a1a18;
+}
+
+.ctaBody {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #3a3a38;
+  margin: 0 0 2rem 0;
+}
+
+.ctaBtn {
+  display: inline-block;
+  background-color: #1a1a18;
+  color: #f5f2ee;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.ctaBtn:hover {
+  background-color: #3a3a38;
+}
+
+/* ================================================================
+   TABLET BREAKPOINT ADAPTATION (Max-width 1024px)
    ================================================================ */
 @media (max-width: 1024px) {
   .introSection {
-    padding: 5rem 3rem 3rem; /* Slightly pulls in padding for tablets */
+    padding: 5rem 3rem 3rem;
   }
 
   .bodyText {
-    font-size: 1.4rem; /* Restructures text size so it doesn't clip */
+    font-size: 1.4rem;
     line-height: 1.8;
-    text-indent: 4rem; /* Scales down the indent cleanly for tablet widths */
+    text-indent: 4rem;
   }
 }
 
 /* ================================================================
-   MOBILE PHONE BREAKPOINT (All iPhones, Samsungs, etc.)
+   TABLET & DESKTOP ROW FLOW FOR PREP GRID (Min-width 768px)
+   ================================================================ */
+@media (min-width: 768px) {
+  .prepGrid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+  }
+  
+  .prepRight {
+    padding: 3rem;
+  }
+}
+
+/* ================================================================
+   MOBILE PHONE BREAKPOINT ADAPTATION (All Handheld Devices)
    ================================================================ */
 @media (max-width: 767px) {
   .introSection {
-    padding: 4rem 1.5rem 2.5rem; /* Safe screen edge padding for small phones */
+    padding: 4rem 1.5rem 2.5rem;
   }
 
   .label {
@@ -60,9 +190,9 @@
   }
 
   .bodyText {
-    font-size: 1.15rem; /* Highly readable mobile font scaling */
+    font-size: 1.15rem;
     line-height: 1.7;
-    text-indent: 1.5rem; /* Elegant, safe indentation built for phone screens */
+    text-indent: 1.5rem;
     letter-spacing: 0.02em;
   }
 }

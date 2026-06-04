@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "About — Chi Botanical | Skincare Studio Mitcham, London",
   description:
     "Learn about Chi Botanical — a modern skincare studio in Mitcham, South London. Meet founder Amarachi and discover our approach to skin health, rooted in nature and guided by intention.",
-  alternates: {
-    canonical: "/concept",
+   alternates: {
+    canonical: "https://www.chibotanical.com",
   },
   openGraph: {
     title: "About Chi Botanical — Skincare Studio in South London",

@@ -21,8 +21,9 @@ export const metadata: Metadata = {
     "facial cupping London",
     "book facial London",
   ],
-  alternates: {
-    canonical: "/treatments",
+
+   alternates: {
+    canonical: "https://www.chibotanical.com",
   },
   openGraph: {
     title: "Facial & Skin Treatments — Chi Botanical London",

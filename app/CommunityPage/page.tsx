@@ -12,7 +12,9 @@ export const metadata: Metadata = {
   title: "Community — Chi Botanical | Skincare Studio London",
   description:
     "Chi Botanical is more than a skincare studio — it is a space for beauty, ritual, education and restoration. Join the community.",
-  alternates: { canonical: "/COMMUNITY" },
+  alternates: {
+    canonical: "https://www.chibotanical.com",
+  },
 };
 
 export default function CommunityPage() {

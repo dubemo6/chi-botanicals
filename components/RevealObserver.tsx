@@ -9,6 +9,7 @@ export default function RevealObserver() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("revealed");
+            // Stop watching this specific item immediately to save CPU memory cycles
             observer.unobserve(entry.target);
           }
         });
@@ -16,20 +17,12 @@ export default function RevealObserver() {
       { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
 
-    const observe = () => {
-      document.querySelectorAll(".reveal:not(.revealed)").forEach((el) => {
-        observer.observe(el);
-      });
-    };
-
-    observe();
-
-    const mutation = new MutationObserver(observe);
-    mutation.observe(document.body, { childList: true, subtree: true });
+    // Grab elements once on initial mount instead of querying inside a constant live mutation loop
+    const elements = document.querySelectorAll(".reveal");
+    elements.forEach((el) => observer.observe(el));
 
     return () => {
       observer.disconnect();
-      mutation.disconnect();
     };
   }, []);
 

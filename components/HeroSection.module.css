@@ -16,17 +16,27 @@
   background: #1a1a18;
 }
 
-.panelImg {
+.imageWrapper {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+}
+
+.panelImg {
   object-fit: cover;
-  transition: opacity 0.4s ease;
 }
 
 .visible {
   opacity: 1;
+  z-index: 3;
+}
+
+.preloadNext {
+  opacity: 0;
   z-index: 2;
 }
 
@@ -106,18 +116,15 @@
    TABLET PORTRAIT (481px–768px)
    ══════════════════════════════════════════════ */
 @media (max-width: 768px) and (min-width: 481px) {
-  /* Hide left panel */
   .leftPanel {
     display: none;
   }
 
-  /* Right panel full width */
   .rightPanel {
     flex: none;
     width: 100%;
   }
 
-  /* Hide desktop tagline, show mobile tagline */
   .tagline {
     display: none;
   }
@@ -140,18 +147,15 @@
    MOBILE (≤ 480px)
    ══════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  /* Hide left panel */
   .leftPanel {
     display: none;
   }
 
-  /* Right panel full width */
   .rightPanel {
     flex: none;
     width: 100%;
   }
 
-  /* Hide desktop tagline, show mobile tagline */
   .tagline {
     display: none;
   }

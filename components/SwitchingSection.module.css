@@ -3,15 +3,20 @@
   width: 100%;
   height: 80vh;
   overflow: hidden;
+  background-color: #f5f2ee; /* Matches your core studio layout color during initial switch-in */
 }
 
-.bgImg {
+/* Bounding container required for Next.js dynamic layout engines */
+.imageWrapper {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   transition: opacity 0.4s ease;
+}
+
+.bgImg {
+  object-fit: cover;
 }
 
 .visible {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import styles from "./WelcomeSection.module.css";
 
 export default function WelcomeSection() {
@@ -33,7 +34,13 @@ export default function WelcomeSection() {
         A space to soften, reconnect, and restore through personalised rituals that honour both skin and self
       </p>
       <div ref={logoRef} className={`${styles.logoWrap} reveal reveal-delay-2`}>
-        <img src="/images/image.webp" alt="Brand logo" className={styles.logoPlaceholder} />
+        <Image 
+          src="/images/image.webp" 
+          alt="Brand logo" 
+          width={90} 
+          height={90} 
+          className={styles.logoPlaceholder}
+        />
       </div>
     </section>
   );

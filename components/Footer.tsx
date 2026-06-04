@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+// 1. IMPORT THE NEXT.JS IMAGE LAYER
+import Image from "next/image"; 
 import styles from "./Footer.module.css";
 
 const allLinks = [
@@ -83,7 +85,6 @@ export default function Footer() {
               </a>
             ))}
 
-            {/* The Wrapper handles all Mouse Triggers seamlessly */}
             <div
               ref={journalRef}
               className={styles.journalWrap}
@@ -105,7 +106,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 3: The New Help Column */}
+          {/* Column 3: Help Column */}
           <div className={styles.helpCol}>
             <p className={`${styles.colLabel} reveal`}>Help</p>
             {helpLinks.map((link, i) => (
@@ -135,9 +136,15 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Column 5: Brand Graphic Node */}
+          {/* Column 5: Brand Graphic Node — UPDATED FOR AUTOMATIC OPTIMIZATION */}
           <div className={`${styles.logoCol} reveal reveal-delay-2`}>
-            <img src="/images/life.webp" alt="Chi Botanical logo" className={styles.logo} />
+            <Image 
+              src="/images/life.webp" 
+              alt="Chi Botanical logo" 
+              width={64} 
+              height={64} 
+              className={styles.logo}
+            />
           </div>
 
         </div>

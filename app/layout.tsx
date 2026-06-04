@@ -9,6 +9,9 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "Chi Botanical | Slow Beauty & Skin Health",
   description: "Chi Botanical is a skin studio rooted in slow beauty, intentional care and skin health.",
+  alternates: {
+    canonical: "https://www.chibotanical.com",
+  },
 };
 
 // 2. Font configuration

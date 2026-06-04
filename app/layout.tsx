@@ -5,6 +5,13 @@ import ChatWidget from "@/components/ChatWidget";
 import RevealObserver from "@/components/RevealObserver";
 import { Analytics } from "@vercel/analytics/next";
 
+// 1. SEO Metadata definition
+export const metadata: Metadata = {
+  title: "Chi Botanical | Slow Beauty & Skin Health",
+  description: "Chi Botanical is a skin studio rooted in slow beauty, intentional care and skin health.",
+};
+
+// 2. Font configuration
 const imFellEnglish = IM_Fell_English({
   weight: "400", style: ["normal", "italic"], subsets: ["latin"],
   variable: "--font-fell", display: "swap", adjustFontFallback: false,
@@ -18,6 +25,7 @@ const xanhMono = Xanh_Mono({
   variable: "--font-xanh", display: "swap", adjustFontFallback: false,
 });
 
+// 3. Structured Data for Search Engines
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -42,7 +50,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <script 
+          type="application/ld+json" 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} 
+        />
       </head>
       <body>
         <main>{children}</main>

@@ -56,9 +56,9 @@ export default function SwitchingSection() {
           >
             <Image
               src={src}
-              alt={i === 0 ? "Switching background" : ""}
+              alt=""
+              aria-hidden="true"
               fill
-              aria-hidden={!isActive}
               // ONLY prioritize the very first image to load immediately above the fold
               priority={i === 0}
               // Tell the browser to lazy load the rest safely without burning your initial performance score

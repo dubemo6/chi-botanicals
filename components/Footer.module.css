@@ -12,6 +12,16 @@
   box-sizing: border-box;
 }
 
+.linksCol ul, .helpCol ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksCol ul li, 
+.helpCol ul li {
+  margin-bottom: 0.7rem; /* Adjust this value (e.g., 0.3rem to 0.8rem) for more or less space */
+}
 /* ─── Typography & Base Links ──────────────────────────────────── */
 .brand {
   font-family: var(--font-mono);
@@ -250,6 +260,7 @@
     grid-row: 1;
     justify-content: flex-end;
   }
+  
 
   .logo {
     width: 64px;

@@ -59,8 +59,6 @@ function Panel({
       {images.map((src, i) => {
         const isActive = i === activeIndex;
         const isNext = i === nextIndex;
-        
-        // Critical Fix: Explicitly flag index 0 as the high-priority LCP frame
         const isLCP = i === 0;
 
         return (
@@ -72,12 +70,10 @@ function Panel({
           >
             <Image
               src={src}
-              alt={i === 0 ? alt : ""}
+              alt=""
+              aria-hidden="true"
               fill
-              aria-hidden={!isActive}
-              // Forces Next.js to omit 'loading=lazy' and pre-render into the initial HTML document payload
               priority={isLCP} 
-              // Signals the browser layout engine to push this request to the front of the network queue
               {...(isLCP ? { fetchPriority: "high" } : { loading: isNext ? "eager" : "lazy" })}
               sizes={sizes}
               className={styles.panelImg}
@@ -99,7 +95,6 @@ export default function HeroSection() {
       <NewsletterModal />
 
       <section className={styles.hero} id="home">
-        {/* LEFT panel — Contains fruit.webp (Your exact LCP target element) */}
         <Panel
           images={LEFT_IMAGES}
           alt="Botanical product"
@@ -113,7 +108,6 @@ export default function HeroSection() {
           </h1>
         </Panel>
 
-        {/* RIGHT panel — Contains face.webp (Your mobile viewport LCP target element) */}
         <Panel
           images={RIGHT_IMAGES}
           alt="Skincare model"

@@ -1,13 +1,15 @@
+import dynamic from 'next/dynamic';
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import WelcomeSection from "@/components/WelcomeSection";
-import TreatmentsPreview from "@/components/TreatmentsPreview";
-import SwitchingSection from "@/components/SwitchingSection";
-import MoreInfoSection from "@/components/MoreInfoSection";
-import TestimonialSection from "@/components/TestimonialSection";
 import Footer from "@/components/Footer";
-import PromoSection from "@/components/CollaborateSection";
-import CollaborateSection from "@/components/CollaborateSection";
+
+// Dynamically import heavy sections
+const WelcomeSection = dynamic(() => import("@/components/WelcomeSection"));
+const TreatmentsPreview = dynamic(() => import("@/components/TreatmentsPreview"));
+const SwitchingSection = dynamic(() => import("@/components/SwitchingSection"));
+const MoreInfoSection = dynamic(() => import("@/components/MoreInfoSection"));
+const TestimonialSection = dynamic(() => import("@/components/TestimonialSection"));
+const CollaborateSection = dynamic(() => import("@/components/CollaborateSection"));
 
 export default function Home() {
   return (
@@ -19,9 +21,8 @@ export default function Home() {
         <TreatmentsPreview />
         <SwitchingSection />
         <MoreInfoSection />
-      <CollaborateSection/>
+        <CollaborateSection />
         <TestimonialSection />
-
       </main>
       <Footer />
     </>

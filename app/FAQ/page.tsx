@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Find answers to frequently asked questions about Chi Botanical skincare studio in Mitcham, South London. Learn about our treatments, booking details, and cancellation policies.",
   alternates: {
-    canonical: "/FAQ",
+    canonical: "https://www.chibotanical.com/FAQ",
   },
   openGraph: {
     title: "Frequently Asked Questions — Chi Botanical",

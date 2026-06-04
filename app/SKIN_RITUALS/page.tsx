@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
 
    alternates: {
-    canonical: "https://www.chibotanical.com",
+    canonical: "https://www.chibotanical.com/SKIN_RITUALS",
   },
   openGraph: {
     title: "Facial & Skin Treatments — Chi Botanical London",

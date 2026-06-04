@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Chi Botanical is more than a skincare studio — it is a space for beauty, ritual, education and restoration. Join the community.",
   alternates: {
-    canonical: "https://www.chibotanical.com",
+    canonical: "https://www.chibotanical.com/CommunityPage",
   },
 };
 

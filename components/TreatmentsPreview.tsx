@@ -20,17 +20,17 @@ const treatments = [
   {
     image: "/images/face3.webp",
     name: "Glow & Flow Facial",
-    duration: "60 min | £220",
+    duration: "90 min | £220",
     description:
-      "A results-driven treatment to refine texture, clear congestion, and restore glow Including 10min consultation, cleanse, extraction, dermaplaning (optional), Massage, hydrating mask and LED",
+      "A results-driven treatment to refine texture, clear congestion, and restore glow Including 10min consultation, cleanse, extraction, dermaplaning (optional), Massage, hydrating mask and LED.",
     size: "tall",
   },
   {
     image: "/images/fruit2.webp",
     name: "Collagen Renewal Ritual",
-    duration: "90 min | £220",
+    duration: "60 min | £220",
     description:
-      "An advanced treatment combining microneedling and LED to support collagen, refine texture, and improve overall skin quality. Includes cleanse, SkinPen® EVO Microneedling, and a calming mask with LED",
+      "An advanced treatment combining microneedling and LED to support collagen, refine texture, and improve overall skin quality. Includes cleanse, SkinPen® EVO Microneedling, and a calming mask with LED .",
     size: "medium",
   },
 ];

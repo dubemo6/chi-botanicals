@@ -65,9 +65,9 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.top}>
 
-          <a href="/" className={`${styles.brand} reveal`}>
+          <div className={`${styles.brand} reveal`}>
             CHI<br />BOTANICAL
-          </a>
+          </div>
 
           <nav className={styles.linksCol} aria-label="Main Navigation">
             <h2 className={`${styles.colLabel} reveal`}>Links</h2>

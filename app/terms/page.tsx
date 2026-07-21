@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div style={{ backgroundColor: "#f5f2ee", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+    <div style={{ backgroundColor: "#f7f7f7", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Navbar dark />
-      <main style={{ flex: "1 0 auto", backgroundColor: "#f5f2ee" }}>
+      <main style={{ flex: "1 0 auto", backgroundColor: "#f7f7f7" }}>
         <TermsSection />
       </main>
       <Footer />

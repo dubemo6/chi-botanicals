@@ -98,14 +98,14 @@ export default function StudioPartnership() {
                 </div>
               </div>
             </div>
-
+         
             <div className={`${styles.fullWidthRow} reveal`}>
               <div className={styles.fieldGroup}>
                 <label htmlFor="project_details" className={styles.fieldLabel}>PROJECT DETAILS</label>
                 <textarea id="project_details" name="project_details" className={styles.textarea} rows={2} required />
               </div>
             </div>
-
+  
             <div className={`${styles.fullWidthRow} reveal`}>
               <div className={styles.fieldGroup}>
                 <label htmlFor="timeline" className={styles.fieldLabel}>TIMELINE</label>

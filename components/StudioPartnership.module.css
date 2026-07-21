@@ -69,6 +69,10 @@
   width: 100%;
 }
 
+.projectDetailsRow {
+  margin-top: 0.6rem;
+}
+
 .fieldGroup {
   display: flex;
   flex-direction: column;

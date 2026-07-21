@@ -21,10 +21,10 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-    /* This inline style forces the background to be #f5f2ee from the absolute top to bottom */
-    <div style={{ backgroundColor: "#f5f2ee", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+    /* This inline style forces the background to be #f7f7f7 from the absolute top to bottom */
+    <div style={{ backgroundColor: "#f7f7f7", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Navbar dark/>
-      <main style={{ flex: "1 0 auto", backgroundColor: "#f5f2ee" }}>
+      <main style={{ flex: "1 0 auto", backgroundColor: "#f7f7f7" }}>
         <FaqSection />
       </main>
       <Footer />

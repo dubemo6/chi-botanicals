@@ -11,7 +11,7 @@ export default function JournalPartTwo() {
         padding: "8rem 4rem",
         fontFamily: "Courier New, monospace",
         minHeight: "100vh",
-        color: "#ffffff", /* Flipped main text color to white */
+        color: "#f7f7f7", /* Flipped main text color to white */
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
@@ -32,7 +32,7 @@ export default function JournalPartTwo() {
             letterSpacing: "0.2em", 
             marginBottom: "2rem",
             fontWeight: "700",
-            color: "#ffffff" /* Enforces structural heading white alignment */
+            color: "#f7f7f7" /* Enforces structural heading white alignment */
           }}>
             JOURNAL — PART TWO
           </h1>
@@ -40,7 +40,7 @@ export default function JournalPartTwo() {
             fontSize: "0.9rem", 
             lineHeight: "1.8",
             fontWeight: "600",
-            color: "#ffffff" /* Enforces structural paragraph white alignment */
+            color: "#f7f7f7" /* Enforces structural paragraph white alignment */
           }}>
             Coming soon.
           </p>

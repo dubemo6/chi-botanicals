@@ -19,7 +19,7 @@
   flex-direction: column;
   width: 100%;
   max-width: 920px;
-  background-color: #f2f0ea;
+  background-color: #F7F7F7;
   color: #1c1b18;
   box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
   border-radius: 0;
@@ -46,7 +46,7 @@
   top: 1rem;
   right: 1rem;
   z-index: 10;
-  background: rgba(242, 240, 234, 0.85); /* Ensures visibility over images */
+  background: rgba(247, 247, 247, 0.85); /* Ensures visibility over images */
   backdrop-filter: blur(2px);
   border: none;
   cursor: pointer;

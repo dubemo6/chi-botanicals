@@ -1,6 +1,6 @@
 /* ─── Footer Shell ─────────────────────────────────────────────── */
 .footer {
-  background: #f5f2ee;
+  background: #F7F7F7;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
 }
@@ -82,7 +82,7 @@
   position: absolute;
   bottom: 100%; /* Spits upwards on mobile to avoid screen bounds clipping */
   left: 0;
-  background: #f5f2ee;
+  background: #F7F7F7;
   border: 1px solid rgba(26, 26, 24, 0.12);
   padding: 0.4rem 0;
   z-index: 200;
@@ -146,7 +146,7 @@
   height: 40px;
   border-radius: 50%;
   background-color: #1a1a1a;
-  color: #f5f2ee;
+  color: #F7F7F7;
   border: none;
   display: flex;
   align-items: center;

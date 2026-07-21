@@ -1,102 +1,59 @@
-/* ================================================================
-   STRUCTURAL CONTAINER CANVAS BASICS
-   ================================================================ */
+/* StudioPartnership.module.css */
 .wrapper {
   width: 100%;
-  background-color: #f5f2ee;
-  display: flex;
-  flex-direction: column;
+  background-color: #F7F7F7;
 }
 
 .splitGrid {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* ================================================================
-   LEFT EDITORIAL PANEL (DARK SIDEBAR BACKGROUND)
-   ================================================================ */
 .leftPanel {
-  background-color: #1a1917; 
-  color: #f5f2ee;
-  padding: 4.5rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.leftContent {
-  max-width: 440px;
-  margin: 0 auto;
+  gap: 1.5rem;
 }
 
 .partnerLabel {
   font-family: var(--font-mono), monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
-  color: rgba(245, 242, 238, 0.7);
-  margin: 0 0 1.5rem 0;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: #1a1917;
+  max-width: 480px;
+  margin: 0;
 }
 
-.partnerTitle {
-    font-family: var(--font-mono), monospace;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 300;
-  line-height: 1.2;
-  color: #f5f2ee;
-  margin: 0 0 1.5rem 0;
+.photoWrap {
+  width: 320px;
+  max-width: 100%;
 }
 
-.titleLine {
-  border: none;
-  border-top: 1px solid rgba(245, 242, 238, 0.2);
-  margin: 0 0 2rem 0;
-  width: 40px;
+.photo {
+  width: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .partnerBody {
-    font-family: var(--font-mono), monospace;
+  font-family: var(--font-mono), monospace;
   font-size: 0.9rem;
   line-height: 1.7;
-  color: rgba(245, 242, 238, 0.85);
-  margin: 0 0 1.5rem 0;
+  color: #2b2a28;
+  max-width: 480px;
+  margin: 0;
 }
 
-.enquireAnchorBtn {
-  display: inline-block;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: #f5f2ee;
-  text-decoration: none;
-  padding: 0.8rem 2.2rem;
-  border: 1px solid rgba(245, 242, 238, 0.4);
-  margin-top: 1rem;
-  transition: all 0.2s ease;
-}
-
-.enquireAnchorBtn:hover {
-  background-color: #f5f2ee;
-  color: #1a1917;
-  border-color: #f5f2ee;
-}
-
-/* ================================================================
-   RIGHT EDITORIAL PANEL (FORM LAYOUT SYSTEM)
-   ================================================================ */
 .rightPanel {
-  padding: 4.5rem 2rem;
   display: flex;
-  align-items: center;
-  background-color: #f5f2ee; 
 }
 
 .form {
   width: 100%;
-  max-width: 780px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
@@ -120,78 +77,63 @@
 }
 
 .fieldLabel {
-   font-family: var(--font-mono), monospace;
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
   color: #1a1917;
 }
 
 .input, .textarea, .select {
   width: 100%;
-  padding: 0.95rem 1rem;
-   font-family: var(--font-mono), monospace;
+  padding: 0.6rem 0;
+  font-family: var(--font-mono), monospace;
   font-size: 0.9rem;
   color: #2b2a28;
   background-color: transparent;
-  border: 1px solid rgba(26, 25, 23, 0.15);
+  border: none;
+  border-bottom: 1px solid rgba(26, 25, 23, 0.5);
   box-sizing: border-box;
   outline: none;
-  transition: border-color 0.2s ease;
 }
 
 .input:focus, .textarea:focus, .select:focus {
   border-color: #1a1917;
 }
 
-.textarea {
-  resize: vertical;
-}
-
 .selectWrapper {
   position: relative;
-  width: 100%;
 }
 
 .select {
   appearance: none;
   cursor: pointer;
-  padding-right: 2.5rem;
+  padding-right: 2rem;
 }
 
 .selectWrapper::after {
   content: "↓";
-    font-family: var(--font-mono), monospace;
   font-size: 0.75rem;
   color: #1a1917;
   position: absolute;
-  right: 1.2rem;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0.2rem;
+  top: 0.6rem;
   pointer-events: none;
 }
 
 .actionRow {
   display: flex;
   justify-content: flex-end;
-  margin-top: 0.5rem;
 }
 
 .submitBtn {
-  width: 100%;
-  background-color: #1a1917;
-  color: #f5f2ee;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  background: none;
   border: none;
-  padding: 1.2rem 2.5rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  color: #1a1917;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.submitBtn:hover {
-  background-color: #383632;
 }
 
 .submitBtn:disabled {
@@ -204,7 +146,6 @@
   font-size: 0.85rem;
   color: #2e613c;
   margin: 0;
-  line-height: 1.5;
 }
 
 .errorMessage {
@@ -214,93 +155,21 @@
   margin: 0;
 }
 
-/* ================================================================
-   LOWER EDITORIAL ACCENT BANNER SLAT
-   ================================================================ */
-.footerAccent {
-  width: 100%;
-  padding: 6rem 1.5rem;
-  background-color: #f5f2ee;
-  text-align: center;
-}
-
-.accentContent {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.accentText {
-  font-family: var(--font-mono), monospace;
-  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
-  font-weight: 300;
-  color: #1a1917;
-  line-height: 1.4;
-  margin: 0 0 1.5rem 0;
-}
-
-.accentLine {
-  border: none;
-  border-top: 1px solid rgba(27 , 25, 23, 0.2);
-  width: 35px;
-  margin: 0 auto;
-}
-
-/* ================================================================
-   RESPONSIVE DESIGN VIEWPORT BREAKPOINTS
-   ================================================================ */
 @media (min-width: 1024px) {
   .splitGrid {
     flex-direction: row;
-    align-items: stretch;
-    min-height: 75vh;
   }
 
   .leftPanel {
-    width: 38%;
-    padding: 0 5%;
+    width: 42%;
   }
 
   .rightPanel {
-    width: 62%;
-    padding: 0 6%;
+    width: 58%;
+    align-items: center;
   }
 
   .formRow {
     flex-direction: row;
   }
-
-  .submitBtn {
-    width: auto;
-  }
-}
-
-/* ================================================================
-   ELEMENT-LEVEL SCROLL REVEAL TARGETS (STAGGERED TEXT & FIELDS)
-   ================================================================ */
-.leftContent:global(.reveal),
-.formRow:global(.reveal),
-.fullWidthRow:global(.reveal),
-.actionRow:global(.reveal),
-.accentContent:global(.reveal) {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.1s cubic-bezier(0.25, 1, 0.5, 1), 
-              transform 1.1s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: opacity, transform;
-}
-
-.leftContent:global(.reveal.revealed),
-.formRow:global(.reveal.revealed),
-.fullWidthRow:global(.reveal.revealed),
-.actionRow:global(.reveal.revealed),
-.accentContent:global(.reveal.revealed) {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Form line items custom staggered delay mappings */
-.formRow:global(.reveal.revealed),
-.fullWidthRow:global(.reveal.revealed),
-.actionRow:global(.reveal.revealed) {
-  transition-delay: var(--reveal-delay, 0s);
 }

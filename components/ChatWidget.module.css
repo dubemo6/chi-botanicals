@@ -20,7 +20,7 @@
   height: 52px;
   border-radius: 50%;
   background: #1a1a18;
-  color: #f5f2ee;
+  color: #F7F7F7;
   border: none;
   cursor: pointer;
   display: flex;
@@ -45,7 +45,7 @@
 .window {
   width: 340px;
   max-height: 500px;
-  background: #f5f2ee;
+  background: #F7F7F7;
   border: 1px solid rgba(26, 26, 24, 0.14);
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@
 /* ── Header ── */
 .header {
   background: #1a1a18;
-  color: #f5f2ee;
+  color: #F7F7F7;
   padding: 0.9rem 1.1rem;
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@
 .closeBtn {
   background: none;
   border: none;
-  color: #f5f2ee;
+  color: #F7F7F7;
   cursor: pointer;
   font-size: 0.9rem;
   padding: 0;
@@ -142,7 +142,7 @@
 
 .userMsg {
   background: #1a1a18;
-  color: #f5f2ee;
+  color: #F7F7F7;
   align-self: flex-end;
   border-radius: 8px 8px 0 8px;
 }
@@ -183,7 +183,7 @@
 .input {
   flex: 1;
   border: none;
-  background: #f5f2ee;
+  background:  #F7F7F7;
   padding: 0.85rem 1rem;
   font-family: "Courier New", monospace;
   font-size: 0.78rem;

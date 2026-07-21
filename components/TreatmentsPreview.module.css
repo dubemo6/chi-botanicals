@@ -1,5 +1,5 @@
 .section {
-  background: #f5f2ee;
+  background: #F7F7F7;
   padding: 5rem 4rem 6rem;
 }
 
@@ -124,7 +124,7 @@
 @media (max-width: 768px) {
   .section {
     padding: 3.5rem 0 5rem;
-    background: #f5f2ee;
+    background: #F7F7F7;
   }
 
   .eyebrow {

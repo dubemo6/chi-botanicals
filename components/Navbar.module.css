@@ -20,7 +20,7 @@
 /* Dark navbar — white bg, dark text (about + treatments pages) */
 .navbarDark {
   position: relative;
-  background: #f5f2ee;
+  background: #F7F7F7;
   /* CHANGE: Mirror the same top-shifting padding here */
   padding: 1.5rem 0 3rem 0; 
 }

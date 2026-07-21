@@ -3,7 +3,7 @@
   width: 100%;
   height: 80vh;
   overflow: hidden;
-  background-color: #f5f2ee; /* Matches your core studio layout color during initial switch-in */
+  background-color: #F7F7F7; /* Matches your core studio layout color during initial switch-in */
 }
 
 /* Bounding container required for Next.js dynamic layout engines */

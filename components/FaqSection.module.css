@@ -1,7 +1,7 @@
 .faqWrapper {
   width: 100%;
   /* Match the exact background color of your Footer/Navbar */
-  background-color: #f5f2ee; 
+  background-color: #F7F7F7; 
   margin: 0 auto;
   /* Reduced top padding so it sits closer to the Navbar */
   padding: 2rem 1.5rem 6rem; 
@@ -40,7 +40,7 @@
 
 .accordionItem {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #f5f2ee; /* Match the wrapper */
+  background-color: #F7F7F7; /* Match the wrapper */
 }
 
 .accordionHeader {

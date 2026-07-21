@@ -2,7 +2,7 @@
    JOIN THE WAITLIST SECTION LAYOUT
    ══════════════════════════════════════ */
 .waitlist {
-  background: #f5f2ee;
+  background: #f7f7f7;
   border-top: 1px solid rgba(26, 26, 24, 0.1);
   display: grid;
   /* Balanced to give the landscape configuration wide breathing room */

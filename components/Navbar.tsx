@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 
 const allLinks = [
-  { label: "CONCEPT", href: "/CONCEPT" },
+  { label: "ABOUT", href: "/ABOUT" },
   { label: "SKIN RITUALS", href: "/SKIN_RITUALS" },
   { label: "COMMUNITY", href: "/CommunityPage" },
   { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },

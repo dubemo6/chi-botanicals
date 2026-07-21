@@ -1,10 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CommunityHero from "@/components/CommunityHero";
+import WelcomeSection from "@/components/WelcomeSection";
 import FutureWorkshops from "@/components/FutureWorkshops";
-import ImageBanner from "@/components/ImageBanner";
 import JoinWaitlist from "@/components/JoinWaitlist";
-import styles from "@/components/CommunityPage.module.css";
 import StudioPartners from "@/components/StudioPartnership";
 import type { Metadata } from "next";
 
@@ -23,100 +21,225 @@ export default function CommunityPage() {
       <Navbar dark />
       <main>
 
-        {/* ── 1. MODULAR FULL BACKGROUND COVER HERO ── */}
-        <CommunityHero />
+        {/* ── 1. WELCOME ── */}
+        <WelcomeSection
+          eyebrow="BEAUTY, RITUAL, EDUCATION AND RESTORATION."
+          body={
+            <>
+              In a fast-paced world, we have lost the art of slowing down. Chi
+              Botanical was created as more than a skincare studio — but as a
+              space to reconnect through skin, ritual and intentional wellbeing.
+              A return to slower beauty, intentional care and meaningful
+              connection.
+            </>
+          }
+        />
 
-        {/* ── 2. WHY COMMUNITY MAIN BLOCK ── */}
-        <section className={styles.why} id="why">
-          <div className={`${styles.whyImageWrap} reveal`}>
-            <img src="/images/face2.webp" alt="Community" className={styles.whyImage} />
-          </div>
+        {/* ── 2. WHY COMMUNITY MATTERS ── */}
+     <section className="why-section">
+  <style>{`
+    .why-section {
+      background-color: #F7F7F7;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "image"
+        "text"
+        "pillars";
+      gap: 3rem;
+      padding: 2rem 1.5rem 4rem;
+    }
 
-          <div className={`${styles.whyContent} reveal`}>
-            <p className={styles.whyLabel}>WHY COMMUNITY MATTERS</p>
-            <h2 className={styles.whyTitle}>Why Skincare &amp; Community</h2>
+    .why-image-wrap {
+      grid-area: image;
+      width: 80%;
+      
+    }
 
-            <div className={styles.whyBody}>
-              <div className={styles.whyCol}>
-                <p>
-                  At Chi Botanical, skincare is approached as a ritual
-                  rather than a routine.
-                </p>
-                <p>
-                  A moment to soften.<br />
-                  A moment to reconnect.<br />
-                  A moment to return to yourself.
-                </p>
-              </div>
-              <div className={styles.whyCol}>
-                <p>
-                  Through working closely with clients,
-                  one thing became increasingly clear:
-                  modern life is leaving people feeling
-                  disconnected from both their bodies
-                  and wellbeing.
-                </p>
-                <p>
-                  Stress, tension and overstimulation
-                  do not only affect how we feel —
-                  they often reveal themselves
-                  through the skin.
-                </p>
-              </div>
-            </div>
+    .why-image {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+    }
 
-            <hr className={styles.whyRule} />
-            <p className={styles.whyClosing}>
-              Chi Botanical exists to create space for restoration.<br />
-              Where skin health, education and intentional wellbeing come together.
-            </p>
-          </div>
-        </section>
+    .why-text {
+      grid-area: text;
+      padding: 0 0.5rem;
+      font-family: var(--font-mono), monospace;
+      color: #2b2a28;
+    }
 
-        {/* ── 3. CORE DESIGN PILLARS GRID ── */}
-        <section className={styles.pillars}>
-          <div className={`${styles.pillar} reveal`}>
-            <div className={styles.pillarIcon}>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22V12" /><path d="M12 12C12 7 7 4 3 6" /><path d="M12 12C12 7 17 4 21 6" /><path d="M3 6c0 4 3 7 9 6" /><path d="M21 6c0 4-3 7-9 6" />
-              </svg>
-            </div>
-            <p className={styles.pillarName}>Ritual</p>
-            <p className={styles.pillarDesc}>Skincare as a moment of intentional care, not a chore.</p>
-          </div>
+    .why-label {
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      color: #1a1917;
+      margin: 0 0 3rem 0;
+    
 
-          <div className={styles.pillarDivider} />
+    }
 
-          <div className={`${styles.pillar} reveal`}>
-            <div className={styles.pillarIcon}>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="7" height="9" rx="1" /><rect x="14" y="3" width="7" height="5" rx="1" /><rect x="14" y="12" width="7" height="9" rx="1" /><rect x="3" y="16" width="7" height="5" rx="1" />
-              </svg>
-            </div>
-            <p className={styles.pillarName}>Education</p>
-            <p className={styles.pillarDesc}>Understanding your skin so you can make informed choices.</p>
-          </div>
+    .why-body p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      text-align: justify;
+      margin: 0 0 1.5rem 0;
+    }
 
-          <div className={styles.pillarDivider} />
+    .why-body p:first-child {
+      text-indent: 2.5rem;
+    }
 
-          <div className={`${styles.pillar} reveal`}>
-            <div className={styles.pillarIcon}>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="9" cy="7" r="3" /><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0-3-3.87" />
-              </svg>
-            </div>
-            <p className={styles.pillarName}>Community</p>
-            <p className={styles.pillarDesc}>A shared space to grow, restore and feel supported.</p>
-          </div>
-        </section>
+    .why-pillars {
+      grid-area: pillars;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+      padding: 0 1.5rem;
+    }
 
-        {/* ── 4. WORKSHOPS VIEW ── */}
+    .why-pillar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 320px;
+    }
+
+    .why-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #1a1917;
+      margin-bottom: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .why-pillar-name {
+      font-family: var(--font-mono), monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: #1a1917;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .why-pillar-desc {
+      font-family: var(--font-mono), monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #2b2a28;
+      margin: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .why-section {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "image text"
+          "pillars pillars";
+        gap: 0 4rem;
+        padding: 3rem 4rem 0;
+      }
+
+      .why-image-wrap {
+        height: 100%;
+        max-height: 480px;
+      }
+
+      .why-image {
+        height: 100%;
+        aspect-ratio: auto;
+      }
+
+      .why-text {
+        padding: 0 5% 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .why-label {
+        margin-bottom: 4.5rem;
+      }
+
+      .why-body p {
+        font-size: 1rem;
+        line-height: 1.85;
+      }
+
+      .why-pillars {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 6rem;
+        padding: 4rem 4rem 0 4rem;
+      }
+
+      .why-pillar {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 1rem;
+        max-width: 340px;
+      }
+
+      .why-dot {
+        margin-bottom: 0;
+        margin-top: 0.4rem;
+      }
+    }
+  `}</style>
+
+  <div className="why-image-wrap reveal">
+    <img src="/images/face2.webp" alt="Community" className="why-image" />
+  </div>
+
+  <div className="why-text reveal">
+    <p className="why-label">WHY COMMUNITY MATTERS</p>
+    <div className="why-body">
+      <p>
+        At Chi Botanical, skincare is approached as a ritual
+        rather than a routine. A moment to soften. A moment to
+        reconnect. A moment to return to yourself.
+      </p>
+      <p>
+        Through working closely with clients, one thing became
+        increasingly clear: modern life is leaving people feeling
+        disconnected from both their bodies and wellbeing.
+      </p>
+      <p>
+        Stress, tension and overstimulation do not only affect how
+        we feel — they often reveal themselves through the skin.
+        Chi Botanical exists to create space for restoration.
+        Where skin health, education and intentional wellbeing
+        come together.
+      </p>
+    </div>
+  </div>
+
+  <div className="why-pillars reveal">
+    {[
+      { name: "RITUAL", desc: "Skincare as a moment of intentional care, not a chore." },
+      { name: "EDUCATION", desc: "Understanding your skin so you can make informed choices." },
+      { name: "COMMUNITY", desc: "A shared space to grow, restore and feel supported." },
+    ].map((pillar) => (
+      <div key={pillar.name} className="why-pillar">
+        <span className="why-dot" />
+        <div>
+          <p className="why-pillar-name">{pillar.name}</p>
+          <p className="why-pillar-desc">{pillar.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+        {/* ── 3. WORKSHOPS ── */}
         <FutureWorkshops />
 
-        {/* ── 5. DEEP BANNER ── */}
-        <ImageBanner src="/images/faces7.webp" alt="Chi Botanical philosophy texture display" />
-
-        {/* ── 6. SYNCED DUAL TEMPLATE FOOTER WAITLIST ── */}
+     
+        {/* ── 5. WAITLIST + PARTNERSHIP ── */}
         <JoinWaitlist />
         <StudioPartners />
       </main>

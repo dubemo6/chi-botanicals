@@ -2,7 +2,7 @@
    LAPTOP & DESKTOP FIRST (Intro Section Styling)
    ================================================================ */
 .introSection {
-  background: #f5f2ee;
+  background: #F7F7F7;
   padding: 6rem 4rem 3rem;
   font-family: var(--font-mono), 'Courier New', monospace;
   color: #1a1a18;
@@ -34,7 +34,7 @@
    PRE-APPOINTMENT GUIDELINES SECTION (CORRECTED BACKGROUND COLOR)
    ================================================================ */
 .prepSection {
-  background-color: #f5f2ee; /* Clean sand background as requested */
+  background-color: #F7F7F7; /* Clean sand background as requested */
   color: #1a1a18;            /* Contrast dark text */
   font-family: var(--font-mono), 'Courier New', monospace;
   padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
@@ -132,7 +132,7 @@
 .ctaBtn {
   display: inline-block;
   background-color: #1a1a18;
-  color: #f5f2ee;
+  color: #F7F7F7;
   text-align: center;
   text-decoration: none;
   font-size: 0.8rem;

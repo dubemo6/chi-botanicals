@@ -1,76 +1,87 @@
+// FutureWorkshops.tsx
 "use client";
 
 import styles from "./FutureWorkshops.module.css";
 
-const workshops = [
+type WorkshopSize = "tall" | "medium" | "short";
+
+interface Workshop {
+  title: string;
+  time: string;
+  desc: string;
+  image: string;
+  size: WorkshopSize;
+}
+
+const workshops: Workshop[] = [
   {
-    id: 1,
-    image: "/images/any5.webp",
     title: "The Art of Facial Gua Sha",
-    description:
-      "A slow beauty ritual designed to release tension and encourage mindful self-care.",
+    time: "Date / Time TBC",
+    desc: "A slow beauty ritual designed to release tension and encourage mindful self-care.",
+    image: "/images/faces7.webp",
+    size: "medium",
   },
   {
-    id: 2,
-    image: "/images/any8.webp",
     title: "Skin Health & Ritual Practices",
-    description:
-      "Understanding the skin beyond trends through education and intentional rituals.",
+    time: "Date / Time TBC",
+    desc: "Understanding the skin beyond trends through education and intentional rituals.",
+    image: "/images/veg6.webp",
+    size: "short",
   },
   {
-    id: 3,
-    image: "/images/any3.webp",
     title: "Facial Tension Release for Modern Stress",
-    description:
-      "Techniques designed to soften built-up facial tension and support nervous system wellbeing.",
+    time: "Date / Time TBC",
+    desc: "Techniques designed to soften built-up facial tension and support nervous system wellbeing.",
+    image: "/images/face5.webp",
+    size: "medium",
   },
   {
-    id: 4,
-    image: "/images/any2.webp",
     title: "Beauty Through Slowness",
-    description:
-      "An exploration of slower beauty and intentional skincare rituals.",
+    time: "Date / Time TBC",
+    desc: "An exploration of slower beauty and intentional skincare rituals.",
+    image: "/images/fruit3.webp",
+    size: "short",
   },
 ];
 
+const SIZE_CLASS: Record<WorkshopSize, string> = {
+  tall: styles.imageTall,
+  medium: styles.imageMedium,
+  short: styles.imageShort,
+};
+
 export default function FutureWorkshops() {
   return (
-    <section className={styles.workshops}>
-      <div className={styles.header}>
-        <div className={`${styles.headerLeft} reveal`}>
-          <p className={styles.label}>UPCOMING WORKSHOPS</p>
-          <h2 className={styles.title}>Future Workshops</h2>
-        </div>
-        <p className={`${styles.intro} reveal`}>
-          A curated collection of bespoke workshops thoughtfully designed to bring
-          together beauty, education and restoration. Each experience invites you to
-          slow down, reconnect, and deepen your understanding of skin and self.
-        </p>
-      </div>
+    <section className={styles.section}>
+      <p className={`${styles.heading} reveal`}>UPCOMING WORKSHOPS</p>
 
       <div className={styles.grid}>
-        {workshops.map((w, index) => (
-          <div 
-            key={w.id} 
+        {workshops.map((w, i) => (
+          <div
+            key={w.title}
             className={`${styles.card} reveal`}
-            style={{ "--reveal-delay": `${index * 0.1}s` } as React.CSSProperties}
+            style={{ "--reveal-delay": `${i * 0.08}s` } as React.CSSProperties}
           >
-            <div className={styles.cardImageWrap}>
-              <img src={w.image} alt={w.title} className={styles.cardImage} />
+            <div className={`${styles.imageWrap} ${SIZE_CLASS[w.size]}`}>
+              <img
+                src={w.image}
+                alt={w.title}
+                className={styles.image}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                }}
+              />
             </div>
-            <div className={styles.cardBody}>
-              <h3 className={styles.cardTitle}>{w.title}</h3>
-              <p className={styles.cardDesc}>{w.description}</p>
-            </div>
+            <p className={styles.title}>{w.title}</p>
+            <p className={styles.time}>{w.time}</p>
+            <p className={styles.desc}>{w.desc}</p>
           </div>
         ))}
       </div>
 
-      <div className={`${styles.cta} reveal`}>
-        <a href="#" className={styles.ctaBtn}>
-          VIEW WORKSHOP UPDATES
-        </a>
-      </div>
+      <a href="#" className={`${styles.viewLink} reveal`}>
+        VIEW WORKSHOP UPDATES
+      </a>
     </section>
   );
 }

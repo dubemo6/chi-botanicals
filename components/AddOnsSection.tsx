@@ -28,7 +28,7 @@ export default function AddOnsSection() {
         </div>
 
         <div className={styles.actions}>
-          {addOns.map((_, i) => (
+          {addOns.slice(0, 4).map((_, i) => (
             <div key={i} className={`${styles.actionItem} reveal reveal-delay-${i + 1}`}>
               <a
                 href={BOOK_URL}

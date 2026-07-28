@@ -126,7 +126,7 @@
 /* ─── Logo Alignment Block ──────────────────────────────────────── */
 .logoCol {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
 }
 
@@ -134,6 +134,7 @@
   width: 44px; /* Perfectly sized icon for mobile viewports */
   height: auto; /* Scaled proportionally via Next.js container configuration */
   object-fit: contain;
+  display: block;
 }
 
 /* ─── Floating Scroll Engine ─── */
@@ -259,11 +260,13 @@
     grid-column: 5; 
     grid-row: 1;
     justify-content: flex-end;
+    align-self: start;
   }
   
 
   .logo {
     width: 64px;
     height: auto;
+    display: block;
   }
 }

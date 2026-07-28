@@ -10,6 +10,7 @@
   color: #1a1a18;
   text-align: center;
   margin: 0 0 3rem;
+  font-weight: 400;
 }
 
 /* Only shown on treatments page */
@@ -80,7 +81,7 @@
   color: #1a1a18;
   margin: 0;
   line-height: 1.4;
-  font-weight: bold;
+  font-weight: light ;
 }
 
 .duration {
@@ -89,7 +90,7 @@
   font-style: italic;
   color: #1a1a18;
   margin: 0;
-  font-weight: bold;
+  font-weight:light ;
 }
 
 .desc {
@@ -98,7 +99,7 @@
   line-height: 1.75;
   color: #5a5248;
   margin: 0;
-  font-weight: bold;
+  font-weight: light ;
 }
 
 .viewMore {

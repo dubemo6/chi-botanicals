@@ -30,21 +30,34 @@
   letter-spacing: 0.03em;
 }
 
+.logoWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.logoPlaceholder {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  padding-top: 1rem;
+}
+
 /* ================================================================
-   PRE-APPOINTMENT GUIDELINES SECTION (CORRECTED BACKGROUND COLOR)
+   PRE-APPOINTMENT GUIDELINES SECTION
    ================================================================ */
 .prepSection {
-  background-color: #F7F7F7; /* Clean sand background as requested */
-  color: #1a1a18;            /* Contrast dark text */
+  background-color: #F7F7F7;
+  color: #1a1a18;
   font-family: var(--font-mono), 'Courier New', monospace;
-  padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  padding: clamp(4rem, 8vw, 6rem) 4rem; /* matches introSection/AddOns horizontal padding */
   box-sizing: border-box;
   width: 100%;
 }
 
 .prepGrid {
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%; /* was: max-width: 1100px; margin: 0 auto; — this was centering it narrower than the sections above */
   display: grid;
   grid-template-columns: 1fr;
   gap: 3.5rem;
@@ -104,14 +117,13 @@
   padding-top: 1.5rem;
 }
 
-/* Right Column Side: Micro-contrast tile backdrop */
+/* Right Column: CTA block — border removed, TODO: swap bg to match "join the waitlist" color */
 .prepRight {
-  background-color: #eae6df; /* Soft accent tone to balance the f5f2ee floor */
+  background-color: #eae6df; /* placeholder — replace with your "join the waitlist" section color */
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid rgba(26, 26, 24, 0.06);
 }
 
 .ctaTitle {
@@ -169,14 +181,14 @@
     grid-template-columns: 1.2fr 0.8fr;
     gap: 4rem;
   }
-  
+
   .prepRight {
     padding: 3rem;
   }
 }
 
 /* ================================================================
-   MOBILE PHONE BREAKPOINT ADAPTATION (All Handheld Devices)
+   MOBILE PHONE BREAKPOINT ADAPTATION
    ================================================================ */
 @media (max-width: 767px) {
   .introSection {
@@ -194,5 +206,15 @@
     line-height: 1.7;
     text-indent: 1.5rem;
     letter-spacing: 0.02em;
+  }
+
+  .logoPlaceholder {
+    width: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .logoPlaceholder {
+    width: 90px;
   }
 }

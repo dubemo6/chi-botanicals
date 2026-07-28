@@ -23,7 +23,7 @@
   justify-self: start;
   text-indent: 8rem;
   padding-bottom: 2rem;
-  font-weight: bold;
+ 
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -129,7 +129,7 @@
     align-self: center;
     justify-self: start;
     font-size: 1.1rem;
-    font-weight: normal; 
+    
     text-indent: 0;      
     letter-spacing: 0.15em;
     

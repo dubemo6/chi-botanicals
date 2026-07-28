@@ -49,6 +49,9 @@ export default function TreatmentsPage() {
             advanced techniques with intentional touch, working in harmony with 
             the skin and body.
           </p>
+           <div className={`${styles.logoWrap} reveal reveal-delay-2`}>
+          <img src="/images/image.webp" alt="Brand logo" className={styles.logoPlaceholder} />
+        </div>
         </section>
         
         {/* Treatment Display Previews */}

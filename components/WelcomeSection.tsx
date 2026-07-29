@@ -14,7 +14,8 @@ export default function WelcomeSection({
   body = (
     <>
       A modern skincare studio rooted in timeless care, connection and conscious growth.<br />
-      A space to soften, reconnect, and restore through personalised rituals that honour both skin and self
+      A space to soften, reconnect, and restore through personalised rituals that honour <br/>
+      skin and self, cultivating calm in every quiet moment.
     </>
   ),
 }: WelcomeSectionProps) {

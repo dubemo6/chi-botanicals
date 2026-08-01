@@ -28,8 +28,8 @@
   letter-spacing: 0.15em;
   color: #1a1a18;
   margin: 0 0 2rem 0;
-  text-underline-offset: 4px;
-  text-decoration: underline;
+  /* text-underline-offset: 4px;
+  text-decoration: underline; */
 
 }
 

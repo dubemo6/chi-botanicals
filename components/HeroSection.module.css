@@ -75,12 +75,12 @@
 
 .taglineLine {
   display: block;
-  font-family: var(--font-dm);
-  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
-  font-weight: 400;
+  font-family: var(--font-italic);
+  font-size: clamp(1rem, 1vw, 1rem);
+  font-weight: 40;
   font-style: italic;
   color: #fff;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   line-height: 1.15;
   text-transform: uppercase;
 }

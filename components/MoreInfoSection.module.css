@@ -24,8 +24,8 @@
   text-indent: 8rem;
   padding-bottom: 2rem;
  
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  /* text-decoration: underline;
+  text-underline-offset: 4px; */
 }
 
 .imageWrap {

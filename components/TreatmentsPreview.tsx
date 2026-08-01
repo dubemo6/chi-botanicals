@@ -28,7 +28,7 @@ const treatments = [
   {
     image: "/images/fruit2.webp",
     name: "Collagen Renewal Ritual",
-    duration: "60 min | £220",
+    duration: "60 min | £250",
     description:
       "An advanced treatment combining microneedling and LED to support collagen, refine texture, and improve overall skin quality. Includes cleanse, SkinPen® EVO Microneedling, and a calming mask with LED .",
     size: "medium",

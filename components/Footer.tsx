@@ -7,7 +7,7 @@ import styles from "./Footer.module.css";
 const allLinks = [
   { label: "ABOUT", href: "/ABOUT" },
   { label: "SKIN RITUALS", href: "/SKIN_RITUALS" },
-  { label: "COMMUNITY", href: "/CommunityPage" },
+  { label: "COMMUNITY", href: "/COMMUITY PAGE" },
   { label: "BOOK NOW", href: "https://www.fresha.com/en-GB" },
 ];
 
@@ -17,8 +17,8 @@ const helpLinks = [
 ];
 
 const journalLinks = [
-  { label: "Community Directory", href: "/journal/part-one" },
-  { label: "Skin Library", href: "/journal/part-two" },
+  { label: "COMMUNITY DIRECTORY", href: "/journal/part-one" },
+  { label: "SKIN LIBRARY", href: "/journal/part-two" },
 ];
 
 export default function Footer() {

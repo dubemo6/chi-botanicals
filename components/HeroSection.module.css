@@ -75,7 +75,7 @@
 
 .taglineLine {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-fell);
   font-size: clamp(1.8rem, 3.5vw, 3.2rem);
   font-weight: 400;
   font-style: italic;

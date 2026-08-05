@@ -4,12 +4,10 @@
 
 .navbar {
   position: absolute;
-  /* CHANGE: Shifted closer to the absolute top edge */
   top: 0; 
   left: 0;
   right: 0;
   z-index: 100;
-  /* CHANGE: Decreased top padding from 3rem to 1.5rem to pull the navbar UP */
   padding: 1.5rem 0 3rem 0; 
 
   display: flex;
@@ -21,7 +19,6 @@
 .navbarDark {
   position: relative;
   background: #F7F7F7;
-  /* CHANGE: Mirror the same top-shifting padding here */
   padding: 1.5rem 0 3rem 0; 
 }
 
@@ -32,7 +29,6 @@
 /* Default brand — white, single-line (home page) */
 .brand {
   font-family: var(--font-mono);
-  /* font-style: italic; */
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -43,8 +39,18 @@
   text-transform: uppercase;
 }
 
+/* Dark brand — black text (about + treatments) */
+.brandDark {
+  color: #1a1a18;
+}
+
+/* ══════════════════════════════════════
+   NAVBAR LINKS & UNDERLINE ANIMATION
+   ══════════════════════════════════════ */
+
 /* Default link — white (home page over hero image) */
 .link {
+  position: relative;
   font-family: var(--font-mono);
   font-size: 0.95rem;
   font-weight: 400;
@@ -52,27 +58,46 @@
   color: #fff;
   text-decoration: none;
   opacity: 0.95;
-  transition: all 0.25s ease;
+  transition: opacity 0.25s ease;
   white-space: nowrap;
+  padding-bottom: 4px; /* Space between text & line */
 }
+
+/* Animated underline line */
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor; /* Matches text color */
+  transform: scaleX(0);
+  transform-origin: right; /* Retracts to the right on un-hover */
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Expand underline starting from the left on hover */
+.link:not(.bookNowBtn):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .link:hover {
   opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
+
 /* Dark link — black text */
 .linkDark {
   color: #1a1a18;
   opacity: 1;
 }
 
-/* Dark brand — black text (about + treatments) */
-.brandDark {
-  color: #1a1a18;
-}
 /* ══════════════════════════════════════
    MOBILE NAVBAR
    ══════════════════════════════════════ */
+
 .mobileNav {
   display: none;
   position: absolute;
@@ -135,7 +160,6 @@
   background: #1a1a18;
 }
 
-/* Sticky hamburger — not used */
 .stickyHamburger {
   display: none !important;
 }
@@ -143,6 +167,7 @@
 /* ══════════════════════════════════════
    FULL SCREEN OVERLAY MENU
    ══════════════════════════════════════ */
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -194,6 +219,7 @@
 }
 
 .overlayLink {
+  position: relative;
   font-family: var(--font-mono);
   font-size: 1rem;
   letter-spacing: 0.2em;
@@ -201,15 +227,36 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: opacity 0.2s;
+  padding-bottom: 4px;
+}
+
+.overlayLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #1a1a18;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.overlayLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .overlayLink:hover {
-  opacity: 0.5;
+  opacity: 1;
+  text-decoration: none;
 }
 
 /* ══════════════════════════════════════
    RESPONSIVE BREAKPOINTS
    ══════════════════════════════════════ */
+
 @media (max-width: 768px) {
   .navbar {
     display: none;
@@ -231,12 +278,12 @@
 }
 
 /* ══════════════════════════════════════
-   FINAL UPDATE: PERMANENT PILL THAT SWAPS COLORS ON HOVER
+   BOOK NOW BUTTON (PILL)
    ══════════════════════════════════════ */
+
 .bookNowBtn {
   padding: 0.6rem 1.6rem;
   border-radius: 100px;
-  /* Normal State for Default Navbar: White Pill, Black Text */
   background-color: #ffffff;
   color: #1a1a18 !important;
   opacity: 1 !important;
@@ -244,7 +291,6 @@
   border: 1px solid #ffffff;
 }
 
-/* Default Navbar Hover State: Swaps to Black Pill, White Text */
 .bookNowBtn:hover {
   text-decoration: none !important;
   background-color: #1a1a18;
@@ -252,17 +298,15 @@
   border-color: #1a1a18;
 }
 
-/* Normal State for Dark Navbar: Black Pill, Cream Text */
 .bookNowBtnDark {
   background-color: #1a1a18;
   color: #f5f2ee !important;
   border-color: #1a1a18;
 }
 
-/* Dark Navbar Hover State: Swaps to Cream/White Pill, Black Text */
 .bookNowBtnDark:hover {
   text-decoration: none !important;
   background-color: #f5f2ee;
   color: #1a1a18 !important;
-  border-color: #1a1a18; /* Keeps a clean subtle border edge anchor */
+  border-color: #1a1a18;
 }

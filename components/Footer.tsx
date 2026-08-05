@@ -146,6 +146,31 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* ─── Bottom Credits Row ─── */}
+        <div className={styles.creditsRow}>
+          <p className={styles.creditsText}>
+            Brand and website design by{" "}
+            <a 
+              href="https://www.kelseymacdonald.studio/" 
+              target="_blank" 
+              rel="noreferrer" 
+              className={styles.creditLink}
+            >
+              Kelsey MacDonald Studio
+            </a>
+            . Website build by{" "}
+            <a 
+              href="https://portfolio-bice-tau-jd9noiodfu.vercel.app" 
+              target="_blank" 
+              rel="noreferrer" 
+              className={styles.creditLink}
+            >
+              Oguamanam Anthony
+            </a>
+            .
+          </p>
+        </div>
+
         <button
           onClick={scrollToTop}
           className={`${styles.floatingScrollBtn} ${isVisible ? styles.visible : ""}`}

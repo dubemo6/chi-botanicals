@@ -20,12 +20,13 @@
 
 .linksCol ul li, 
 .helpCol ul li {
-  margin-bottom: 0.7rem; /* Adjust this value (e.g., 0.3rem to 0.8rem) for more or less space */
+  margin-bottom: 0.7rem;
 }
+
 /* ─── Typography & Base Links ──────────────────────────────────── */
 .brand {
   font-family: var(--font-mono);
-  font-size: clamp(1.5rem, 4vw, 2.4rem); /* Scaled beautifully down for mobile screens */
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: 0.08em;
@@ -80,7 +81,7 @@
 
 .dropdown {
   position: absolute;
-  bottom: 100%; /* Spits upwards on mobile to avoid screen bounds clipping */
+  bottom: 100%;
   left: 0;
   background: #F7F7F7;
   border: 1px solid rgba(26, 26, 24, 0.12);
@@ -95,15 +96,12 @@
 @media (min-width: 1024px) {
   .dropdown {
     bottom: auto;
-    top: -4px;        /* Align smoothly with the trigger text top */
-    left: 100%;       /* Sets edge right against the trigger component edge */
+    top: -4px;
+    left: 100%;
     margin-bottom: 0;
     box-shadow: 4px 4px 16px rgba(0,0,0,0.06);
-    
-    /* Crucial Change: This transparent border bridges the 1rem visual layout gap 
-       so your pointer never leaves the hot hover boundary zone */
     border-left: 1rem solid transparent; 
-    background-clip: padding-box; /* Keeps the background color inside the actual container border */
+    background-clip: padding-box;
   }
 }
 
@@ -131,10 +129,36 @@
 }
 
 .logo {
-  width: 44px; /* Perfectly sized icon for mobile viewports */
-  height: auto; /* Scaled proportionally via Next.js container configuration */
+  width: 44px;
+  height: auto;
   object-fit: contain;
   display: block;
+}
+
+/* ─── Bottom Credits Block ──────────────────────────────────────── */
+.creditsRow {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+}
+
+.creditsText {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.creditLink {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.creditLink:hover {
+  opacity: 0.6;
 }
 
 /* ─── Floating Scroll Engine ─── */
@@ -171,23 +195,23 @@
    ================================================================ */
 .top {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Splitting the mobile view into a clean 2-column track */
+  grid-template-columns: 1fr 1fr;
   gap: 2.5rem 1rem;
   width: 100%;
-} outdoors
+}
+
 .brand {
-  grid-column: 1; /* Locks name flat to the left side */
+  grid-column: 1;
   grid-row: 1;
   align-self: center;
 }
 
 .logoCol {
-  grid-column: 2; /* Locks logo flat to the right side */
+  grid-column: 2;
   grid-row: 1;
   justify-content: flex-end;
 }
 
-/* Stacked columns safely underneath the header row */
 .linksCol {
   grid-column: 1;
   grid-row: 2;
@@ -199,7 +223,7 @@
 }
 
 .contactCol {
-  grid-column: 1 / span 2; /* Spans full width at the bottom so your links never drop */
+  grid-column: 1 / span 2;
   grid-row: 3;
 }
 
@@ -230,6 +254,10 @@
     grid-row: 3;
     justify-content: flex-end;
   }
+
+  .creditsRow {
+    margin-top: 5rem;
+  }
 }
 
 /* ================================================================
@@ -243,7 +271,7 @@
 
   .top {
     grid-template-columns: 1.5fr repeat(3, 1fr) auto;
-    grid-template-rows: auto; /* Resets to a flat single line layout */
+    grid-template-rows: auto;
     gap: 2rem;
   }
 
@@ -262,11 +290,14 @@
     justify-content: flex-end;
     align-self: start;
   }
-  
 
   .logo {
     width: 64px;
     height: auto;
     display: block;
+  }
+
+  .creditsRow {
+    margin-top: 6rem;
   }
 }

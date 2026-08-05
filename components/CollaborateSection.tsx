@@ -12,6 +12,9 @@ export default function CollaborateSection() {
 
   return (
     <section className={styles.sectionContainer}>
+      {/* Square blended image block — right side */}
+      <div className={styles.imageBlock} aria-hidden="true" />
+
       {/* The entire content container sits cleanly on top of the background image */}
       <div className={`${styles.contentColumn} reveal`}>
         <span className={styles.eyebrow}>COLLABORATE WITH INTENT</span>

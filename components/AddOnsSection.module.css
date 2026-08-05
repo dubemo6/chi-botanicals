@@ -6,11 +6,24 @@
   padding: 4rem 4rem 7rem;
 }
 
-/*
-  DESKTOP GRID:
-  Col 1: label (row 1) + text list (row 2)
-  Col 2: all BOOK NOW buttons (spans rows 1–2)
-*/
+.inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #1a1a18;
+  margin: 0 0 2rem 0;
+}
+
+/* Previous split-column desktop grid layout (.inner as 2-col grid,
+   .list in col 1, .actions spanning col 2) — replaced because it let
+   text and buttons drift apart when descriptions wrapped.
+
 .inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -22,18 +35,9 @@
 .label {
   grid-column: 1;
   grid-row: 1;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  color: #1a1a18;
-  margin: 0 0 2rem 0;
-  /* text-underline-offset: 4px;
-  text-decoration: underline; */
-
+  ...
 }
 
-/* All text items — left column */
 .list {
   grid-column: 1;
   grid-row: 2;
@@ -43,6 +47,45 @@
 }
 
 .item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.actions {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  gap: 0;
+}
+
+.actionItem {
+  display: flex;
+  width: 100%;
+  min-height: 3.8rem;
+  align-items: flex-start;
+  padding-top: 0.1rem;
+}
+*/
+
+/* Each add-on is now one row: text left, BOOK NOW right, same row —
+   so the button can never drift from its own item. */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 2rem;
+}
+
+.itemText {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -66,31 +109,6 @@
   line-height: 1.5;
 }
 
-/* All BOOK NOW buttons — right column, spans both rows */
-.actions {
-  grid-column: 2;
-  grid-row: 1 / 3;
-  display: flex;
-  flex-direction: column;
-  padding-top: 3rem; /* nudge down to align with first text item */
-  gap: 0;
-}
-
-
-.actionItem {
-  display: flex;
-  width: 100%;
-  min-height: 3.8rem;
-  align-items: flex-start;
-  padding-top: 0.1rem;
-}
-
-
- .actionItem:nth-child(1) { justify-content: flex-start; margin-left: -6rem; }
-.actionItem:nth-child(2) { justify-content: center;margin-left: 2rem; }
-.actionItem:nth-child(3) { justify-content: flex-start; margin-left: 6rem; }
-.actionItem:nth-child(4) { justify-content: flex-end; } 
-
 .bookNow {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -102,6 +120,8 @@
   transition: opacity 0.2s;
   white-space: nowrap;
   cursor: pointer;
+  justify-self: end;
+  margin-top: 0.1rem;
 }
 
 .bookNow:hover {
@@ -116,30 +136,15 @@
   .section {
     padding: 4rem 2.5rem 5rem;
   }
-  .actionItem:nth-child(3) {
-    padding-right: 3%;
-  }
 }
 
 
 /* ══════════════════════════════════════
    MOBILE (max 768px)
-
-   - Label
-   - All 4 text items tight together
-   - Big gap
-   - All 4 BOOK NOW staggered:
-       #1 left | #2 right | #3 center-left | #4 right
    ══════════════════════════════════════ */
 @media (max-width: 768px) {
   .section {
     padding: 3rem 1.5rem 4rem;
-  }
-
-  /* Single column, everything stacks */
-  .inner {
-    display: flex;
-    flex-direction: column;
   }
 
   .label {
@@ -148,38 +153,38 @@
   }
 
   .list {
-    gap: 1.2rem;
-    width: 100%;
+    gap: 1.8rem;
   }
 
-  .name { font-size: 0.8rem; 
-font-weight: 585;}
-  .desc { font-size: 0.72rem; 
-font-weight: 595;}
+  /* Previous mobile: text stacked in .list, buttons stacked separately
+     below in .actions with staggered nth-child rules.
 
-  /* Button block below ALL text items */
+  .list { gap: 1.2rem; width: 100%; }
   .actions {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 4rem;   /* gap between text block and first button */
-    gap: 3rem;          /* gap between each button */
+    margin-top: 4rem;
+    gap: 3rem;
     padding-top: 0;
   }
+  .actionItem { width: 100%; min-height: unset; padding-top: 0; align-items: center; }
+  .actionItem:nth-child(1) { justify-content: center; padding-top: 2rem; }
+  .actionItem:nth-child(2) { justify-content: flex-end; margin-left: -1.9rem; }
+  .actionItem:nth-child(3) { justify-content: center; margin-left: -4.5rem; padding-bottom: 3.3rem; }
+  .actionItem:nth-child(4) { justify-content: flex-end; }
+  */
 
-  .actionItem {
-    width: 100%;
-    min-height: unset;
-    padding-top: 0;
-    align-items: center;
+  .item {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 
-  .actionItem:nth-child(1) { justify-content: center; padding-top: 2rem;}
-.actionItem:nth-child(2) { justify-content: flex-end;margin-left: -1.9rem; }
-.actionItem:nth-child(3) { justify-content: center; margin-left: -4.5rem; padding-bottom: 3.3rem; }
-.actionItem:nth-child(4) { justify-content: flex-end; }
- 
+  .name { font-size: 0.8rem; font-weight: 585; }
+  .desc { font-size: 0.72rem; font-weight: 595; }
+
   .bookNow {
     font-size: 0.78rem;
+    justify-self: start;
   }
 }

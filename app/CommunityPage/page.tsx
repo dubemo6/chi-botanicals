@@ -23,7 +23,7 @@ export default function CommunityPage() {
 
         {/* ── 1. WELCOME ── */}
         <WelcomeSection
-          eyebrow="BEAUTY, RITUAL, EDUCATION AND RESTORATION."
+          eyebrow="BEAUTY,RITUAL,EDUCATION AND RESTORATION."
           body={
             <>
               In a fast-paced world, we have lost the art of slowing down. Chi

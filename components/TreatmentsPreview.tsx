@@ -26,7 +26,7 @@ const treatments = [
     size: "tall",
   },
   {
-    image: "/images/fruit2.webp",
+    image: "/images/meet6.webp",
     name: "Collagen Renewal Ritual",
     duration: "60 min | £250",
     description:
@@ -50,7 +50,7 @@ export default function TreatmentsPreview({ showConsultation = false }: Treatmen
             Consultation — <em>30 min</em>
           </span><br />
           <span className={styles.consultationSub}>
-            Required before any treatment to assess your skin and discuss goals.
+         Required before any treatment to assess your skin and discuss goals.
           </span>
         </div>
       )}

@@ -10,7 +10,7 @@
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  letter-spacing: 0;
+  letter-spacing: 0.1em;
   color: #1a1a18;
   text-decoration: none;
   text-transform: uppercase;

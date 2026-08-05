@@ -10,7 +10,7 @@
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.1em;
   color: #1a1a18;
   margin: 0 0 1.5rem;
 }
@@ -62,7 +62,7 @@
 
   .eyebrow {
     font-size: 1rem;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.1em;
     padding-bottom: 3rem;
     padding-top: 2.5em;
     margin: 0 0 2rem;

@@ -1,19 +1,58 @@
 .sectionContainer {
   width: 100%;
-  /* Loads your texture as a full section graphic canvas cover */
+  position: relative;
+
+  /* Previous: full-bleed textured background image on the whole section
   background-image: url('/images/oil6.webp');
   background-size: cover;
-  background-position: center right; /* Shifts focal point right so text reads clearly on the left */
+  background-position: center right;
   background-repeat: no-repeat;
-  background-color:#F7F7F7;
+  */
+
+  background-color: #F7F7F7;
   overflow: hidden;
   display: flex;
   align-items: center;
   min-height: 520px; /* Gives the container a solid, beautiful baseline footprint */
 }
 
+/* ─── Square image block, right side, feathered to blend into #F7F7F7 ─── */
+.imageBlock {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: min(46%, 460px);
+  aspect-ratio: 1 / 1;
+
+  background-image: url('/images/fruit6.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Feather the left edge (and slightly all edges) into the flat background
+     color instead of a hard-edged square */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 22%,
+    black 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 22%,
+    black 100%
+  );
+
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ─── Left Content Column (Hard-Locked to Left Edge) ───────────── */
 .contentColumn {
+  position: relative;
+  z-index: 1;
   padding: 4rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -101,6 +140,10 @@ font-family: var(--font-mono), monospace;
     height: 480px; /* Locks the dynamic banner thickness completely */
   }
 
+  .imageBlock {
+    width: min(42%, 420px);
+  }
+
   .contentColumn {
     /* Anchors your text perfectly inline with the site container margins */
     padding: 3rem 4rem 3rem 8%; 
@@ -138,5 +181,30 @@ font-family: var(--font-mono), monospace;
 @media (min-width: 1440px) {
   .contentColumn {
     padding-left: 12%; /* Perfect wide desktop alignment edge alignment tracking */
+  }
+}
+
+/* ─── Mobile: image drops below content as its own soft square ─── */
+@media (max-width: 1023px) {
+  .sectionContainer {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+  }
+
+  .imageBlock {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 70%;
+    max-width: 320px;
+    margin: 0 auto 2rem;
+    -webkit-mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
+    mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
+  }
+
+  .contentColumn {
+    max-width: 100%;
   }
 }

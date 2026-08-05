@@ -17,7 +17,7 @@ export default function AboutSection() {
           Where you are invited to slow down, reconnect, and simply be. Here, skincare becomes
           ritual, not routine. A moment of stillness where the body unwinds, the mind quiets, and
           the skin begins to respond. Rooted in nature and guided by intention, every experience is
-          designed to nurture both skin and self.
+          designed to nurture skin and self.
         </p>
         <div className={`${styles.logoWrap} reveal reveal-delay-2`}>
           <img src="/images/image.webp" alt="Brand logo" className={styles.logoPlaceholder} />

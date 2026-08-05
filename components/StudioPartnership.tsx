@@ -1,4 +1,3 @@
-// StudioPartnership.tsx
 "use client";
 
 import React, { useState, useRef } from "react";
@@ -66,10 +65,10 @@ export default function StudioPartnership() {
 
         {/* Right: form */}
         <div className={styles.rightPanel}>
-          <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
+          <form ref={formRef} onSubmit={handleSubmit} className={`${styles.form} reveal`}>
             <input type="hidden" name="title" value="New Partnership Inquiry" />
 
-            <div className={`${styles.formRow} reveal`}>
+            <div className={styles.formRow}>
               <div className={styles.fieldGroup}>
                 <label htmlFor="user_name" className={styles.fieldLabel}>FULL NAME</label>
                 <input type="text" id="user_name" name="user_name" className={styles.input} required />
@@ -80,7 +79,7 @@ export default function StudioPartnership() {
               </div>
             </div>
 
-            <div className={`${styles.formRow} reveal`}>
+            <div className={styles.formRow}>
               <div className={styles.fieldGroup}>
                 <label htmlFor="user_email" className={styles.fieldLabel}>EMAIL ADDRESS</label>
                 <input type="email" id="user_email" name="user_email" className={styles.input} required />
@@ -99,21 +98,21 @@ export default function StudioPartnership() {
               </div>
             </div>
          
-            <div className={`${styles.fullWidthRow} reveal`}>
+            <div className={`${styles.fullWidthRow} ${styles.projectDetailsRow}`}>
               <div className={styles.fieldGroup}>
                 <label htmlFor="project_details" className={styles.fieldLabel}>PROJECT DETAILS</label>
                 <textarea id="project_details" name="project_details" className={styles.textarea} rows={2} required />
               </div>
             </div>
   
-            <div className={`${styles.fullWidthRow} reveal`}>
+            <div className={styles.fullWidthRow}>
               <div className={styles.fieldGroup}>
                 <label htmlFor="timeline" className={styles.fieldLabel}>TIMELINE</label>
                 <input type="text" id="timeline" name="timeline" className={styles.input} required />
               </div>
             </div>
 
-            <div className={`${styles.actionRow} reveal`}>
+            <div className={styles.actionRow}>
               <button type="submit" className={styles.submitBtn} disabled={status === "sending"}>
                 {status === "sending" ? "TRANSMITTING..." : "SUBMIT"}
               </button>

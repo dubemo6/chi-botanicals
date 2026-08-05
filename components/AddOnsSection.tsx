@@ -8,7 +8,7 @@ const addOns = [
   { name: "Head Tension Massage | 10mins | £45", desc: "Relieves scalp, temple, and head tension." },
   { name: "Extra massage | 10mins| £40", desc: "Enhanced relaxation with additional massage techniques." },
    { name: "Hydrating Mask |10mins| £30", desc: "Intensive moisture boost to restore hydration and glow." },
-
+{ name: "LED light | 10mins | £40", desc: "Targeted light therapy to improve skin texture and tone." }
 
 ];
 
@@ -17,6 +17,11 @@ export default function AddOnsSection() {
     <section className={styles.section} id="add-ons">
       <div className={styles.inner}>
         <p className={`${styles.label} reveal`}>Add-Ons</p>
+
+        {/* Previous version — text list and BOOK NOW buttons were two separate
+            flex columns (.list / .actions), each with its own independent gap.
+            That meant a row's button no longer lined up with its row's text
+            once a description wrapped to a second line.
 
         <div className={styles.list}>
           {addOns.map((addon, i) => (
@@ -28,8 +33,28 @@ export default function AddOnsSection() {
         </div>
 
         <div className={styles.actions}>
-          {addOns.slice(0, 4).map((_, i) => (
+          {addOns.map((_, i) => (
             <div key={i} className={`${styles.actionItem} reveal reveal-delay-${i + 1}`}>
+              
+                href={BOOK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.bookNow}
+              >
+                BOOK NOW
+              </a>
+            </div>
+          ))}
+        </div>
+        */}
+
+        <div className={styles.list}>
+          {addOns.map((addon, i) => (
+            <div key={i} className={`${styles.item} reveal reveal-delay-${i + 1}`}>
+              <div className={styles.itemText}>
+                <p className={styles.name}>{addon.name}</p>
+                <p className={styles.desc}>{addon.desc}</p>
+              </div>
               <a
                 href={BOOK_URL}
                 target="_blank"

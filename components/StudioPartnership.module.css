@@ -1,4 +1,3 @@
-/* StudioPartnership.module.css */
 .wrapper {
   width: 100%;
   background-color: #F7F7F7;
@@ -9,95 +8,109 @@
   flex-direction: column;
   gap: 3rem;
   padding: 4rem 2rem;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
+/* Left Panel */
 .leftPanel {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  gap: 1.8rem;
 }
 
 .partnerLabel {
   font-family: var(--font-mono), monospace;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
   color: #1a1917;
-  max-width: 480px;
+  max-width: 440px;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .photoWrap {
-  width: 320px;
+  width: 220px;
   max-width: 100%;
 }
 
 .photo {
   width: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
 }
 
 .partnerBody {
   font-family: var(--font-mono), monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.7;
   color: #2b2a28;
-  max-width: 480px;
+  max-width: 420px;
   margin: 0;
 }
 
+/* Right Panel */
 .rightPanel {
   display: flex;
+  width: 100%;
 }
 
 .form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.5rem;
 }
 
 .formRow {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.5rem;
 }
 
 .fullWidthRow {
   width: 100%;
 }
 
+/* Precise spacing to match design mockup */
 .projectDetailsRow {
-  margin-top: 0.6rem;
+  margin-top: 14rem;
 }
 
 .fieldGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
   flex: 1;
 }
 
 .fieldLabel {
   font-family: var(--font-mono), monospace;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.05em;
   color: #1a1917;
+  text-transform: uppercase;
 }
 
 .input, .textarea, .select {
   width: 100%;
-  padding: 0.6rem 0;
+  padding: 0.4rem 0;
   font-family: var(--font-mono), monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #2b2a28;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(26, 25, 23, 0.5);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.4);
   box-sizing: border-box;
   outline: none;
+  border-radius: 0;
+}
+
+.textarea {
+  resize: none;
 }
 
 .input:focus, .textarea:focus, .select:focus {
@@ -110,30 +123,32 @@
 
 .select {
   appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
   padding-right: 2rem;
 }
 
 .selectWrapper::after {
-  content: "↓";
+  content: "∨";
   font-size: 0.75rem;
   color: #1a1917;
   position: absolute;
   right: 0.2rem;
-  top: 0.6rem;
+  top: 0.4rem;
   pointer-events: none;
 }
 
 .actionRow {
   display: flex;
   justify-content: flex-end;
+  margin-top: 1.5rem;
 }
 
 .submitBtn {
   background: none;
   border: none;
   font-family: var(--font-mono), monospace;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-decoration: underline;
   color: #1a1917;
@@ -159,21 +174,34 @@
   margin: 0;
 }
 
+/* Mobile responsive resets */
+@media (max-width: 1023px) {
+  .projectDetailsRow {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Desktop */
 @media (min-width: 1024px) {
   .splitGrid {
     flex-direction: row;
+    gap: 4rem;
   }
 
   .leftPanel {
-    width: 42%;
+    width: 48%;
+    padding-right: 2rem;
+    border-right: 1px solid rgba(26, 25, 23, 0.4);
   }
 
   .rightPanel {
-    width: 58%;
-    align-items: center;
+    width: 52%;
+    padding-left: 1rem;
+    padding-top: 0.2rem;
   }
 
   .formRow {
     flex-direction: row;
+    gap: 2rem;
   }
 }

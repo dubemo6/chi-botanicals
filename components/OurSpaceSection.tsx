@@ -4,9 +4,9 @@ import { useState } from "react";
 import styles from "./OurSpaceSection.module.css";
 
 const spaceImages: string[] = [
-  "/images/meet.webp",
+  "/images/meet7.webp",
   "/images/meet2.webp",
-  "/images/meet3.webp",
+  "/images/meet8.webp",
   "/images/fruit6.webp",
   "/images/meet5.webp",
 ];

@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "Amarachi was excellent, she talked me through the process in depth and gave men really useful tips for my day to day skin care. A really enjoyable and enlightening experience!",
+      "Amarachi was excellent, she talked me through the process in depth and gave me really useful tips for my day to day skin care. A really enjoyable and enlightening experience!",
     name: "Client Name -Tait ",
   },
   {

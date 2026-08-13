@@ -6,9 +6,9 @@ import styles from "./OurSpaceSection.module.css";
 const spaceImages: string[] = [
   "/images/meet7.webp",
   "/images/meet2.webp",
-  "/images/meet8.webp",
+  "/images/faces10.webp",
   "/images/fruit6.webp",
-  "/images/meet5.webp",
+  "/images/face.webp",
 ];
 
 const entries = [

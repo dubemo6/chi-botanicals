@@ -91,7 +91,7 @@ export default function StudioPartnership() {
                     <option value="" disabled hidden>Select an option</option>
                     <option value="Brand Partnership">Brand Partnership</option>
                     <option value="Content Collaboration">Content Collaboration</option>
-                    <option value="Studio Event Hosting">Studio Event Hosting</option>
+        
                     <option value="Corporate Wellness">Corporate Wellness</option>
                   </select>
                 </div>

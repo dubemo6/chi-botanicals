@@ -275,7 +275,7 @@
   .item:nth-child(3) .imgWrap,
   .item:nth-child(4) .imgWrap {
     aspect-ratio: unset;
-    width: 100%;
+    width: 90%;
     height: 100%;
   }
 
@@ -296,7 +296,7 @@
     height: 640px;
   }
 
-  .item:nth-child(1) { width: 65%; }
+  .item:nth-child(1) { width: 55%; }
   .item:nth-child(2) { width: 60%; top: 10%; }
   .item:nth-child(3) { width: 44%; top: 40%; }
   .item:nth-child(4) { width: 50%; top: 50%; }

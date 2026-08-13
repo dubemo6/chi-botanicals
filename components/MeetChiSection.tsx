@@ -48,7 +48,7 @@ export default function MeetChiSection() {
           skin. More importantly, my aim is to
           empower you with knowledge, honesty, and
           the right treatments, so you can feel
-          confident and connected to your skin
+          confident and connected to your skin.
         </p>
       </div>
 

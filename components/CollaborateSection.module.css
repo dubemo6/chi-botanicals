@@ -16,7 +16,7 @@
   min-height: 520px; /* Gives the container a solid, beautiful baseline footprint */
 }
 
-/* ─── Square image block, right side, feathered to blend into #F7F7F7 ─── */
+/* ─── Square image block, right side ─── */
 .imageBlock {
   position: absolute;
   top: 50%;
@@ -29,21 +29,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Feather the left edge (and slightly all edges) into the flat background
-     color instead of a hard-edged square */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 22%,
-    black 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 22%,
-    black 100%
-  );
 
   pointer-events: none;
   z-index: 0;
@@ -184,7 +169,7 @@ font-family: var(--font-mono), monospace;
   }
 }
 
-/* ─── Mobile: image drops below content as its own soft square ─── */
+/* ─── Mobile: image drops below content as its own square ─── */
 @media (max-width: 1023px) {
   .sectionContainer {
     flex-direction: column;
@@ -200,8 +185,6 @@ font-family: var(--font-mono), monospace;
     width: 70%;
     max-width: 320px;
     margin: 0 auto 2rem;
-    -webkit-mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
-    mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
   }
 
   .contentColumn {

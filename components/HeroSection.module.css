@@ -1,100 +1,96 @@
 .hero {
   position: relative;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: #111;
+display: flex;
+width: 100vw;
+height: 100vh;
+overflow: hidden;
+background: #111;
 }
 
 /* ── Panels ── */
 .panel {
-  position: relative;
-  flex: 1;
-  height: 100%;
-  overflow: hidden;
-  background: #1a1a18;
+position: relative;
+flex: 1;
+height: 100%;
+overflow: hidden;
+background: #1a1a18;
 }
 
 .imageWrapper {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-  z-index: 1;
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+transition: opacity 0.5s ease-in-out;
+opacity: 0;
+z-index: 1;
 }
 
 .panelImg {
-  object-fit: cover;
+object-fit: cover;
 }
 
 .visible {
-  opacity: 1;
-  z-index: 3;
+opacity: 1;
+z-index: 3;
 }
 
 .preloadNext {
-  opacity: 0;
-  z-index: 2;
+opacity: 0;
+z-index: 2;
 }
 
 .hidden {
-  opacity: 0;
-  z-index: 1;
+opacity: 0;
+z-index: 1;
 }
 
 /* ── Overlay ── */
 .overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 2.5rem 3rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
-  z-index: 5;
+position: absolute;
+inset: 0;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding: 2.5rem 3rem;
+background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+z-index: 5;
 }
 
 /* ── Tagline (desktop — lives on left panel) ── */
 .tagline {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.1em;
+margin: 0;
+display: flex;
+flex-direction: column;
+gap: 0.1em;
 }
 
 /* Mobile tagline — hidden on desktop */
 .taglineMobile {
-  margin: 0;
-  display: none;
-  flex-direction: column;
-  gap: 0.1em;
+margin: 0;
+display: none;
+flex-direction: column;
+gap: 0.1em;
 }
 
 .taglineLine {
-  display: block;
-  font-family: var(--font-italic);
-  font-size: clamp(1rem, 1vw, 1rem);
-  font-weight: 40;
-  font-style: italic;
-  color: #fff;
-  letter-spacing: 0.02em;
-  line-height: 1.15;
-  text-transform: uppercase;
+display: block;
+font-size: clamp(1rem, 1vw, 1rem);
+font-weight: 100;
+color: #fff;
+line-height: 1.15;
 }
 
 /* ══════════════════════════════════════════════
    LARGE DESKTOP (≥ 1440px)
    ══════════════════════════════════════════════ */
 @media (min-width: 1440px) {
-  .taglineLine {
-    font-size: 3.5rem;
+.taglineLine {
+font-size: 3.5rem;
   }
 
-  .overlay {
-    padding: 3rem 4rem;
+.overlay {
+padding: 3rem 4rem;
   }
 }
 
@@ -102,13 +98,12 @@
    TABLET LANDSCAPE / SMALL LAPTOP (769px–1024px)
    ══════════════════════════════════════════════ */
 @media (max-width: 1024px) and (min-width: 769px) {
-  .taglineLine {
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-family: var(--font-mono);
+.taglineLine {
+font-size: clamp(1.5rem, 3vw, 2.2rem);
   }
 
-  .overlay {
-    padding: 2rem 2rem;
+.overlay {
+padding: 2rem 2rem;
   }
 }
 
@@ -116,30 +111,29 @@
    TABLET PORTRAIT (481px–768px)
    ══════════════════════════════════════════════ */
 @media (max-width: 768px) and (min-width: 481px) {
-  .leftPanel {
-    display: none;
+.leftPanel {
+display: none;
   }
 
-  .rightPanel {
-    flex: none;
-    width: 100%;
+.rightPanel {
+flex: none;
+width: 100%;
   }
 
-  .tagline {
-    display: none;
+.tagline {
+display: none;
   }
 
-  .taglineMobile {
-    display: flex;
+.taglineMobile {
+display: flex;
   }
 
-  .taglineLine {
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
-    font-family: var(--font-mono);
+.taglineLine {
+font-size: clamp(1.8rem, 7vw, 2.5rem);
   }
 
-  .overlay {
-    padding: 2rem 2.5rem;
+.overlay {
+padding: 2rem 2.5rem;
   }
 }
 
@@ -147,28 +141,28 @@
    MOBILE (≤ 480px)
    ══════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .leftPanel {
-    display: none;
+.leftPanel {
+display: none;
   }
 
-  .rightPanel {
-    flex: none;
-    width: 100%;
+.rightPanel {
+flex: none;
+width: 100%;
   }
 
-  .tagline {
-    display: none;
+.tagline {
+display: none;
   }
 
-  .taglineMobile {
-    display: flex;
+.taglineMobile {
+display: flex;
   }
 
-  .taglineLine {
-    font-size: clamp(1.8rem, 10vw, 2.8rem);
+.taglineLine {
+font-size: clamp(1.8rem, 10vw, 2.8rem);
   }
 
-  .overlay {
-    padding: 1.5rem 1.5rem;
+.overlay {
+padding: 1.5rem 1.5rem;
   }
 }

@@ -2,7 +2,7 @@ import styles from "./TreatmentsPreview.module.css";
 
 const treatments = [
   {
-    image: "/images/face6.webp",
+    image: "/images/faces7.webp",
     name: "Lift & Release Facial",
     duration: "45 min | £110",
     description:

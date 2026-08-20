@@ -129,8 +129,26 @@ export default function Footer() {
               href="https://instagram.com/chibotanical"
               target="_blank"
               rel="noreferrer"
-              className={`${styles.link} reveal reveal-delay-2`}
+              className={`${styles.link} ${styles.socialLink} reveal reveal-delay-2`}
+              aria-label="Instagram: @chibotanical"
             >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" className={styles.socialIconDot} />
+              </svg>
+              @chibotanical
+            </a>
+             <a
+              href="https://www.tiktok.com/@chi.botanical?_r=1&_t=ZN-9915iklaWne"
+              target="_blank"
+              rel="noreferrer"
+              className={`${styles.link} ${styles.socialLink} reveal reveal-delay-2`}
+              aria-label="TikTok: @chibotanical"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M15.5 3h3c.3 1.8 1.4 3.2 3 4v3.1c-1.1-.1-2.1-.5-3-1.1v6.2a5.8 5.8 0 1 1-5.8-5.8c.3 0 .6 0 .8.1v3.2a2.7 2.7 0 1 0 1.9 2.5V3Z" />
+              </svg>
               @chibotanical
             </a>
           </div>

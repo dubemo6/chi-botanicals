@@ -68,6 +68,31 @@
   opacity: 0.55;
 }
 
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.socialLink svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  flex: 0 0 auto;
+}
+
+.socialLink svg path {
+  fill: currentColor;
+  stroke: none;
+}
+
+.socialLink .socialIconDot {
+  fill: currentColor;
+  stroke: none;
+}
+
 /* ─── Journal Dropdown Menu Engine ──────────────────────────────── */
 .journalWrap {
   position: relative;
